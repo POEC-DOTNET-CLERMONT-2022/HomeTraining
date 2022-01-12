@@ -6,5 +6,6 @@ namespace DTO
 {
     internal class ProgrammeDto
     {
+        string nom;
     }
 }
