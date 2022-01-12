@@ -9,5 +9,6 @@ namespace DTO
         string nom;
         string prenom;
         string age;
+        string blabla;
     }
 }
