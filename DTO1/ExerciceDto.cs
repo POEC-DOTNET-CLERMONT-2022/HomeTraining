@@ -10,6 +10,8 @@ namespace Ipme.Hometraining.DTO
         [DataMember]
         public string Name { get; set; }
 
+
+
     }
 
 }
