@@ -5,6 +5,7 @@ namespace Ipme.Hometraining.Models
     /*
      * Classe représentant un exercice concret
      */
+
     public class ExerciceModel
     {
         private Guid _id;
