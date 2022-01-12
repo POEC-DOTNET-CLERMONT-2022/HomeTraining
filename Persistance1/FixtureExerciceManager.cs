@@ -15,13 +15,8 @@ namespace Ipme.Hometraining.Persistance
 
         public IEnumerable<ExerciceModel> GetAllExercices()
         {
-<<<<<<< HEAD
             var exos =   _fixture.Build<ExerciceModel>().CreateMany(10);
             return exos;
-=======
-            return _fixture.CreateMany<ExerciceModel>(20);
-
->>>>>>> f8203c2d0c123b135266a55c45fb28028714916c
         }
     }
 
