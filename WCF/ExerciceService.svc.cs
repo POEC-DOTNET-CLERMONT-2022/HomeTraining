@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ipme.Hometraining.DTO;
+using Ipme.Hometraining.Persistance;
+using System;
 using System.Collections.Generic;
 
 namespace Ipme.Hometraining.WCF
@@ -6,17 +8,14 @@ namespace Ipme.Hometraining.WCF
     // REMARQUE : vous pouvez utiliser la commande Renommer du menu Refactoriser pour changer le nom de classe "Service1" dans le code, le fichier svc et le fichier de configuration.
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez Service1.svc ou Service1.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     //
-    public class ExerciceService
+    public class ExerciceService :IExerciceService
     {
-        //: IExerciceService
+        public IExerciceManager ExerciceManager => throw new NotImplementedException();
 
-        /*public IExerciceManager ExerciceManager => throw new NotImplementedException();
 
-        IExerciceManager IExerciceService.ExerciceManager => throw new NotImplementedException();*/
-
-        public string GetData(int value)
+        public IEnumerable<ExerciceDto> GetExercices()
         {
-            return string.Format("You entered: {0}", value);
+            return new List<ExerciceDto>() { new ExerciceDto() { Name="Toto"}, new ExerciceDto() { Name = "Tata" } };
         }
 
         /*
@@ -33,9 +32,5 @@ namespace Ipme.Hometraining.WCF
             return composite;
         }*/
 
-        /*IEnumerable<ExerciceDto> IExerciceService.GetUsers()
-        {
-            throw new NotImplementedException();
-        }*/
     }
 }

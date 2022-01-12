@@ -2,6 +2,7 @@
 using AutoFixture;
 using Ipme.Hometraining.Models;
 using System.Collections.Generic;
+using Ipme.Hometraining.DTO;
 
 namespace Ipme.Hometraining.Persistance
 {
@@ -14,7 +15,8 @@ namespace Ipme.Hometraining.Persistance
 
         public IEnumerable<ExerciceModel> GetAllExercices()
         {
-            throw new NotImplementedException();
+            var exos =   _fixture.Build<ExerciceModel>().CreateMany(10);
+            return exos;
         }
     }
 
