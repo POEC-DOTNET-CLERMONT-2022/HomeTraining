@@ -14,7 +14,8 @@ namespace Ipme.Hometraining.Persistance
 
         public IEnumerable<ExerciceModel> GetAllExercices()
         {
-            throw new NotImplementedException();
+            return _fixture.CreateMany<ExerciceModel>(20);
+
         }
     }
 
