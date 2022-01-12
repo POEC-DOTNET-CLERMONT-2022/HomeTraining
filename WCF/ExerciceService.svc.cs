@@ -18,19 +18,5 @@ namespace Ipme.Hometraining.WCF
             return new List<ExerciceDto>() { new ExerciceDto() { Name="Toto"}, new ExerciceDto() { Name = "Tata" } };
         }
 
-        /*
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
-        }*/
-
     }
 }
