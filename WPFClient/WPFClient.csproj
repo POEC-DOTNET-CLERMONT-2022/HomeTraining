@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Ipme.Hometraining.WPFClient</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Videos\Seoul-21985.mp4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Videos\Seoul-21985.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WCF\WCF.csproj" />
+  </ItemGroup>
+
+</Project>

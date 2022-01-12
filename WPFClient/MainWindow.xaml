@@ -1,0 +1,42 @@
+﻿<Window x:Class="Ipme.Hometraining.WPFClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ipme.Hometraining.WPFClient"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="410" Width="1260">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="155*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="435"/>
+            <ColumnDefinition Width="800"/>
+        </Grid.ColumnDefinitions>
+
+
+        <TabControl  x:Name="TypeEntityTab" Grid.Row="0" Grid.ColumnSpan="1" Grid.RowSpan="2">
+            <TabItem Header="Exercices entrainement">
+
+                <TabControl x:Name="TypeExerciceTab" TabStripPlacement="Left" Grid.Row="2" Grid.Column="1">
+                    <TabItem Header="EpaulesDefaut" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="99">
+                        <ListBox x:Name="ExercicesZone" Grid.ColumnSpan="2">
+                            <ListBoxItem>Exercice 1</ListBoxItem>
+                            <ListBoxItem>Nouveau</ListBoxItem>
+                        </ListBox>
+                    </TabItem>
+                </TabControl>
+
+
+
+            </TabItem>
+            <TabItem Header="Programmes entrainement" >
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <local:ExerciceViewUserControl Grid.Row="2" Grid.Column="2"/>
+
+    </Grid>
+</Window>
