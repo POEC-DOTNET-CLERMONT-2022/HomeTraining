@@ -8,8 +8,7 @@ namespace Ipme.Hometraining.DTO
     [DataContract]
     public class ExerciceDto
     {
-        [DataMember]
-        public Guid Id { get; set; }
+        
 
         [DataMember]
         public string Name { get; set; }

@@ -22,7 +22,7 @@
 
                 <TabControl x:Name="TypeExerciceTab" TabStripPlacement="Left" Grid.Row="2" Grid.Column="1">
                     <TabItem Header="EpaulesDefaut" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="99">
-                        <ListBox x:Name="ExercicesZone" Grid.ColumnSpan="2">
+                        <ListBox x:Name="ExercicesZone" Grid.ColumnSpan="2" SelectionChanged="ExercicesZone_SelectionChanged">
                             <ListBoxItem>Exercice 1</ListBoxItem>
                             <ListBoxItem>Nouveau</ListBoxItem>
                         </ListBox>

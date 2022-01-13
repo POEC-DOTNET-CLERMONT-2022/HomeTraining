@@ -9,7 +9,7 @@
 
     <Grid>
         <MediaElement Source="https://www.youtube.com/watch?v=wX8eSe1SZks" HorizontalAlignment="Left" Height="168" Margin="20,39,0,104" Width="289"/>
-        <Button Grid.Column="1" Content="Enregistrer" HorizontalAlignment="Left" Margin="20,267,0,0" Grid.Row="2" VerticalAlignment="Top" Height="20" Width="145"/>
+        <Button Grid.Column="1" Content="Enregistrer" HorizontalAlignment="Left" Margin="20,267,0,0" Grid.Row="2" VerticalAlignment="Top" Height="20" Width="145" Click="Button_Click"/>
         <Button Grid.Column="1" Content="Annuler" HorizontalAlignment="Left" Margin="172,267,0,0" Grid.Row="2" VerticalAlignment="Top" Width="145"/>
         <Button Grid.Column="1" Content="Supprimer" HorizontalAlignment="Left" Margin="637,267,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.414,-0.284" Width="145" />
 
