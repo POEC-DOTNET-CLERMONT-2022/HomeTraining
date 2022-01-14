@@ -1,4 +1,5 @@
 ﻿using Ipme.Hometraining.DTO;
+using Ipme.Hometraining.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,14 @@ namespace WPFClient
             
         }
 
-     
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            ExerciceDto ex = new ExerciceDto() { 
+                Name = "Squates sautés",
+                Description = "",
+                MuscleArea = MuscleArea.Jambes,
+                VideoName = "" };
+            ExerciceApiRest.PostExerciceAsync("https://localhost:7266/api/Exercices",ex);
+        }
     }
 }

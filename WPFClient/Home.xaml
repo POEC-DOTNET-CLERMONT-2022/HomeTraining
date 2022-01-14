@@ -10,7 +10,7 @@
         <TabControl>
             <TabItem Header="Mon entrainement">
                 <Grid Background="#FFE5E5E5">
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="78,45,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+                    <Button Content="Charger Exercices from uri json" HorizontalAlignment="Left" Margin="78,45,0,0" VerticalAlignment="Top" Click="Button_Click"/>
                     <ListBox  x:Name="ListExercice"  Margin="0,139,0,0">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -22,6 +22,7 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
+                    <Button Content="Post exercice" HorizontalAlignment="Left" Margin="78,95,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Programmes d'entrainement">

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace WPFClient
         static HttpClient client = new HttpClient();
 
         
-
+        //TODO gerer le catch
         public static async Task<List<ExerciceDto>> GetExercicesAsync(string uri)
         {
             try
@@ -34,11 +35,12 @@ namespace WPFClient
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-
+                throw;
             }
             return null;
         }
 
+        //TODO gerer le catch
         public static async Task<ExerciceDto> GetExerciceByIdAsync(string uri)
         {
             try
@@ -56,28 +58,30 @@ namespace WPFClient
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                throw;
 
             }
             return null;
         }
 
-        public static async Task<ExerciceDto> PostExerciceByIdAsync(string uri,ExerciceDto exDto)
+        //TODO gerer le catch
+        public static async Task<Uri> PostExerciceAsync(string uri,ExerciceDto exDto)
         {
             try
             {
-                var request = new HttpRequestMessage(HttpMethod.Post, uri);
-                request.Headers.Add("Accept", "application/json");
-                var response = client.Send(request);
+                HttpResponseMessage response = await client.PostAsJsonAsync(
+                uri, exDto);
+                response.EnsureSuccessStatusCode();
+                
                 if (response.IsSuccessStatusCode)
                 {
-                    var jsonString = await response.Content.ReadAsStringAsync();
-                    var exercice = JsonConvert.DeserializeObject<ExerciceDto>(jsonString);
-                    return exercice;
+                    return response.Headers.Location;
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                throw;
 
             }
             return null;
