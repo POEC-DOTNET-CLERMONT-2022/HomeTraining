@@ -36,8 +36,8 @@ namespace APIRest.Controllers
 
         // GET api/<ExerciceController>/5
         [HttpGet("{id}")]
-        //[ProducesErrorResponseType(StatusCodes.Status200OK, Type = typeof(ExerciceEntity))]
-        //[ProducesErrorResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ExerciceDto))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<ExerciceDto> Get(Guid id)
         {
             if (id == Guid.Empty)
