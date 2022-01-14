@@ -25,8 +25,6 @@ namespace APIRest.Controllers
         }
 
 
-
-
         // GET: api/<ExerciceController>
         [HttpGet]
         public IEnumerable<ExerciceEntity>? Get()
@@ -48,6 +46,21 @@ namespace APIRest.Controllers
             ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
             return Ok(exerciceDto);
         }
+
+
+            // GET api/<ExerciceController>/5
+        [HttpGet("{id}/descriptionnnn")]
+        public ActionResult<string> GetDesc(Guid id)
+        {
+            if (id == Guid.Empty)
+            {
+                return NotFound();
+            }
+            ExerciceEntity exerciceEntity = _repository.GetSingleExercice(id);
+            return exerciceEntity.Description;
+        }
+
+
 
         // DELETE api/<ExerciceController>/5
         [HttpDelete("{id}")]
