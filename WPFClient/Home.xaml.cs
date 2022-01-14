@@ -27,7 +27,7 @@ namespace WPFClient
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var ex = APIRestRequest.GetExercicesAsync("https://localhost:7266/api/Exercices");
+            var ex = ExerciceApiRest.GetExercicesAsync("https://localhost:7266/api/Exercices");
             List<ExerciceDto> exDto = ex.Result;
             foreach(var exx in exDto)
             {
