@@ -13,12 +13,16 @@ namespace Ipme.Hometraining.Entities
         public string Name { get; set; }
         public DateTime Created { get; set; }       
         public Difficulty Difficulty { get; set; }
-
-
-        [ForeignKey("User")]    // Syntaxe OK ?
         public Guid UserId { get; set; }
               
-
+        public ProgramEntity(Guid id, string name, DateTime created, Difficulty difficulty, Guid userId)
+        {
+            Id = id;
+            Name = name;
+            Created = created;
+            Difficulty = difficulty;
+            UserId = userId;
+        }
 
     }
 }

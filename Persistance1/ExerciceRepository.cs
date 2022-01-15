@@ -31,10 +31,12 @@ namespace Ipme.Hometraining.Persistance
             return SqlContext.Set<ExerciceEntity>().ToList();
         }
 
+
         public void AddExercice(ExerciceEntity exerciceEntity)
         {
             SqlContext.Set<ExerciceEntity>().Add(exerciceEntity);
         }
+
 
         public ExerciceEntity RemoveExercice(Guid id)
         {

@@ -48,7 +48,7 @@ namespace APIRest.Controllers
         }
 
 
-            // GET api/<ExerciceController>/5
+        // GET api/<ExerciceController>/5
         [HttpGet("{id}/descriptionnnn")]
         public ActionResult<string> GetDesc(Guid id)
         {
@@ -76,6 +76,7 @@ namespace APIRest.Controllers
             return Ok(exerciceDto);
         }
 
+
         //POST api/<ExerciceController>
         //TODO verifier les informations passées
         [HttpPost]
@@ -85,6 +86,7 @@ namespace APIRest.Controllers
             _dbContext.SaveChanges();
             return exerciceEntity;
         }
+
 
         // PUT api/<ExerciceController>/5
         //TODO implémenter la mise à jour
