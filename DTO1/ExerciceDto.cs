@@ -4,11 +4,11 @@ using System.Runtime.Serialization;
 
 namespace Ipme.Hometraining.DTO
 {
-
     [DataContract]
     public class ExerciceDto
-    {
-        
+    {        
+        [DataMember]
+        public Guid Id { get; set; }    // ajouter ID ???
 
         [DataMember]
         public string Name { get; set; }
@@ -22,7 +22,9 @@ namespace Ipme.Hometraining.DTO
         [DataMember]
         public string VideoName { get; set; }
 
-
+        [DataMember]
+        public Guid UserId { get; set; }
+                
     }
 
 }
