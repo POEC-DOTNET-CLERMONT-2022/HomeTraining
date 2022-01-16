@@ -27,9 +27,11 @@ namespace APIRest.Controllers
 
         // GET: api/<ExerciceController>
         [HttpGet]
-        public IEnumerable<ExerciceEntity>? Get()
+        public IEnumerable<ExerciceDto>? Get()
         {
-            return _repository.GetAllExercices();
+            var exercices = _repository.GetAllExercices();
+            var exercicesDto =_mapper.Map<ExerciceDto>(exercices);
+            yield return exercicesDto;
         }
 
         // GET api/<ExerciceController>/5
@@ -80,11 +82,12 @@ namespace APIRest.Controllers
         //POST api/<ExerciceController>
         //TODO verifier les informations passées
         [HttpPost]
-        public ExerciceEntity Post([FromBody] ExerciceEntity exerciceEntity)
+        public ExerciceDto Post([FromBody] ExerciceEntity exerciceEntity)
         {
             _repository.AddExercice(exerciceEntity);
             _dbContext.SaveChanges();
-            return exerciceEntity;
+            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
+            return exerciceDto;
         }
 
 

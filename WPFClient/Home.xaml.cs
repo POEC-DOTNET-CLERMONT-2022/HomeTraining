@@ -47,5 +47,11 @@ namespace WPFClient
                 VideoName = "" };
             ExerciceApiRest.PostExerciceAsync("https://localhost:7266/api/Exercices",ex);
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Au revoir");
+            MainWindow.Close();
+        }
     }
 }
