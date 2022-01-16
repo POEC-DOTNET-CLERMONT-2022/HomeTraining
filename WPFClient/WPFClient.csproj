@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="hometraining.ico" />
     <None Remove="Videos\Seoul-21985.mp4" />
   </ItemGroup>
 
@@ -23,6 +24,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WCF\WCF.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="hometraining.ico" />
   </ItemGroup>
 
 </Project>
