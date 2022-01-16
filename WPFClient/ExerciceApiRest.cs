@@ -1,4 +1,4 @@
-﻿using Ipme.Hometraining.DTO;
+﻿using Ipme.Hometraining.Dto;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

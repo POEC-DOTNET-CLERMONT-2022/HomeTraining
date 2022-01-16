@@ -2,7 +2,7 @@
 using AutoFixture;
 using Ipme.Hometraining.Models;
 using System.Collections.Generic;
-using Ipme.Hometraining.DTO;
+using Ipme.Hometraining.Dto;
 
 namespace Ipme.Hometraining.Persistance
 {

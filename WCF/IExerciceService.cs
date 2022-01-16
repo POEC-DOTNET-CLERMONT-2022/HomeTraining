@@ -1,4 +1,4 @@
-﻿using Ipme.Hometraining.DTO;
+﻿using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.Persistance;
 using System.Collections.Generic;
 using System.Runtime.Serialization;

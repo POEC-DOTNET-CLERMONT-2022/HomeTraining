@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "DTO1\DTO.csproj", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistance", "Persistance1\Persistance.csproj", "{8F10C810-4535-48CE-8CF1-E2463CC7DDD7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ipme.Hometraining.Entities", "Ipme.Hometraining.Entities\Ipme.Hometraining.Entities.csproj", "{F74B0B39-883A-4618-98F7-782B5DA4E2E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Ipme.Hometraining.Entities\Entities.csproj", "{F74B0B39-883A-4618-98F7-782B5DA4E2E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIRest", "APIRest\APIRest.csproj", "{D9D43329-CEC2-4077-8240-2483D9B48453}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIRest", "APIRest\APIRest.csproj", "{D9D43329-CEC2-4077-8240-2483D9B48453}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

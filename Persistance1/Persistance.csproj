@@ -17,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DTO1\DTO.csproj" />
-    <ProjectReference Include="..\Ipme.Hometraining.Entities\Ipme.Hometraining.Entities.csproj" />
+    <ProjectReference Include="..\Ipme.Hometraining.Entities\Entities.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 

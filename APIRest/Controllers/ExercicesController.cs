@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Ipme.Hometraining.DTO;
+using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.Entities;
 using Ipme.Hometraining.Persistance;
 using Microsoft.AspNetCore.Mvc;

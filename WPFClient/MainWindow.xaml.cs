@@ -1,4 +1,4 @@
-﻿using Ipme.Hometraining.DTO;
+﻿using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.WCF;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
