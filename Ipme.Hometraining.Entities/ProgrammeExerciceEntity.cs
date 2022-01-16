@@ -15,6 +15,8 @@ namespace Ipme.Hometraining.Entities
         int NombreRepetition { get; set; }
         int Position { get; set; }
         int NombreSeries { get; set; }
+        public string Name { get; }
+        public DateTime CreatedAt { get; }
 
         private readonly List<ExerciceEntity> _exercices;
 
