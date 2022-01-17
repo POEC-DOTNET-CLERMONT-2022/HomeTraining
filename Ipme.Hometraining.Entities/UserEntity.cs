@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Ipme.Hometraining.Entities
 {
     [Table("User")]
-    public class UsereEntity
+    public class UserEntity
     {
 
         [Key]
@@ -17,7 +17,7 @@ namespace Ipme.Hometraining.Entities
         public string Password { get; set; }
         public bool isAdmin { get; set; }
 
-        public UsereEntity(Guid id, string firstname, string lastname, string login, string password)
+        public UserEntity(Guid id, string firstname, string lastname, string login, string password)
         {
             Id = id;
             FirstName = firstname;

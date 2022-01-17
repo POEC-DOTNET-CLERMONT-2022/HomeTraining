@@ -16,7 +16,7 @@ namespace Ipme.Hometraining.Persistance
 
         public DbSet<ExerciceEntity> Exercices { get; set; }
         public DbSet<ProgrammeEntity> Programmes { get; set; }
-        public DbSet<UsereEntity> Users { get; set; }
+        public DbSet<UserEntity> Users { get; set; }
         public override DbSet<TEntity> Set<TEntity>()
         {
             ChangeTracker.LazyLoadingEnabled = false;

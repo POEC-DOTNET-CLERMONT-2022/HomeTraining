@@ -15,7 +15,7 @@ namespace Ipme.Hometraining.Entities
         string Name { get; set; }
         DateTime CreatedAt { get; set; }
 
-        private readonly List<ExerciceEntity> _exerci.ces;
+        private readonly List<ExerciceEntity> _exercices;
 
         public ProgrammeEntity(string name)
         {
