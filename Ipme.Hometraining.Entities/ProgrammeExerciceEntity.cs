@@ -7,14 +7,14 @@ using System.Text;
 
 namespace Ipme.Hometraining.Entities
 {
-    [Table("ProgrammeExercice")]
+    [Table("ProgramExercice")]
     public class ProgrammeExerciceEntity
     {
         [Key]
         Guid ID { get; set; }
         int NombreRepetition { get; set; }
         int Position { get; set; }
-        int NombreSeries { get; set; }
+        int NombrSeries { get; set; }
         public string Name { get; }
         public DateTime CreatedAt { get; }
 

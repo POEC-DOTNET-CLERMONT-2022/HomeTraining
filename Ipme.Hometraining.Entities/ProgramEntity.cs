@@ -1,5 +1,6 @@
 ﻿using Ipme.Hometraining.Models;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,17 +12,24 @@ namespace Ipme.Hometraining.Entities
         [Key]
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public DateTime Created { get; set; }       
+        public DateTime CreatedAt { get; set; }       
         public Difficulty Difficulty { get; set; }
         public Guid UserId { get; set; }
-              
-        public ProgramEntity(Guid id, string name, DateTime created, Difficulty difficulty, Guid userId)
+        private readonly List<ExerciceEntity> _exercices;
+
+        public ProgramEntity(Guid id, string name, Difficulty difficulty, Guid userId)
         {
             Id = id;
             Name = name;
-            Created = created;
+            CreatedAt = DateTime.Now;
             Difficulty = difficulty;
             UserId = userId;
+            _exercices = new List<ExerciceEntity>();
+        }
+
+        public IEnumerable<ExerciceEntity> Exercices
+        {
+            get { return _exercices.AsReadOnly(); }
         }
 
     }

@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WCF\WCF.csproj" />
+    <ProjectReference Include="..\DTO1\DTO.csproj" />
   </ItemGroup>
 
   <ItemGroup>
