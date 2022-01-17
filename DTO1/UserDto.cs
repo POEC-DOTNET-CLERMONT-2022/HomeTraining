@@ -2,7 +2,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace Ipme.Hometraining.DTO
+namespace Ipme.Hometraining.Dto
 {
     [DataContract]
     public class UserDto

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Ipme.Hometraining.Models
 {
@@ -6,14 +7,14 @@ namespace Ipme.Hometraining.Models
      * Classe représentant un exercice concret
      */
 
-    public class ExerciceModel  // --> à renommer en Exercice 
+    public class ExerciceModel : INotifyPropertyChanged
     {
-        private Guid _id;
-        string _name;
-        string _description;
-        MuscleArea _muscleArea;
-        string _videoName;
-        Guid _userId;  // créateur de l'exercice
+        public Guid Id;
+        public string Name { get; private set; }
+        public string Description { get; private set; }
+        public MuscleArea MuscleArea { get; private set; }
+        public string VideoName { get; private set; }
+        public Guid UserId { get; private set; }  // créateur de l'exercice
 
 
         public ExerciceModel(Guid id, string name, string description, MuscleArea muscleArea, string videoName, Guid userId)
@@ -22,27 +23,24 @@ namespace Ipme.Hometraining.Models
 
             if (id == Guid.Empty) throw new ArgumentOutOfRangeException(nameof(id));
             if (name == null) throw new ArgumentOutOfRangeException(nameof(name));
-            if (muscleArea == null) throw new ArgumentOutOfRangeException(nameof(muscleArea));  // test enum = 0 ?
             if (userId == Guid.Empty) throw new ArgumentOutOfRangeException(nameof(userId));
 
             Id = id;
-            _name = name;
-            _description = description;
-            _muscleArea = muscleArea;
-            _videoName = videoName;
-            _userId = userId;
+            Name = name;
+            Description = description;
+            MuscleArea = muscleArea;
+            VideoName = videoName;
+            UserId = userId;
         }
 
 
-        /// <summary>
-        /// Gets the ExerciceModel identifier
-        /// </summary>
-        public Guid Id
+       
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnNotifyPropertyChanged()
         {
-            get { return _id; }
-            set { _id = value; }
-        }
 
+        }
     }
 }
 

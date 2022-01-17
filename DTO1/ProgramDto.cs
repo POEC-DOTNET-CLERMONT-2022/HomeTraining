@@ -2,10 +2,10 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace DTO
+namespace Ipme.Hometraining.Dto
 {
     [DataContract]
-    internal class ProgrammeDto
+    public class Program
     {
         [DataMember]
         public Guid Id { get; set; } 

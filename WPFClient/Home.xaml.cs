@@ -1,6 +1,10 @@
-﻿using Ipme.Hometraining.Dto;
+﻿using AutoMapper;
+using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace WPFClient
@@ -10,6 +14,8 @@ namespace WPFClient
     /// </summary>
     public partial class Home : Window
     {
+        private readonly IMapper _mapper = ((App)Application.Current).Mapper;
+        readonly ObservableCollection<ProgramModel> _programs;
         public Home()
         {
             InitializeComponent();
@@ -29,12 +35,9 @@ namespace WPFClient
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            ExerciceDto ex = new ExerciceDto() { 
-                Name = "Squates sautés",
-                Description = "",
-                MuscleArea = MuscleArea.Jambes,
-                VideoName = "" };
-            ExerciceApiRest.PostExerciceAsync("https://localhost:7266/api/Exercices",ex);
+            ExerciceModel ex = new ExerciceModel(new Guid(),"Squates sautés","",MuscleArea.Jambes,"", new Guid());
+            ExerciceDto exDto =  _mapper.Map<ExerciceDto>(ex);
+            ExerciceApiRest.PostExerciceAsync("https://localhost:7266/api/Exercices",exDto);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

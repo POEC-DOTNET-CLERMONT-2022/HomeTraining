@@ -2,12 +2,12 @@
 
 namespace Ipme.Hometraining.Models
 {
-    internal class User
+    internal class UserModel
     {
         private Guid _id;
         string _name;
 
-        public User(Guid id, string name)
+        public UserModel(Guid id, string name)
         {
             if (id == Guid.Empty) throw new ArgumentOutOfRangeException(nameof(id));
             if (name == null) throw new ArgumentOutOfRangeException(nameof(name));
