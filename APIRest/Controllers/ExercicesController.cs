@@ -20,7 +20,7 @@ namespace APIRest.Controllers
         public ExercicesController(SqlDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
-            _repository = new ExerciceRepository(dbContext);
+            _repository = new ExerciceSqlRepository(dbContext);
             _mapper = mapper;
         }
 

@@ -8,13 +8,13 @@ using System.Linq;
 namespace Ipme.Hometraining.Persistance
 {
 
-    public class ExerciceRepository : IExerciceRepository
+    public class ExerciceSqlRepository : IExerciceRepository
     {
         //injection de dependance du DbContext
         private DbContext SqlContext { get; }
 
 
-        public ExerciceRepository(DbContext sqlContext)
+        public ExerciceSqlRepository(DbContext sqlContext)
         {
             SqlContext = sqlContext;
         }
