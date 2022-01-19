@@ -9,6 +9,7 @@ namespace APIRest.Profiles
         public ExerciceProfile()
         {
             CreateMap<ExerciceDto, ExerciceEntity>().ReverseMap();
+
                 /*.ForMember(
                     dest => dest.Id,
                     opt => opt.MapFrom(src => $"{src.Id}")

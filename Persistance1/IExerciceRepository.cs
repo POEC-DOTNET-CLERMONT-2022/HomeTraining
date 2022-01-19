@@ -13,5 +13,8 @@ namespace Ipme.Hometraining.Persistance
         void AddExercice(ExerciceEntity exerciceEntity);
 
         ExerciceEntity RemoveExercice(Guid id);
+
+        ExerciceEntity UpdateExercice(ExerciceEntity exerciceEntity);
+
     }
 }

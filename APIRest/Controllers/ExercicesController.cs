@@ -11,6 +11,7 @@ namespace APIRest.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class ExercicesController : ControllerBase
     {
         IExerciceRepository _repository { get; }
@@ -30,8 +31,8 @@ namespace APIRest.Controllers
         public IEnumerable<ExerciceDto>? Get()
         {
             var exercices = _repository.GetAllExercices();
-            var exercicesDto =_mapper.Map<ExerciceDto>(exercices);
-            yield return exercicesDto;
+            var exercicesDto = _mapper.Map<IEnumerable<ExerciceDto>>(exercices);
+            return exercicesDto;
         }
 
         // GET api/<ExerciceController>/5
@@ -49,35 +50,19 @@ namespace APIRest.Controllers
             return Ok(exerciceDto);
         }
 
-
-        // GET api/<ExerciceController>/5
-        [HttpGet("{id}/descriptionnnn")]
-        public ActionResult<string> GetDesc(Guid id)
-        {
-            if (id == Guid.Empty)
-            {
-                return NotFound();
-            }
-            ExerciceEntity exerciceEntity = _repository.GetSingleExercice(id);
-            return exerciceEntity.Description;
-        }
-
-
-
         // DELETE api/<ExerciceController>/5
         [HttpDelete("{id}")]
         public ActionResult<ExerciceDto> Delete(Guid id)
         {
-            if (id == Guid.Empty)
-            {
-                return NotFound();
-            }
+            if (id == Guid.Empty)            
+                return NotFound();            
             ExerciceEntity exerciceEntity = _repository.RemoveExercice(id);
             ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
+            if (exerciceEntity == null)
+                return NotFound();
             _dbContext.SaveChanges();
             return Ok(exerciceDto);
         }
-
 
         //POST api/<ExerciceController>
         //TODO verifier les informations passées
@@ -90,15 +75,18 @@ namespace APIRest.Controllers
             return exerciceDto;
         }
 
-
         // PUT api/<ExerciceController>/5
         //TODO implémenter la mise à jour
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public ActionResult<ExerciceDto> Put([FromBody] ExerciceEntity exerciceEntity)
         {
-            //PUT your code here
+            ExerciceEntity majexerciceEntity = _repository.UpdateExercice(exerciceEntity);
+            if (majexerciceEntity == null)
+                return NotFound();
+            _dbContext.SaveChanges();
+            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(majexerciceEntity);
+            return Ok(exerciceDto);
         }
-
 
 
 

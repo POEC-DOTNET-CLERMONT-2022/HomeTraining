@@ -14,6 +14,8 @@ namespace Ipme.Hometraining.Persistance
 
         UserEntity RemoveUser(Guid id);
 
+        UserEntity UpdateUser(UserEntity userEntity);
+
     }
 }
 

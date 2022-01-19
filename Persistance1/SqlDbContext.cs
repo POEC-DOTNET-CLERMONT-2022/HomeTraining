@@ -17,6 +17,7 @@ namespace Ipme.Hometraining.Persistance
         public DbSet<ExerciceEntity> Exercices { get; set; }
         public DbSet<ProgramEntity> Programmes { get; set; }
         public DbSet<UserEntity> Users { get; set; }
+
         public override DbSet<TEntity> Set<TEntity>()
         {
             ChangeTracker.LazyLoadingEnabled = false;
@@ -54,6 +55,7 @@ namespace Ipme.Hometraining.Persistance
 
         //équivalent à [Key] dans le SqlDto
         //userCatalog.HasKey(u => u.UserId);
+
     }
 
 }
