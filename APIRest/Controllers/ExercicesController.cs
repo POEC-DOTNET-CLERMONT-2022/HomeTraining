@@ -36,6 +36,7 @@ namespace APIRest.Controllers
             return Ok(exercicesDto);
         }
 
+
         // GET api/<ExerciceController>/5
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ExerciceDto))]
@@ -43,11 +44,11 @@ namespace APIRest.Controllers
         public ActionResult<ExerciceDto> Get(Guid id)
         {
             if (id == Guid.Empty)
-            {
                 return NotFound();
-            }
-            ExerciceEntity exerciceEntity = _repository.GetSingleExercice(id);
-            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
+            ExerciceEntity exerciceGet = _repository.GetSingleExercice(id);
+            if (exerciceGet == null)
+                return NotFound("Aucun resultat pour GET");
+            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceGet);
             return Ok(exerciceDto);
         }
 
@@ -57,15 +58,16 @@ namespace APIRest.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<ExerciceDto> Delete(Guid id)
         {
-            if (id == Guid.Empty)            
-                return NotFound();            
+            if (id == Guid.Empty)
+                return NotFound();
             ExerciceEntity exerciceEntity = _repository.RemoveExercice(id);
-            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
             if (exerciceEntity == null)
-                return NotFound("Aucun resultat");
+                return NotFound("Aucun resultat pour DEL");
+            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
             _dbContext.SaveChanges();
             return Ok(exerciceDto);
         }
+
 
         //POST api/<ExerciceController>        
         [HttpPost]
@@ -79,6 +81,7 @@ namespace APIRest.Controllers
             return Ok(exerciceDto);
         }
 
+
         // PUT api/<ExerciceController>/5
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
@@ -87,7 +90,7 @@ namespace APIRest.Controllers
             //TODO verifier les informations passées
             ExerciceEntity majexerciceEntity = _repository.UpdateExercice(exerciceEntity);
             if (majexerciceEntity == null)
-                return NotFound();
+                return NotFound("Aucun resultat pour PUT");
             _dbContext.SaveChanges();
             ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(majexerciceEntity);
             return Ok(exerciceDto);

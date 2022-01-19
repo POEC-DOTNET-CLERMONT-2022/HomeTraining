@@ -9,7 +9,6 @@ namespace Ipme.Hometraining.Entities
     public class ProgramExerciceEntity
     {
         [Key]
-        public Guid ProgramExerciceID { get; set; }
 
         public Guid ExerciceID;
         [ForeignKey("ProgramEntity")]
@@ -19,7 +18,6 @@ namespace Ipme.Hometraining.Entities
 
         public ProgramExerciceEntity(Guid exerciceID, Guid programID, int position, int repetitions)
         {
-            ProgramExerciceID = Guid.NewGuid();
             programID = programID;
             ExerciceID = exerciceID;
             Repetitions = repetitions;
@@ -27,17 +25,6 @@ namespace Ipme.Hometraining.Entities
             
         }
 
-        [ForeignKey("ExerciceEntity")]
-        public Guid ExerciceID {
-            get
-            {
-                return ExerciceID;
-            }
-            set
-            {
-
-            }
-        }
     }
 
 }
