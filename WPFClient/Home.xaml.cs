@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using Ipme.Hometraining.Dto;
+using Ipme.Hometraining.Entities;
 using Ipme.Hometraining.Models;
+using Ipme.Hometraining.Persistance;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -37,8 +40,7 @@ namespace WPFClient
                 });
             }
             //TODO corriger cette fonction fictive
-            var exercicesModel = _mapper.Map<IEnumerable<ExerciceModel>>(ExerciceApiRest.GetExercicesByZone("ALL"));
-            _exercicesHandler.Exercices = new ObservableCollection<ExerciceModel>(exercicesModel);
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -64,6 +66,16 @@ namespace WPFClient
         {
             MessageBox.Show("Au revoir");
             MainWindow.Close();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var exercicesModel = _mapper.Map<IEnumerable<ExerciceEntity>>(ExerciceApiRest.GetExercicesByZone("ALL"));
+            //_exercicesHandler.Exercices = new ObservableCollection<ExerciceModel>(exercicesModel);
+            SqlDbContext ctx = new SqlDbContext(new DbContextOptions<SqlDbContext>());
+            ctx.Database.EnsureCreated();
+            ctx.Exercices.AddRange(exercicesModel);
+            ctx.SaveChanges();
         }
     }
 }

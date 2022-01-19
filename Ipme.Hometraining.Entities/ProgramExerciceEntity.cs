@@ -11,17 +11,22 @@ namespace Ipme.Hometraining.Entities
     public class ProgramExerciceEntity
     {
         [Key]
-        Guid ExerciceID { get; set; }
-        Guid ProgramID { get; set; }
-        int Repetitions { get; set; }
-        int Position { get; set; }
+        public Guid ProgramExerciceID { get; set; }
+        [ForeignKey("ExerciceEntity")]
+        public Guid ExerciceID { get; set; }
+        [ForeignKey("ProgramEntity")]
+        public Guid ProgramID { get; set; }
+        public int Repetitions { get; set; }
+        public int Position { get; set; }
 
         public ProgramExerciceEntity(Guid exerciceID, Guid programID, int position, int repetitions)
         {
+            ProgramExerciceID = Guid.NewGuid();
             ProgramID = programID;
             ExerciceID = exerciceID;
-            Position = position;
             Repetitions = repetitions;
+            Position = position;
+            
         }
 
     }

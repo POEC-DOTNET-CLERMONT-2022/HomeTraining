@@ -14,6 +14,8 @@ namespace Ipme.Hometraining.Entities
         public string Name { get; set; }
         public DateTime Created { get; set; }       
         public Difficulty Difficulty { get; set; }
+
+        [ForeignKey("UserEntity")]
         public Guid UserId { get; set; }
 
         public ProgramEntity(Guid id, string name, Difficulty difficulty, Guid userId)

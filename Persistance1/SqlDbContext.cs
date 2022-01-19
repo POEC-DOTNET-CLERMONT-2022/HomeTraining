@@ -7,7 +7,7 @@ namespace Ipme.Hometraining.Persistance
 {
     public class SqlDbContext : DbContext
     {
-        //private string ConnectionString { get; }
+        private string ConnectionString = "Server=(localdb)\\mssqllocaldb;Database=hometrainingbb;Trusted_Connection=True;MultipleActiveResultSets=true";
                 
 
         public SqlDbContext(DbContextOptions<SqlDbContext> options) : base(options)
@@ -16,6 +16,7 @@ namespace Ipme.Hometraining.Persistance
 
         public DbSet<ExerciceEntity> Exercices { get; set; }
         public DbSet<ProgramEntity> Programmes { get; set; }
+        public DbSet<ProgramExerciceEntity> ProgrammesExercices { get; set; }
         public DbSet<UserEntity> Users { get; set; }
         public override DbSet<TEntity> Set<TEntity>()
         {
@@ -28,11 +29,11 @@ namespace Ipme.Hometraining.Persistance
 
 
 
-        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(ConnectionString);
-        }*/
+        }
 
         /*protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
