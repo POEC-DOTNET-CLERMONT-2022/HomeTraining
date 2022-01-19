@@ -9,31 +9,24 @@ namespace Ipme.Hometraining.Models
 
     public class ProgramExerciceModel
     {
-        Guid ExerciceID { get; set; }
-        Guid ProgramID { get; set; }
-        int Repetitions { get; set; }
-        int Position { get; set; }
-        public string Name { get; }
-        private readonly List<ExerciceModel> _exercices;
+        private Guid ProgramID { get; set; }
+        private Guid ExerciceID { get; set; }
+        public int Position { get; set; }
+        public int Repetitions { get; set; }
 
-        public ProgramExerciceModel(string name, Guid exerciceID, Guid programID, int position, int repetitions)
+        public ExerciceModel Exercice { get; set; } 
+
+        // ? ProgramModel 
+
+        public ProgramExerciceModel(string name, Guid programID, Guid exerciceID, int position, int repetitions)
         {
             ExerciceID = exerciceID;
             ProgramID = programID;
-            Name = name;
-            Position = position;
             Repetitions = repetitions;
-            _exercices = new List<ExerciceModel>();
-        }
+            Position = position;
 
-        /// <summary>
-        /// Gets the vehicle list from the garage
-        /// </summary>
-        public IEnumerable<ExerciceModel> Exercices
-        {
-            get { return _exercices.AsReadOnly(); }
         }
 
     }
-    
+
 }

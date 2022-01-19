@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Ipme.Hometraining.Models
 {
     public class ProgramModel
     {
         private Guid _id;
-        string _name;
-        DateTime _created;
-        Difficulty _difficulty;
-        Guid _userId;  // créateur         
+        public string _name;
+        public DateTime _created;
+        public Difficulty _difficulty;
+        public Guid _userId;  // créateur         
+
+        public List<ProgramExerciceModel> ExerciceList { get; set; }
 
         public ProgramModel(Guid id, string name, Difficulty difficulty, Guid userId)
         {
