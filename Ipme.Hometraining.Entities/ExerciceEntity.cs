@@ -21,10 +21,8 @@ namespace Ipme.Hometraining.Entities
         }
         public ExerciceEntity(Guid id, string name, string description, MuscleArea muscleArea, string videoName, Guid userId)
         {
-
             if (id == Guid.Empty)
             { id = Guid.NewGuid(); };
-
 
             Id = id;
             Name = name;
@@ -36,7 +34,6 @@ namespace Ipme.Hometraining.Entities
             // UserId = userId;
             // pour tester 
             UserId = Guid.NewGuid();
-
 
 
         }

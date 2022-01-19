@@ -15,27 +15,15 @@ namespace Ipme.Hometraining.Entities
         Guid ProgramID { get; set; }
         int Repetitions { get; set; }
         int Position { get; set; }
-        public string Name { get; }
-        private readonly List<ExerciceEntity> _exercices;
 
-        public ProgramExerciceEntity(string name,Guid exerciceID,Guid programID,int position,int repetitions)
+        public ProgramExerciceEntity(Guid exerciceID, Guid programID, int position, int repetitions)
         {
-            ExerciceID = exerciceID;
             ProgramID = programID;
-            Name = name;
+            ExerciceID = exerciceID;
             Position = position;
             Repetitions = repetitions;
-            _exercices = new List<ExerciceEntity>();
-        }
-
-        /// <summary>
-        /// Gets the vehicle list from the garage
-        /// </summary>
-        public IEnumerable<ExerciceEntity> Exercices
-        {
-            get { return _exercices.AsReadOnly(); }
         }
 
     }
-    
+
 }
