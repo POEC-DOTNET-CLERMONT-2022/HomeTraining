@@ -26,5 +26,6 @@ namespace Ipme.Hometraining.Dto
         public bool IsAdmin { get; set; }
 
 
+
     }
 }

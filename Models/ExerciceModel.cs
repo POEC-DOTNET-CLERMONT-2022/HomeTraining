@@ -7,7 +7,7 @@ namespace Ipme.Hometraining.Models
      * Classe représentant un exercice concret
      */
 
-    public class ExerciceModel : INotifyPropertyChanged
+    public class ExerciceModel : ObservableObject
     {
         public Guid Id;
         public string Name { get; private set; }
@@ -15,7 +15,6 @@ namespace Ipme.Hometraining.Models
         public MuscleArea MuscleArea { get; private set; }
         public string VideoName { get; private set; }
         public Guid UserId { get; private set; }  // créateur de l'exercice
-
 
         public ExerciceModel(Guid id, string name, string description, MuscleArea muscleArea, string videoName, Guid userId)
         {
@@ -31,15 +30,6 @@ namespace Ipme.Hometraining.Models
             MuscleArea = muscleArea;
             VideoName = videoName;
             UserId = userId;
-        }
-
-
-       
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnNotifyPropertyChanged()
-        {
-
         }
     }
 }

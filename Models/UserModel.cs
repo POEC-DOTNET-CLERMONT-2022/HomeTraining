@@ -2,7 +2,7 @@
 
 namespace Ipme.Hometraining.Models
 {
-    internal class UserModel
+    public class UserModel
     {
         private Guid _id;
         public string _firstName;

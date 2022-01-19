@@ -33,8 +33,4 @@
     <Resource Include="hometraining.ico" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Profiles\" />
-  </ItemGroup>
-
 </Project>

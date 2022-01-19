@@ -1,17 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace Ipme.Hometraining.Models
 {
-    public class ProgramModel
+    public class ProgramModel : ObservableObject
     {
         private Guid _id;
         public string _name;
         public DateTime _created;
         public Difficulty _difficulty;
-        public Guid _userId;  // créateur         
+        public Guid _userId;
+        private ObservableCollection<ProgramExerciceModel> _exerciceList;
+        public UserModel _user;
 
-        public List<ProgramExerciceModel> ExerciceList { get; set; }
+        public UserModel User
+        {
+            get { return _user; }
+           private set { _user = value; }
+        }
+
+        public ObservableCollection<ProgramExerciceModel> ExerciceList
+    {
+            get { return _exerciceList; }
+            set
+            {
+                if (_exerciceList != value)
+                {
+                    _exerciceList = value;
+                    OnNotifyPropertyChanged();
+                }
+            }
+        }
 
         public ProgramModel(Guid id, string name, Difficulty difficulty, Guid userId)
         {
@@ -27,13 +48,6 @@ namespace Ipme.Hometraining.Models
             _difficulty = difficulty;
             _userId = userId;
         }
-
-
-        // autre méthodes ?
-
-
-
-
     }
 
 }

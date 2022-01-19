@@ -16,6 +16,7 @@
                         <ColumnDefinition Width="233*"/>
                         <ColumnDefinition Width="527*"/>
                     </Grid.ColumnDefinitions>
+                    <Button Content="Button" HorizontalAlignment="Left" Margin="27,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.025,-0.472" Click="Button_Click_3"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Mon entrainement">
