@@ -11,8 +11,12 @@ namespace Ipme.Hometraining.Persistance
                 
         public DbSet<ExerciceEntity> Exercices { get; set; }
         public DbSet<ProgramEntity> Programmes { get; set; }
+<<<<<<< HEAD
 
    //     public DbSet<ProgramExerciceEntity> ProgrammesExercices { get; set; }
+=======
+        public DbSet<ProgramExerciceEntity> ProgrammesExercices { get; set; }
+>>>>>>> bdc0e16abd115c21a4cf91226b9e0d7e353cc7d1
         public DbSet<UserEntity> Users { get; set; }
         public SqlDbContext(DbContextOptions<SqlDbContext> options) : base(options)
         {

@@ -15,13 +15,13 @@ namespace Ipme.Hometraining.Entities
         public MuscleArea MuscleArea { get; set; }
         public string VideoName { get; set; }
 
-        [ForeignKey("UserEntity")]
-        public Guid UserId { get; set; }
+        [ForeignKey("UserId")]
+        public UserEntity User { get; set; }
 
         public ExerciceEntity()
         {
         }
-        public ExerciceEntity(Guid id, string name, string description, MuscleArea muscleArea, string videoName, Guid userId)
+        public ExerciceEntity(Guid id, string name, string description, MuscleArea muscleArea, string videoName,UserEntity user)
         {
             if (id == Guid.Empty)
             { id = Guid.NewGuid(); };
@@ -31,11 +31,7 @@ namespace Ipme.Hometraining.Entities
             Description = description;
             MuscleArea = muscleArea;
             VideoName = videoName;
-
-
-            // UserId = userId;
-            // pour tester 
-            UserId = Guid.NewGuid();
+            User = user;
 
 
         }
