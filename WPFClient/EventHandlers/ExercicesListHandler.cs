@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WPFClient.EventHandlers
+namespace WPFClient
 {
     public class ExercicesListHandler : ObservableObject
     {
