@@ -8,16 +8,17 @@ namespace Ipme.Hometraining.Persistance
     public class SqlDbContext : DbContext
     {
         private string ConnectionString = "Server=(localdb)\\mssqllocaldb;Database=hometrainingbb;Trusted_Connection=True;MultipleActiveResultSets=true";
-                
-
-        public SqlDbContext(DbContextOptions<SqlDbContext> options) : base(options)
-        {
-        }
 
         public DbSet<ExerciceEntity> Exercices { get; set; }
         public DbSet<ProgramEntity> Programmes { get; set; }
         public DbSet<ProgramExerciceEntity> ProgrammesExercices { get; set; }
         public DbSet<UserEntity> Users { get; set; }
+
+        public SqlDbContext() 
+        {
+        }
+
+        
 
         public override DbSet<TEntity> Set<TEntity>()
         {

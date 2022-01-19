@@ -72,7 +72,7 @@ namespace WPFClient
         {
             var exercicesModel = _mapper.Map<IEnumerable<ExerciceEntity>>(ExerciceApiRest.GetExercicesByZone("ALL"));
             //_exercicesHandler.Exercices = new ObservableCollection<ExerciceModel>(exercicesModel);
-            SqlDbContext ctx = new SqlDbContext(new DbContextOptions<SqlDbContext>());
+            SqlDbContext ctx = new SqlDbContext();
             ctx.Database.EnsureCreated();
             ctx.Exercices.AddRange(exercicesModel);
             ctx.SaveChanges();
