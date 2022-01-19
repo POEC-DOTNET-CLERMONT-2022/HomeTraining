@@ -1,4 +1,5 @@
 ﻿using Ipme.Hometraining.Dto;
+using Ipme.Hometraining.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,60 @@ namespace WPFClient
                 throw;
             }
             return null;
+        }
+
+        public static List<ExerciceDto> GetExercicesByZone(string zone)
+        {
+            ExerciceDto ex1 = new ExerciceDto()
+            {
+                Name = "POMPES",
+                MuscleArea = MuscleArea.Pectoraux
+            };
+            ExerciceDto ex2 = new ExerciceDto()
+            {
+                Name = "CRUNCH",
+                MuscleArea = MuscleArea.Abdos
+            };
+            ExerciceDto ex3 = new ExerciceDto()
+            {
+                Name = "PLANCHE SUR LES AVANT-BRAS",
+                MuscleArea = MuscleArea.Dos
+            };
+            ExerciceDto ex4 = new ExerciceDto()
+            {
+                Name = "PLANCHE BRAS TENDUS",
+                MuscleArea = MuscleArea.Dos
+            };
+            ExerciceDto ex5 = new ExerciceDto()
+            {
+                Name = "BRIDGE",
+                MuscleArea = MuscleArea.Dos
+            };
+            ExerciceDto ex6 = new ExerciceDto()
+            {
+                Name = "SQUATE",
+                MuscleArea = MuscleArea.Jambes
+            };
+            ExerciceDto ex7 = new ExerciceDto()
+            {
+                Name = "FLEXION",
+                MuscleArea = MuscleArea.Jambes
+            };
+            ExerciceDto ex8 = new ExerciceDto()
+            {
+                Name = "SUPERMAN",
+                MuscleArea = MuscleArea.Abdos
+            };
+            var exercices = new List<ExerciceDto>();
+            exercices.Add(ex1);
+            exercices.Add(ex2);
+            exercices.Add(ex3);
+            exercices.Add(ex4);
+            exercices.Add(ex5);
+            exercices.Add(ex6);
+            exercices.Add(ex7);
+            exercices.Add(ex8);
+            return exercices;
         }
 
         //TODO gerer le catch
