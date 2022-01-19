@@ -16,6 +16,9 @@ namespace WPFClient
     {
         private readonly IMapper _mapper = ((App)Application.Current).Mapper;
         readonly ObservableCollection<ProgramModel> _programs;
+        readonly ObservableCollection<ExerciceModel> _exercices;
+        readonly ObservableCollection<ProgramExerciceModel> _programsExercices;
+
         public Home()
         {
             InitializeComponent();

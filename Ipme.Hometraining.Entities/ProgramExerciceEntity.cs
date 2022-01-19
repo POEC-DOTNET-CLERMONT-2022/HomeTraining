@@ -8,22 +8,23 @@ using System.Text;
 namespace Ipme.Hometraining.Entities
 {
     [Table("ProgramExercice")]
-    public class ProgrammeExerciceEntity
+    public class ProgramExerciceEntity
     {
         [Key]
-        Guid ID { get; set; }
-        int NombreRepetition { get; set; }
+        Guid ExerciceID { get; set; }
+        Guid ProgramID { get; set; }
+        int Repetitions { get; set; }
         int Position { get; set; }
-        int NombrSeries { get; set; }
         public string Name { get; }
-        public DateTime CreatedAt { get; }
-
         private readonly List<ExerciceEntity> _exercices;
 
-        public ProgrammeExerciceEntity(string name)
+        public ProgramExerciceEntity(string name,Guid exerciceID,Guid programID,int position,int repetitions)
         {
+            ExerciceID = exerciceID;
+            ProgramID = programID;
             Name = name;
-            CreatedAt = DateTime.Now;
+            Position = position;
+            Repetitions = repetitions;
             _exercices = new List<ExerciceEntity>();
         }
 
