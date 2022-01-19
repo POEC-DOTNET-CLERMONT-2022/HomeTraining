@@ -8,7 +8,7 @@ namespace Ipme.Hometraining.Dto
     public class ExerciceDto
     {        
         [DataMember]
-        public Guid Id { get; set; }    // ajouter ID ???
+        public Guid Id { get; set; }    
 
         [DataMember]
         public string Name { get; set; }
