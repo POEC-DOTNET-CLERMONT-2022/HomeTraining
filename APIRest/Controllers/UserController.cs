@@ -20,7 +20,7 @@ namespace APIRest.Controllers
         public UserController(SqlDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
-            _repository = new UserRepository(dbContext);
+            _repository = new UserSqlRepository(dbContext);
             _mapper = mapper;
         }
 
