@@ -26,6 +26,8 @@ namespace Ipme.Hometraining.Persistance
             return base.Set<TEntity>();
         }
 
+
+
         /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
