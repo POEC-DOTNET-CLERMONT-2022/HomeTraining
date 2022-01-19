@@ -5,21 +5,17 @@ using System.Runtime.Serialization;
 namespace Ipme.Hometraining.Dto
 {
     [DataContract]
-    internal class ProgramExerciceDto
+    public class ProgramExerciceDto
     {
-        [DataMember]
         public Guid ProgramId { get; set; }
 
-        [DataMember]
         public Guid UserId { get; set; }
 
-        [DataMember]
         public int Position { get; set; }
 
-        [DataMember]
         public int Repetitions { get; set; }
 
-
+        public ExerciceDto Exercice { get; set; }
 
     }
 

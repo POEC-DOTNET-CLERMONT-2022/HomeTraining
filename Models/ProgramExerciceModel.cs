@@ -10,7 +10,6 @@ namespace Ipme.Hometraining.Models
         private Guid ExerciceID { get; set; }
         public int Position { get; set; }
         public int Repetitions { get; set; }
-
         public ExerciceModel Exercice { get; set; } 
 
         // ? ProgramModel 
