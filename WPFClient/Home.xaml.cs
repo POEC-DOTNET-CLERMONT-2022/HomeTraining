@@ -18,6 +18,7 @@ namespace WPFClient
     public partial class Home : Window
     {
         private readonly IMapper _mapper = ((App)Application.Current).Mapper;
+
         readonly ObservableCollection<ProgramModel> _programs;
         readonly ObservableCollection<ExerciceModel> _exercices;
         readonly ObservableCollection<ProgramExerciceModel> _programsExercices;
@@ -30,14 +31,15 @@ namespace WPFClient
             InitializeComponent();
             foreach (var zone in Enum.GetValues(typeof(MuscleArea)))
             {
+                var exercicesZone = 
                 TabExercicesZone.Items.Add(new TabItem()
                 {
                     Header = zone,
                     Content = new ListBox()
                     {
-
+                        ItemsSource = new ObservableCollection<TabItem>()
                     }
-                });
+                }); ;
             }
             //TODO corriger cette fonction fictive
             

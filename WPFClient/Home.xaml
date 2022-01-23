@@ -76,7 +76,7 @@
                                     </Setter.Value>
                                 </Setter>
                             </Style>
-                        </TabControl.Resources>
+                        </TabControl.Resources>                        
                     </TabControl>
                 </Grid>
             </TabItem>

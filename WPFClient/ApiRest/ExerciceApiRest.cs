@@ -37,8 +37,9 @@ namespace WPFClient
             return null;
         }
 
-        public static List<ExerciceDto> GetExercicesByZone(string zone)
+        public static List<ExerciceDto> GetExercicesByZone(MuscleArea zone)
         {
+          
             ExerciceDto ex1 = new ExerciceDto()
             {
                 Name = "POMPES",
@@ -47,6 +48,11 @@ namespace WPFClient
             ExerciceDto ex2 = new ExerciceDto()
             {
                 Name = "CRUNCH",
+                MuscleArea = MuscleArea.Abdos
+            };
+            ExerciceDto ex8 = new ExerciceDto()
+            {
+                Name = "SUPERMAN",
                 MuscleArea = MuscleArea.Abdos
             };
             ExerciceDto ex3 = new ExerciceDto()
@@ -74,20 +80,29 @@ namespace WPFClient
                 Name = "FLEXION",
                 MuscleArea = MuscleArea.Jambes
             };
-            ExerciceDto ex8 = new ExerciceDto()
-            {
-                Name = "SUPERMAN",
-                MuscleArea = MuscleArea.Abdos
-            };
+            
             var exercices = new List<ExerciceDto>();
-            exercices.Add(ex1);
-            exercices.Add(ex2);
-            exercices.Add(ex3);
-            exercices.Add(ex4);
-            exercices.Add(ex5);
-            exercices.Add(ex6);
-            exercices.Add(ex7);
-            exercices.Add(ex8);
+            if (zone == MuscleArea.Abdos)
+            {
+                exercices.Add(ex2);
+                exercices.Add(ex8);
+            }
+            if (zone == MuscleArea.Dos)
+            {
+                exercices.Add(ex3);
+                exercices.Add(ex4);
+                exercices.Add(ex5);
+            }
+            if (zone == MuscleArea.Pectoraux)
+            {
+                exercices.Add(ex1);
+            }
+            if (zone == MuscleArea.Jambes)
+            {
+                exercices.Add(ex6);
+                exercices.Add(ex7);
+            }
+            
             return exercices;
         }
 
