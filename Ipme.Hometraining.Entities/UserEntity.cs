@@ -18,7 +18,6 @@ namespace Ipme.Hometraining.Entities
 
         public UserEntity()
         {
-
         }
 
         public UserEntity(Guid id, string firstName, string lastName, string login, string password, bool isAdmin)

@@ -89,6 +89,7 @@ namespace WPFClient
             exercices.Add(ex7);
             exercices.Add(ex8);
             return exercices;
+
         }
 
         //TODO gerer le catch
