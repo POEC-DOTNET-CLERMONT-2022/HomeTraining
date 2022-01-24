@@ -21,6 +21,7 @@ namespace WPFClient
         readonly ObservableCollection<ProgramModel> _programs;
         readonly ObservableCollection<ExerciceModel> _exercices;
         readonly ObservableCollection<ProgramExerciceModel> _programsExercices;
+        public Array MuscleAreas { get; set; }
 
         readonly ExercicesListHandler _exercicesHandler = new ExercicesListHandler();
 
@@ -28,17 +29,8 @@ namespace WPFClient
         public Home()
         {
             InitializeComponent();
-            foreach (var zone in Enum.GetValues(typeof(MuscleArea)))
-            {
-                TabExercicesZone.Items.Add(new TabItem()
-                {
-                    Header = zone,
-                    Content = new ListBox()
-                    {
-
-                    }
-                });
-            }
+            DataContext = this;
+            MuscleAreas = Enum.GetValues(typeof(MuscleArea));
             //TODO corriger cette fonction fictive
             
         }
@@ -70,7 +62,7 @@ namespace WPFClient
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            var exercicesModel = _mapper.Map<IEnumerable<ExerciceEntity>>(ExerciceApiRest.GetExercicesByZone("ALL"));
+            var exercicesModel = _mapper.Map<IEnumerable<ExerciceEntity>>(ExerciceApiRest.GetExercicesByZone(MuscleArea.Dos));
             //_exercicesHandler.Exercices = new ObservableCollection<ExerciceModel>(exercicesModel);
             SqlDbContext ctx = new SqlDbContext(new DbContextOptions<SqlDbContext>());
             ctx.Database.EnsureCreated();

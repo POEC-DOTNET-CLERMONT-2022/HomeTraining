@@ -12,7 +12,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddDbContext<SqlDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 //on peut ajouter d'autres context ici
-//builder.Services.AddSingleton<IExerciceRepository,ExerciceSqlRepository>();
+//type of (IExerciceRepository)
+builder.Services.AddSingleton<IExerciceRepository,ExerciceSqlRepository>();
 
 var app = builder.Build();
 /*
