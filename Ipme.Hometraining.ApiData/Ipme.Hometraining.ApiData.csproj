@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>APIData</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DTO1\DTO.csproj" />
-    <ProjectReference Include="..\Ipme.Hometraining.Entities\Entities.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 

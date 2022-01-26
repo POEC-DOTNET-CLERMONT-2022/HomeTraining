@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Ipme.Hometraining.ApiData;
 using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.Entities;
 using Ipme.Hometraining.Models;
@@ -7,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net.Http;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -23,8 +25,12 @@ namespace WPFClient
         readonly ObservableCollection<ProgramExerciceModel> _programsExercices;
         public Array MuscleAreas { get; set; }
 
-        readonly ExercicesListHandler _exercicesHandler = new ExercicesListHandler();
 
+        //Parti communication API
+        private const string SERVER_URL = "https://localhost:7266";
+        public HttpClient HttpClient { get; } = new HttpClient();
+        public IDataManager<ExerciceModel, ExerciceDto> ExerciceDataManager { get; }
+        //public INavigator Navigator { get; } = new Navigator();
 
         public Home()
         {
@@ -35,23 +41,11 @@ namespace WPFClient
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var ex = ExerciceApiRest.GetExercicesAsync("https://localhost:7266/api/Exercices");
-            List<ExerciceDto> exDto = ex.Result;
-            foreach (var exx in exDto)
-            {
-                ListExercice.Items.Add(exx);
-            }
-
-
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             ExerciceModel ex = new ExerciceModel(new Guid(), "Squates sautés", "", MuscleArea.Jambes, "", new Guid());
             ExerciceDto exDto = _mapper.Map<ExerciceDto>(ex);
-            ExerciceApiRest.PostExerciceAsync("https://localhost:7266/api/Exercices", exDto);
+            //ExerciceApiRest.PostExerciceAsync("https://localhost:7266/api/Exercices", exDto);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -62,12 +56,12 @@ namespace WPFClient
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            var exercicesModel = _mapper.Map<IEnumerable<ExerciceEntity>>(ExerciceApiRest.GetExercicesByZone(MuscleArea.Dos));
-            //_exercicesHandler.Exercices = new ObservableCollection<ExerciceModel>(exercicesModel);
-            SqlDbContext ctx = new SqlDbContext(new DbContextOptions<SqlDbContext>());
-            ctx.Database.EnsureCreated();
-            ctx.Exercices.AddRange(exercicesModel);
-            ctx.SaveChanges();
+            //var exercicesModel = _mapper.Map<IEnumerable<ExerciceEntity>>(ExerciceApiRest.GetExercicesByZone(MuscleArea.Dos));
+            ////_exercicesHandler.Exercices = new ObservableCollection<ExerciceModel>(exercicesModel);
+            //SqlDbContext ctx = new SqlDbContext(new DbContextOptions<SqlDbContext>());
+            //ctx.Database.EnsureCreated();
+            //ctx.Exercices.AddRange(exercicesModel);
+            //ctx.SaveChanges();
         }
     }
 }

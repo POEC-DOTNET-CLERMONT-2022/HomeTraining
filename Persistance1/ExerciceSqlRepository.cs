@@ -29,6 +29,7 @@ namespace Ipme.Hometraining.Persistance
         public void AddExercice(ExerciceEntity exerciceEntity)
         {
             SqlContext.Set<ExerciceEntity>().Add(exerciceEntity);
+            SqlContext.SaveChanges();
         }
 
         public ExerciceEntity RemoveExercice(Guid id)
@@ -37,6 +38,7 @@ namespace Ipme.Hometraining.Persistance
             if (exerciceEntity == null)
                 return null;
             SqlContext.Set<ExerciceEntity>().Remove(exerciceEntity);
+            SqlContext.SaveChanges();
             return exerciceEntity;
         }
 
@@ -46,6 +48,7 @@ namespace Ipme.Hometraining.Persistance
             if (exo == null)
                 return null; 
             SqlContext.Set<ExerciceEntity>().Update(exerciceEntity);
+            SqlContext.SaveChanges();
             return exerciceEntity;
         }
 

@@ -12,13 +12,12 @@ namespace APIRest.Controllers
     public class UserController : ControllerBase
     {
         IUserRepository _repository { get; }
-        private readonly DbContext _dbContext;
+        //private readonly DbContext _dbContext;
         private IMapper _mapper;
 
-        public UserController(SqlDbContext dbContext, IMapper mapper)
+        public UserController(IUserRepository userRepository, IMapper mapper)
         {
-            _dbContext = dbContext;
-            _repository = new UserSqlRepository(dbContext);
+            _repository = userRepository;
             _mapper = mapper;
         }
 
@@ -62,7 +61,6 @@ namespace APIRest.Controllers
             if (userEntity == null)
                 return NotFound("Aucun resultat pour DEL");
             UserDto exerciceDto = _mapper.Map<UserDto>(userEntity);
-            _dbContext.SaveChanges();
             return Ok(exerciceDto);
         }
 
@@ -74,8 +72,7 @@ namespace APIRest.Controllers
         public ActionResult<UserDto> Post([FromBody] UserEntity userEntity)
         {
             //TODO verifier les informations passées
-            _repository.AddUser(userEntity);
-            _dbContext.SaveChanges();
+            _repository.AddUser(userEntity);            
             UserDto userDto = _mapper.Map<UserDto>(userEntity);
             return Ok(userDto);
         }

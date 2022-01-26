@@ -2,15 +2,14 @@
 using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.Entities;
 
-namespace APIRest.Profiles
+namespace Ipme.Hometraining.Profiles
 {
-    public class ExerciceProfile : Profile
+    public class ExercicesProfile : Profile
     {
-        public ExerciceProfile()
+        public ExercicesProfile()
         {
-            CreateMap<ExerciceDto, ExerciceEntity>().ReverseMap();
-
-                /*.ForMember(
+            CreateMap< IEnumerable<ExerciceDto>, IEnumerable<ExerciceEntity>>().ReverseMap();
+            /*.ForMember(
                     dest => dest.Id,
                     opt => opt.MapFrom(src => $"{src.Id}")
                 )
@@ -30,7 +29,6 @@ namespace APIRest.Profiles
                     dest => dest.VideoName,
                     opt => opt.MapFrom(src => $"{src.VideoName}")
                 );*/
-
         }
 
     }

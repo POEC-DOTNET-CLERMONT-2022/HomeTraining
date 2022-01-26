@@ -33,7 +33,6 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <Button Content="Post exercice" HorizontalAlignment="Left" Margin="78,95,0,0" VerticalAlignment="Top" Click="Button_Click_1    "/>
                 </Grid>
             </TabItem>
             <TabItem Header="Programmes d'entrainement">

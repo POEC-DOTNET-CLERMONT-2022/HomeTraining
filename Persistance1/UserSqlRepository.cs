@@ -29,6 +29,7 @@ namespace Ipme.Hometraining.Persistance
         public void AddUser(UserEntity userEntity)
         {
             SqlContext.Set<UserEntity>().Add(userEntity);
+            SqlContext.SaveChanges();
         }
 
         public UserEntity RemoveUser(Guid id)
@@ -37,6 +38,7 @@ namespace Ipme.Hometraining.Persistance
             if (userEntity == null)            
                 return null;            
             SqlContext.Set<UserEntity>().Remove(userEntity);
+            SqlContext.SaveChanges();
             return userEntity;
         }
 
@@ -46,6 +48,7 @@ namespace Ipme.Hometraining.Persistance
             if (user == null)
                 return null;
             SqlContext.Set<UserEntity>().Update(userEntity);
+            SqlContext.SaveChanges();
             return userEntity;
 
         }
