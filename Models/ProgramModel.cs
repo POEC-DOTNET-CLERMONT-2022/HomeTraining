@@ -13,11 +13,7 @@ namespace Ipme.Hometraining.Models
         public Difficulty _difficulty;
         public Guid _userId;
         private ObservableCollection<ProgramExerciceModel> _exerciceList;
-
-
-        // UserId ou UserModel ???
         public UserModel _user;
-
 
         public UserModel User
         {

@@ -15,12 +15,14 @@ namespace Ipme.Hometraining.Entities
         public DateTime Created { get; set; }       
         public Difficulty Difficulty { get; set; }
         
+
         public UserEntity User { get; set; }
 
         public List<ProgramExerciceEntity> ProgramExercices { get; set; }
 
         public ProgramEntity()
         {
+
         }
 
         public ProgramEntity(Guid id, string name, Difficulty difficulty, UserEntity user)
