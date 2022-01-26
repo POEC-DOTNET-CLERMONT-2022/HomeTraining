@@ -14,7 +14,11 @@ namespace Ipme.Hometraining.Models
         public string Description { get; private set; }
         public MuscleArea MuscleArea { get; private set; }
         public string VideoName { get; private set; }
+
+
+        // UserId ou UserModel ???
         public Guid UserId { get; private set; }  // créateur de l'exercice
+
 
         public ExerciceModel(Guid id, string name, string description, MuscleArea muscleArea, string videoName, Guid userId)
         {

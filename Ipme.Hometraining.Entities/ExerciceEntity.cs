@@ -15,12 +15,21 @@ namespace Ipme.Hometraining.Entities
         public MuscleArea MuscleArea { get; set; }
         public string VideoName { get; set; }
 
+
+
+
+        // UserId ou UserEntity ???
+
         [ForeignKey("UserId")]
         public UserEntity User { get; set; }
+
+
+
 
         public ExerciceEntity()
         {
         }
+
         public ExerciceEntity(Guid id, string name, string description, MuscleArea muscleArea, string videoName,UserEntity user)
         {
             if (id == Guid.Empty)
@@ -32,7 +41,6 @@ namespace Ipme.Hometraining.Entities
             MuscleArea = muscleArea;
             VideoName = videoName;
             User = user;
-
 
         }
 

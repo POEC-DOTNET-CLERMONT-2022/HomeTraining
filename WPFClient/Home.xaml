@@ -21,7 +21,6 @@
             </TabItem>
             <TabItem Header="Mon entrainement">
                 <Grid Background="#FFE5E5E5">
-                    <Button Content="Charger Exercices from uri json" HorizontalAlignment="Left" Margin="78,45,0,0" VerticalAlignment="Top" Click="Button_Click"/>
                     <ListBox  x:Name="ListExercice"  Margin="0,139,0,0">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
