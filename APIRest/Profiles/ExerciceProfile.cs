@@ -4,11 +4,11 @@ using Ipme.Hometraining.Entities;
 
 namespace Ipme.Hometraining.Profiles
 {
-    public class ExercicesProfile : Profile
+    public class ExerciceProfile : Profile
     {
-        public ExercicesProfile()
+        public ExerciceProfile()
         {
-            CreateMap< IEnumerable<ExerciceDto>, IEnumerable<ExerciceEntity>>().ReverseMap();
+            CreateMap<ExerciceDto, ExerciceEntity>().ReverseMap();
             /*.ForMember(
                     dest => dest.Id,
                     opt => opt.MapFrom(src => $"{src.Id}")

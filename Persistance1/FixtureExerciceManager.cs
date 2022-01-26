@@ -9,7 +9,7 @@ namespace Ipme.Hometraining.Persistance
     /*
      *Classe renvoyant des données sous forme de fixtures Exercice
      */
-    public class FixtureExerciceManager : IExerciceManager
+    public class FixtureExerciceManager
     {
         private readonly Fixture _fixture = new Fixture();
 

@@ -8,13 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Profiles\**" />
-    <EmbeddedResource Remove="Profiles\**" />
-    <None Remove="Profiles\**" />
-    <Page Remove="Profiles\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="hometraining.ico" />
     <None Remove="Videos\Seoul-21985.mp4" />
   </ItemGroup>
