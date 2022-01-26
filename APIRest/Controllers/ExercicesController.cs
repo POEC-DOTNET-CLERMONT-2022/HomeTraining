@@ -3,7 +3,6 @@ using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.Entities;
 using Ipme.Hometraining.Persistance;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,25 +10,24 @@ namespace APIRest.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-
     public class ExercicesController : ControllerBase
     {
         IExerciceRepository _repository { get; }
-        private readonly DbContext _dbContext;
         private IMapper _mapper;
+        private readonly ILogger<ExercicesController> _logger;
 
-        public ExercicesController(SqlDbContext dbContext, IMapper mapper)
+        public ExercicesController(IExerciceRepository repository, IMapper mapper, ILogger<ExercicesController> Logger)
         {
-            _dbContext = dbContext;
-            _repository = new ExerciceSqlRepository(dbContext);
+            _repository = repository;
             _mapper = mapper;
+            _logger = Logger;
         }
 
 
         // GET: api/<ExerciceController>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ExerciceDto>))]
-        public ActionResult<IEnumerable<ExerciceDto>>? Get()
+        public IActionResult Get()
         {
             var exercices = _repository.GetAllExercices();
             var exercicesDto = _mapper.Map<IEnumerable<ExerciceDto>>(exercices);
@@ -64,7 +62,6 @@ namespace APIRest.Controllers
             if (exerciceEntity == null)
                 return NotFound("Aucun resultat pour DEL");
             ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
-            _dbContext.SaveChanges();
             return Ok(exerciceDto);
         }
 
@@ -76,7 +73,6 @@ namespace APIRest.Controllers
         {
             //TODO verifier les informations passées
             _repository.AddExercice(exerciceEntity);
-            _dbContext.SaveChanges();
             ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
             return Ok(exerciceDto);
         }
@@ -91,7 +87,6 @@ namespace APIRest.Controllers
             ExerciceEntity majexerciceEntity = _repository.UpdateExercice(exerciceEntity);
             if (majexerciceEntity == null)
                 return NotFound("Aucun resultat pour PUT");
-            _dbContext.SaveChanges();
             ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(majexerciceEntity);
             return Ok(exerciceDto);
         }

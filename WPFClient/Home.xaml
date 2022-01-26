@@ -21,7 +21,6 @@
             </TabItem>
             <TabItem Header="Mon entrainement">
                 <Grid Background="#FFE5E5E5">
-                    <Button Content="Charger Exercices from uri json" HorizontalAlignment="Left" Margin="78,45,0,0" VerticalAlignment="Top" Click="Button_Click"/>
                     <ListBox  x:Name="ListExercice"  Margin="0,139,0,0">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
@@ -33,7 +32,6 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <Button Content="Post exercice" HorizontalAlignment="Left" Margin="78,95,0,0" VerticalAlignment="Top" Click="Button_Click_1    "/>
                 </Grid>
             </TabItem>
             <TabItem Header="Programmes d'entrainement">
@@ -51,32 +49,10 @@
                         <RowDefinition Height="19*" />
                         <RowDefinition Height="471*" />
                     </Grid.RowDefinitions>
-                    <TabControl x:Name="TabExercicesZone" Grid.Row="2" TabStripPlacement="Left" Margin="8" >
-                        <TabControl.Resources>
-                            <Style TargetType="TabItem">
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="TabItem">
-                                            <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,0,0,4" >
-                                                <ContentPresenter x:Name="ContentSite"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Center"
-                                        ContentSource="Header"
-                                        Margin="8"/>
-                                            </Border>
-                                            <ControlTemplate.Triggers>
-                                                <Trigger Property="IsSelected" Value="True">
-                                                    <Setter TargetName="Border" Property="Background" Value="LightSkyBlue" />
-                                                </Trigger>
-                                                <Trigger Property="IsSelected" Value="False">
-                                                    <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
-                                                </Trigger>
-                                            </ControlTemplate.Triggers>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </TabControl.Resources>                        
+                    <TabControl x:Name="TabExercicesZone" ItemsSource="{Binding MuscleAreas}" Grid.Row="2" TabStripPlacement="Left" Margin="8" >
+                        
+                        
+
                     </TabControl>
                 </Grid>
             </TabItem>

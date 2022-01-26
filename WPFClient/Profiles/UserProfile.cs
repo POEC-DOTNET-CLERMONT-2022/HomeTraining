@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Ipme.Hometraining.Dto;
-using Ipme.Hometraining.Entities;
+using Ipme.Hometraining.Models;
 
 namespace Ipme.Hometraining.Profiles
 {
@@ -8,7 +8,7 @@ namespace Ipme.Hometraining.Profiles
     {
         public UserProfile()
         {
-            CreateMap<UserDto, UserEntity>().ReverseMap();
+            CreateMap<UserDto, UserModel>().ReverseMap();
 
         }
 

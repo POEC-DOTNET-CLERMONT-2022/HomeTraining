@@ -20,11 +20,14 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Polly" Version="7.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DTO1\DTO.csproj" />
+    <ProjectReference Include="..\Ipme.Hometraining.ApiData\Ipme.Hometraining.ApiData.csproj" />
     <ProjectReference Include="..\Ipme.Hometraining.Entities\Entities.csproj" />
     <ProjectReference Include="..\Persistance1\Persistance.csproj" />
   </ItemGroup>

@@ -18,11 +18,11 @@ namespace Ipme.Hometraining.Models
         public UserModel User
         {
             get { return _user; }
-           private set { _user = value; }
+            private set { _user = value; }
         }
 
         public ObservableCollection<ProgramExerciceModel> ExerciceList
-    {
+        {
             get { return _exerciceList; }
             set
             {
