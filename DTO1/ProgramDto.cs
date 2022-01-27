@@ -17,8 +17,10 @@ namespace Ipme.Hometraining.Dto
 
         public Guid UserId { get; set; }
 
-        public List<ProgramExerciceDto> ExerciceList { get; set; }
 
-        public UserModel User { get; set; }
+       // à anlever du Dto
+       // public List<ProgramExerciceDto> ExerciceList { get; set; }
+       // public UserModel User { get; set; }
+
     }
 }

@@ -75,12 +75,12 @@ namespace APIRest.Controllers
             //POST api/<ProgramController>        
             [HttpPost]
             [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ProgramDto>))]
-            public ActionResult<ProgramDto> Post([FromBody] ProgramEntity programEntity)
+            public ActionResult<ProgramDto> Post([FromBody] ProgramDto programDto)
             {
                 //TODO verifier les informations passées
+                ProgramEntity programEntity = _mapper.Map<ProgramEntity>(programDto);
                 _repository.AddProgram(programEntity);
                 _dbContext.SaveChanges();
-                ProgramDto programDto = _mapper.Map<ProgramDto>(programEntity);
                 return Ok(programDto);
             }
 
@@ -88,15 +88,16 @@ namespace APIRest.Controllers
             // PUT api/<ProgramController>/5
             [HttpPut("{id}")]
             [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ProgramDto>))]
-            public ActionResult<ProgramDto> Put([FromBody] ProgramEntity programEntity)
+            public ActionResult<ProgramDto> Put([FromBody] ProgramDto programDto)
             {
                 //TODO verifier les informations passées
+                ProgramEntity programEntity = _mapper.Map<ProgramEntity>(programDto);
                 ProgramEntity majprogramEntity = _repository.UpdateProgram(programEntity);
                 if (majprogramEntity == null)
                     return NotFound("Aucun resultat pour PUT");
                 _dbContext.SaveChanges();
-                ProgramDto programDto = _mapper.Map<ProgramDto>(majprogramEntity);
                 return Ok(programDto);
+
             }
 
 
