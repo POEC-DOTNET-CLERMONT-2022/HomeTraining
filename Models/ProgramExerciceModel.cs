@@ -4,7 +4,7 @@
 namespace Ipme.Hometraining.Models
 {
 
-    public class ProgramExerciceModel : ObservableObject
+    public class ProgramExerciceModel
     {
         private Guid ProgramID { get; set; }
         private Guid ExerciceID { get; set; }
@@ -20,7 +20,6 @@ namespace Ipme.Hometraining.Models
             ProgramID = programID;
             Repetitions = repetitions;
             Position = position;
-
         }
 
     }

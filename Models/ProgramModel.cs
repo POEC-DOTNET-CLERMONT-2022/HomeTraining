@@ -5,48 +5,28 @@ using System.ComponentModel;
 
 namespace Ipme.Hometraining.Models
 {
-    public class ProgramModel : ObservableObject
+    public class ProgramModel
     {
-        private Guid _id;
-        public string _name;
-        public DateTime _created;
-        public Difficulty _difficulty;
-        public Guid _userId;
-        private ObservableCollection<ProgramExerciceModel> _exerciceList;
-        public UserModel _user;
+        private Guid Id { get; set; }
+        public string Name { get; set; }
+        public DateTime Created { get; set; }
+        public Difficulty Difficulty { get; set; }
+        public Guid UserId { get; set; }
+        public ObservableCollection<ProgramExerciceModel> ExerciceList {  get; set; }
+        public UserModel User { get; set; }
 
-        public UserModel User
-        {
-            get { return _user; }
-            private set { _user = value; }
-        }
 
-        public ObservableCollection<ProgramExerciceModel> ExerciceList
-        {
-            get { return _exerciceList; }
-            set
-            {
-                if (_exerciceList != value)
-                {
-                    _exerciceList = value;
-                    OnNotifyPropertyChanged();
-                }
-            }
-        }
 
         public ProgramModel(Guid id, string name, Difficulty difficulty, Guid userId)
         {
-            // vérifier champs obligatoires non vides
-
             if (id == Guid.Empty) throw new ArgumentOutOfRangeException(nameof(id));
             if (name == null) throw new ArgumentOutOfRangeException(nameof(name));
             if (userId == Guid.Empty) throw new ArgumentOutOfRangeException(nameof(userId));
-
-            _id = id;
-            _name = name;
-            _created = DateTime.Today;
-            _difficulty = difficulty;
-            _userId = userId;
+            Id = id;
+            Name = name;
+            Created = DateTime.Today;
+            Difficulty = difficulty;
+            UserId = userId;
         }
     }
 

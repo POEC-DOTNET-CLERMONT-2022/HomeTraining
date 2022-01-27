@@ -10,13 +10,13 @@ namespace APIRest.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ExercicesController : ControllerBase
+    public class ProgramExercicesController : ControllerBase
     {
         IExerciceRepository _repository { get; }
         private IMapper _mapper;
         private readonly ILogger<ExercicesController> _logger;
 
-        public ExercicesController(IExerciceRepository repository, IMapper mapper, ILogger<ExercicesController> Logger)
+        public ProgramExercicesController(IExerciceRepository repository, IMapper mapper, ILogger<ExercicesController> Logger)
         {
             _repository = repository;
             _mapper = mapper;
@@ -65,7 +65,21 @@ namespace APIRest.Controllers
             return Ok(exerciceDto);
         }
 
-         
+
+        /*
+        //POST api/<ExerciceController>        
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
+        public ActionResult<ExerciceDto> Post([FromBody] ExerciceEntity exerciceEntity)
+        {
+            //TODO verifier les informations passées
+            _repository.AddExercice(exerciceEntity);
+            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
+            return Ok(exerciceDto);
+        }
+        */
+
+        // vu OK avec Nico : pour le POST on passe par le Dto, et idem pour PUT
         //POST api/<ExerciceController>        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
@@ -78,16 +92,36 @@ namespace APIRest.Controllers
         }
 
 
+        /*
+        // PUT api/<ExerciceController>/5
+        [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
+        public ActionResult<ExerciceDto> Put([FromBody] ExerciceEntity exerciceEntity)
+        {
+            //TODO verifier les informations passées
+            ExerciceEntity majexerciceEntity = _repository.UpdateExercice(exerciceEntity);
+            if (majexerciceEntity == null)
+                return NotFound("Aucun resultat pour PUT");
+            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(majexerciceEntity);
+            return Ok(exerciceDto);
+        }
+        */
+
+
         // PUT api/<ExerciceController>/5
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
         public ActionResult<ExerciceDto> Put([FromBody] ExerciceDto exerciceDto)
         {
             //TODO verifier les informations passées
+
             ExerciceEntity exerciceEntity = _mapper.Map<ExerciceEntity>(exerciceDto);
+
             ExerciceEntity majexerciceEntity = _repository.UpdateExercice(exerciceEntity);
+
             if (majexerciceEntity == null)
                 return NotFound("Aucun resultat pour PUT");
+
             return Ok(exerciceDto);
         }
 

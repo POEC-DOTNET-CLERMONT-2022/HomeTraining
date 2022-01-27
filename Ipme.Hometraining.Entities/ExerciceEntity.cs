@@ -33,7 +33,7 @@ namespace Ipme.Hometraining.Entities
             MuscleArea = muscleArea;
             VideoName = videoName;
             User = user;
-
+            UserId = user.Id; // Du coup il faut qu'il soit à jour
         }
 
 

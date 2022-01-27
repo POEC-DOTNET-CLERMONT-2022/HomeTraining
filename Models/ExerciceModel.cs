@@ -7,14 +7,14 @@ namespace Ipme.Hometraining.Models
      * Classe représentant un exercice concret
      */
 
-    public class ExerciceModel : ObservableObject
+    public class ExerciceModel
     {
         public Guid Id;
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public MuscleArea MuscleArea { get; private set; }
-        public string VideoName { get; private set; }
-        public Guid UserId { get; private set; }  // créateur de l'exercice
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public MuscleArea MuscleArea { get; set; }
+        public string VideoName { get; set; }
+        public Guid UserId { get; set; }  // créateur de l'exercice
 
         public ExerciceModel(Guid id, string name, string description, MuscleArea muscleArea, string videoName, Guid userId)
         {

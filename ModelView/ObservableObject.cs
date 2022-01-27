@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Ipme.Hometraining.Models
+namespace Ipme.Hometraining.ModelView
 {
     public class ObservableObject : INotifyPropertyChanged
     {

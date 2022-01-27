@@ -56,6 +56,7 @@
                     </TabControl>
                 </Grid>
             </TabItem>
+            
         </TabControl>
         <Button Content="Se déconnecter" HorizontalAlignment="Left" Margin="775,10,0,0" VerticalAlignment="Top" Width="101" Background="#FFA7A7A7" Click="Button_Click_2"/>
         <Label  x:Name="UserNameDisplay" Content="NomUtilisateur" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Background="{x:Null}" FontWeight="Bold" Foreground="White"/>

@@ -18,7 +18,6 @@ namespace Ipme.Hometraining.ApiData
         {
             try
             {
-                HttpClient.DefaultRequestHeaders.Add("Accept", "application/json");
                 var response =  await HttpClient.GetFromJsonAsync<ExerciceDto>(uri);               
                     var exercices = Mapper.Map<IEnumerable<ExerciceModel>>(response); ;
                     return exercices;
@@ -121,13 +120,12 @@ namespace Ipme.Hometraining.ApiData
         //    return null;
         //}
 
-        ////TODO gerer le catch
-        //public static async Task<Uri> PostExerciceAsync(string uri,ExerciceDto exDto)
+        //TODO gerer le catch
+        //public static async Task<Uri> PostExerciceAsync(string uri, ExerciceDto exDto)
         //{
         //    try
         //    {
-        //        HttpResponseMessage response = await HttpClient.PostAsJsonAsync(
-        //        uri, exDto);
+        //        HttpResponseMessage response = await HttpClient.PostAsJsonAsync(uri, exDto);
         //        response.EnsureSuccessStatusCode();
 
         //        if (response.IsSuccessStatusCode)
