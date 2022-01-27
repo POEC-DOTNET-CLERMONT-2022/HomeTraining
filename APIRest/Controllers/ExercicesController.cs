@@ -66,6 +66,7 @@ namespace APIRest.Controllers
         }
 
 
+        /*
         //POST api/<ExerciceController>        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
@@ -76,8 +77,22 @@ namespace APIRest.Controllers
             ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
             return Ok(exerciceDto);
         }
+        */
+
+        // vu OK avec Nico : pour le POST on passe par le Dto, et idem pour PUT
+        //POST api/<ExerciceController>        
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
+        public ActionResult<ExerciceDto> Post([FromBody] ExerciceDto exerciceDto)
+        {
+            //TODO verifier les informations passées
+            ExerciceEntity exerciceEntity = _mapper.Map<ExerciceEntity>(exerciceDto);
+            _repository.AddExercice(exerciceEntity);
+            return Ok(exerciceDto);
+        }
 
 
+        /*
         // PUT api/<ExerciceController>/5
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
@@ -90,6 +105,26 @@ namespace APIRest.Controllers
             ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(majexerciceEntity);
             return Ok(exerciceDto);
         }
+        */
+
+
+        // PUT api/<ExerciceController>/5
+        [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
+        public ActionResult<ExerciceDto> Put([FromBody] ExerciceDto exerciceDto)
+        {
+            //TODO verifier les informations passées
+
+            ExerciceEntity exerciceEntity = _mapper.Map<ExerciceEntity>(exerciceDto);
+
+            ExerciceEntity majexerciceEntity = _repository.UpdateExercice(exerciceEntity);
+
+            if (majexerciceEntity == null)
+                return NotFound("Aucun resultat pour PUT");
+
+            return Ok(exerciceDto);
+        }
+
 
     }
 }
