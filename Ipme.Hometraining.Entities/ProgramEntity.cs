@@ -18,6 +18,7 @@ namespace Ipme.Hometraining.Entities
         public Guid UserId { get; set; }    // ajouté par Nico
 
         [ForeignKey("UserId")]                          // ok pour Nico
+
         public virtual UserEntity User { get; set; }    // ok pour Nico
 
 

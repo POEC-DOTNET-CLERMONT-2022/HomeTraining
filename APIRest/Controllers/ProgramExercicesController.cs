@@ -3,6 +3,8 @@ using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.Entities;
 using Ipme.Hometraining.Persistance;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,11 +14,11 @@ namespace APIRest.Controllers
     [ApiController]
     public class ProgramExercicesController : ControllerBase
     {
-        IExerciceRepository _repository { get; }
+        IProgramExerciceRepository _repository { get; }
         private IMapper _mapper;
-        private readonly ILogger<ExercicesController> _logger;
+        private readonly ILogger<ProgramExercicesController> _logger;
 
-        public ProgramExercicesController(IExerciceRepository repository, IMapper mapper, ILogger<ExercicesController> Logger)
+        public ProgramExercicesController(IProgramExerciceRepository repository, IMapper mapper, ILogger<ProgramExercicesController> Logger)
         {
             _repository = repository;
             _mapper = mapper;
@@ -24,105 +26,71 @@ namespace APIRest.Controllers
         }
 
 
-        // GET: api/<ExerciceController>
+        // GET: api/<ProgramExercicesController>
         [HttpGet]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ExerciceDto>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProgramExerciceDto>))]
         public IActionResult Get()
         {
-            var exercices = _repository.GetAllExercices();
-            var exercicesDto = _mapper.Map<IEnumerable<ExerciceDto>>(exercices);
-            return Ok(exercicesDto);
+            var prgExercices = _repository.GetAllProgramExercices();
+            var prgExercicesDto = _mapper.Map<IEnumerable<ProgramExerciceDto>>(prgExercices);
+            return Ok(prgExercicesDto);
         }
 
 
-        // GET api/<ExerciceController>/5
+        // GET api/<ProgramExercicesController>/5
         [HttpGet("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ExerciceDto))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ProgramExerciceDto))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<ExerciceDto> Get(Guid id)
+        public ActionResult<ProgramExerciceDto> Get(Guid id)
         {
             if (id == Guid.Empty)
                 return NotFound();
-            ExerciceEntity exerciceGet = _repository.GetSingleExercice(id);
-            if (exerciceGet == null)
+            ProgramExerciceEntity prgExGet = _repository.GetSingleProgramExercice(id);
+            if (prgExGet == null)
                 return NotFound("Aucun resultat pour GET");
-            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceGet);
-            return Ok(exerciceDto);
+            ProgramExerciceDto prgExDto = _mapper.Map<ProgramExerciceDto>(prgExGet);
+            return Ok(prgExDto);
         }
 
-        // DELETE api/<ExerciceController>/5
+        // DELETE api/<ProgramExercicesController>/5
         [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ProgramExerciceDto>))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<ExerciceDto> Delete(Guid id)
+        public ActionResult<ProgramExerciceDto> Delete(Guid id)
         {
             if (id == Guid.Empty)
                 return NotFound();
-            ExerciceEntity exerciceEntity = _repository.RemoveExercice(id);
-            if (exerciceEntity == null)
+            ProgramExerciceEntity prgExEntity = _repository.RemoveProgramExercice(id);
+            if (prgExEntity == null)
                 return NotFound("Aucun resultat pour DEL");
-            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
-            return Ok(exerciceDto);
+            ProgramExerciceDto prgExDto = _mapper.Map<ProgramExerciceDto>(prgExEntity);
+            return Ok(prgExDto);
         }
 
 
-        /*
-        //POST api/<ExerciceController>        
+        //POST api/<ProgramExercicesController>        
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
-        public ActionResult<ExerciceDto> Post([FromBody] ExerciceEntity exerciceEntity)
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ProgramExerciceDto>))]
+        public ActionResult<ProgramExerciceDto> Post([FromBody] ProgramExerciceDto prgExDto)
         {
             //TODO verifier les informations passées
-            _repository.AddExercice(exerciceEntity);
-            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
-            return Ok(exerciceDto);
-        }
-        */
-
-        // vu OK avec Nico : pour le POST on passe par le Dto, et idem pour PUT
-        //POST api/<ExerciceController>        
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
-        public ActionResult<ExerciceDto> Post([FromBody] ExerciceDto exerciceDto)
-        {
-            //TODO verifier les informations passées
-            ExerciceEntity exerciceEntity = _mapper.Map<ExerciceEntity>(exerciceDto);
-            _repository.AddExercice(exerciceEntity);
-            return Ok(exerciceDto);
+            ProgramExerciceEntity prgExEntity = _mapper.Map<ProgramExerciceEntity>(prgExDto);
+            _repository.AddProgramExercice(prgExEntity);
+            return Ok(prgExDto);
         }
 
 
-        /*
-        // PUT api/<ExerciceController>/5
+        // PUT api/<ProgramExercicesController>/5
         [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
-        public ActionResult<ExerciceDto> Put([FromBody] ExerciceEntity exerciceEntity)
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ProgramExerciceDto>))]
+        public ActionResult<ProgramExerciceDto> Put([FromBody] ProgramExerciceDto prgExDto)
         {
             //TODO verifier les informations passées
-            ExerciceEntity majexerciceEntity = _repository.UpdateExercice(exerciceEntity);
-            if (majexerciceEntity == null)
+            ProgramExerciceEntity prgExEntity = _mapper.Map<ProgramExerciceEntity>(prgExDto);
+            ProgramExerciceEntity majPrgExEntity = _repository.UpdateProgramExercice(prgExEntity);
+            if (majPrgExEntity == null)
                 return NotFound("Aucun resultat pour PUT");
-            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(majexerciceEntity);
-            return Ok(exerciceDto);
-        }
-        */
-
-
-        // PUT api/<ExerciceController>/5
-        [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
-        public ActionResult<ExerciceDto> Put([FromBody] ExerciceDto exerciceDto)
-        {
-            //TODO verifier les informations passées
-
-            ExerciceEntity exerciceEntity = _mapper.Map<ExerciceEntity>(exerciceDto);
-
-            ExerciceEntity majexerciceEntity = _repository.UpdateExercice(exerciceEntity);
-
-            if (majexerciceEntity == null)
-                return NotFound("Aucun resultat pour PUT");
-
-            return Ok(exerciceDto);
+            return Ok(prgExDto);
         }
 
 

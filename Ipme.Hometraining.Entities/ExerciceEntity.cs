@@ -14,6 +14,7 @@ namespace Ipme.Hometraining.Entities
         public string Description { get; set; }
         public MuscleArea MuscleArea { get; set; }
         public string VideoName { get; set; }
+
         public Guid UserId { get; set; }    // ajouté par Nico
 
         [ForeignKey("UserId")]                          // ok pour Nico
