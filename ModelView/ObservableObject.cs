@@ -5,9 +5,7 @@ namespace Ipme.Hometraining.ModelView
 {
     public class ObservableObject : INotifyPropertyChanged
     {
-        //Event
         public event PropertyChangedEventHandler? PropertyChanged;
-
 
         protected virtual void OnNotifyPropertyChanged([CallerMemberName] string propertyname = "")
         {
@@ -16,5 +14,7 @@ namespace Ipme.Hometraining.ModelView
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyname));
             }
         }
+
+        
     }
 }

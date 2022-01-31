@@ -9,7 +9,7 @@ namespace Ipme.Hometraining.Models
 
     public class ExerciceModel
     {
-        public Guid Id;
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public MuscleArea MuscleArea { get; set; }
@@ -17,13 +17,10 @@ namespace Ipme.Hometraining.Models
         public Guid UserId { get; set; }  // créateur de l'exercice
 
         public ExerciceModel(Guid id, string name, string description, MuscleArea muscleArea, string videoName, Guid userId)
-        {
-            // vérifier champs obligatoires non vides
-
+        {           
             if (id == Guid.Empty) throw new ArgumentOutOfRangeException(nameof(id));
             if (name == null) throw new ArgumentOutOfRangeException(nameof(name));
             if (userId == Guid.Empty) throw new ArgumentOutOfRangeException(nameof(userId));
-
             Id = id;
             Name = name;
             Description = description;

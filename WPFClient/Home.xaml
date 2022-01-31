@@ -5,33 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFClient"
         mc:Ignorable="d"
-        x:Name="MainWindow"
+        x:Name="MainWindow"       
         Title="Hometraining v1" Height="600" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/hometraining.ico" Background="#FF5624D0">
     <Grid>
         <TabControl Margin="0,31,0,0">
             <TabItem Header="Acceuil">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="134*"/>
-                        <ColumnDefinition Width="233*"/>
+                        <ColumnDefinition Width="337*"/>
+                        <ColumnDefinition Width="30*"/>
                         <ColumnDefinition Width="527*"/>
                     </Grid.ColumnDefinitions>
-                    <Button Content="Button" HorizontalAlignment="Left" Margin="27,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.025,-0.472" Click="Button_Click_3"/>
+                    <local:ExerciceControl Margin="10,10,10,262"/>
+
                 </Grid>
             </TabItem>
             <TabItem Header="Mon entrainement">
                 <Grid Background="#FFE5E5E5">
-                    <ListBox  x:Name="ListExercice"  Margin="0,139,0,0">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Path=Name}" />
-                                    <TextBlock Text="{Binding Path=Description}"/>
-                                    <TextBlock Text="{Binding Path=MuscleArea}"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
+                    <StackPanel VerticalAlignment="Center" Height="505">
+                        <DataGrid Width="873" Margin="10"  Name="MaGrille"  HorizontalAlignment="Center" 
+                  ItemsSource="{Binding Exercices}"  AutoGenerateColumns="True" Height="410" />
+                    </StackPanel>
                 </Grid>
             </TabItem>
             <TabItem Header="Programmes d'entrainement">
@@ -50,15 +44,15 @@
                         <RowDefinition Height="471*" />
                     </Grid.RowDefinitions>
                     <TabControl x:Name="TabExercicesZone" ItemsSource="{Binding MuscleAreas}" Grid.Row="2" TabStripPlacement="Left" Margin="8" >
-                        
-                        
+
+
 
                     </TabControl>
                 </Grid>
             </TabItem>
-            
+
         </TabControl>
-        <Button Content="Se déconnecter" HorizontalAlignment="Left" Margin="775,10,0,0" VerticalAlignment="Top" Width="101" Background="#FFA7A7A7" Click="Button_Click_2"/>
+        <Button Content="Se déconnecter" HorizontalAlignment="Left" Margin="775,10,0,0" VerticalAlignment="Top" Width="101" Background="#FFA7A7A7" />
         <Label  x:Name="UserNameDisplay" Content="NomUtilisateur" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Background="{x:Null}" FontWeight="Bold" Foreground="White"/>
 
     </Grid>

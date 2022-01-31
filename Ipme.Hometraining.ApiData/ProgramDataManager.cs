@@ -1,13 +1,14 @@
 ﻿using AutoMapper;
 using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.Models;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 
 namespace Ipme.Hometraining.ApiData
 {
-    public class ExerciceDataManager : ApiDataManager<ExerciceModel, ExerciceDto>
+    public class ProgramDataManager : ApiDataManager<ExerciceModel, ExerciceDto>
     {
-        public ExerciceDataManager(HttpClient client, IMapper mapper, string serverUrl) : base(client, mapper, serverUrl, "/api/Exercices")
+        public ProgramDataManager(HttpClient client, IMapper mapper, string serverUrl) : base(client, mapper, serverUrl, "/api/Exercices")
         {
         }
 
@@ -28,27 +29,7 @@ namespace Ipme.Hometraining.ApiData
             }
         }
 
-        public IEnumerable<ExerciceModel> GetExercicesFixture(MuscleArea zone)
-        {
-            ExerciceModel ex1 = new ExerciceModel(Guid.NewGuid(),"POMPES","", MuscleArea.Pectoraux,"",Guid.NewGuid());
-            ExerciceModel ex2 = new ExerciceModel(Guid.NewGuid(),"CRUNCH", "", MuscleArea.Abdos, "", Guid.NewGuid());
-            ExerciceModel ex3 = new ExerciceModel(Guid.NewGuid(),"PLANCHE SUR LES AVANT-BRAS", "", MuscleArea.Dos, "", Guid.NewGuid());
-            ExerciceModel ex4 = new ExerciceModel(Guid.NewGuid(), "PLANCHE BRAS TENDUS", "", MuscleArea.Dos, "", Guid.NewGuid());
-            ExerciceModel ex5 = new ExerciceModel(Guid.NewGuid(), "BRIDGE", "", MuscleArea.Dos, "", Guid.NewGuid());
-            ExerciceModel ex6 = new ExerciceModel(Guid.NewGuid(), "SQUATE", "", MuscleArea.Jambes, "", Guid.NewGuid());
-            ExerciceModel ex7 = new ExerciceModel(Guid.NewGuid(), "FLEXION", "", MuscleArea.Jambes, "", Guid.NewGuid());
-            ExerciceModel ex8 = new ExerciceModel(Guid.NewGuid(), "SUPERMAN", "", MuscleArea.Abdos, "", Guid.NewGuid());           
-            var exercices = new List<ExerciceModel>();            
-                exercices.Add(ex8);
-                exercices.Add(ex2);            
-                exercices.Add(ex6);
-                exercices.Add(ex7);            
-                exercices.Add(ex3);
-                exercices.Add(ex4);
-                exercices.Add(ex5);            
-                exercices.Add(ex1); 
-            return exercices;
-        }
+        
 
         //TODO gerer le catch
         //public static async Task<ExerciceDto> GetExerciceByIdAsync(string uri)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ipme.Hometraining.Models;
+using Ipme.Hometraining.ModelView;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +22,16 @@ namespace WPFClient
     /// </summary>
     public partial class ExerciceControl : UserControl
     {
+        public ExerciceModelView ex { get; set; }
+        
         public ExerciceControl()
         {
             InitializeComponent();
-        }
+            DataContext = this;
+            ex = new ExerciceModelView(new ExerciceModel(Guid.NewGuid(), "Blabla", "Tralalla", MuscleArea.Dos, "Hehehe", Guid.NewGuid()));
 
-       
     }
+
+
+}
 }
