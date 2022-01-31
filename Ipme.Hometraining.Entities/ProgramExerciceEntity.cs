@@ -8,14 +8,26 @@ namespace Ipme.Hometraining.Entities
     [Table("ProgramExercice")]
     public class ProgramExerciceEntity
     {
+
+        // Inutile ??? 
         [Key]
         public Guid Id { get; set; }
-        [ForeignKey("ExerciceId")]
-        public ExerciceEntity Exercice { get; set; }        
+
+
+        public Guid ProgramId { get; set; }  
+
         [ForeignKey("ProgramId")]
-        public ProgramEntity Program { get; set; }
-        public int Repetitions { get; set; }
+        public virtual ProgramEntity Program { get; set; }
+
+
+        public Guid ExerciceId { get; set; }   
+
+        [ForeignKey("ExerciceId")]
+        public virtual ExerciceEntity Exercice { get; set; }
+
+
         public int Position { get; set; }
+        public int Repetitions { get; set; }
 
         public ProgramExerciceEntity()
         {

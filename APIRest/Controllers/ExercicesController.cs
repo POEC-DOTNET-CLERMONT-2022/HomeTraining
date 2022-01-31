@@ -3,6 +3,8 @@ using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.Entities;
 using Ipme.Hometraining.Persistance;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -65,15 +67,15 @@ namespace APIRest.Controllers
             return Ok(exerciceDto);
         }
 
-
+         
         //POST api/<ExerciceController>        
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
-        public ActionResult<ExerciceDto> Post([FromBody] ExerciceEntity exerciceEntity)
+        public ActionResult<ExerciceDto> Post([FromBody] ExerciceDto exerciceDto)
         {
             //TODO verifier les informations passées
+            ExerciceEntity exerciceEntity = _mapper.Map<ExerciceEntity>(exerciceDto);
             _repository.AddExercice(exerciceEntity);
-            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
             return Ok(exerciceDto);
         }
 
@@ -81,15 +83,16 @@ namespace APIRest.Controllers
         // PUT api/<ExerciceController>/5
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
-        public ActionResult<ExerciceDto> Put([FromBody] ExerciceEntity exerciceEntity)
+        public ActionResult<ExerciceDto> Put([FromBody] ExerciceDto exerciceDto)
         {
             //TODO verifier les informations passées
+            ExerciceEntity exerciceEntity = _mapper.Map<ExerciceEntity>(exerciceDto);
             ExerciceEntity majexerciceEntity = _repository.UpdateExercice(exerciceEntity);
             if (majexerciceEntity == null)
                 return NotFound("Aucun resultat pour PUT");
-            ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(majexerciceEntity);
             return Ok(exerciceDto);
         }
+
 
     }
 }

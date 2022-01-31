@@ -52,7 +52,5 @@ namespace Ipme.Hometraining.Persistance
             return exerciceEntity;
         }
 
-
-
     }
 }

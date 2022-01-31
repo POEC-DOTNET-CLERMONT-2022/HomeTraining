@@ -4,23 +4,25 @@
 namespace Ipme.Hometraining.Models
 {
 
-    public class ProgramExerciceModel : ObservableObject
+    public class ProgramExerciceModel
     {
-        private Guid ProgramID { get; set; }
-        private Guid ExerciceID { get; set; }
+
+        // Inutile ??? 
+        private Guid Id { get; set; }
+
+        private Guid ProgramId { get; set; }
+        private Guid ExerciceId { get; set; }
         public int Position { get; set; }
         public int Repetitions { get; set; }
-        public ExerciceModel Exercice { get; set; } 
 
-        // ? ProgramModel 
 
-        public ProgramExerciceModel(string name, Guid programID, Guid exerciceID, int position, int repetitions)
+        public ProgramExerciceModel(Guid peId, Guid programId, Guid exerciceId, int position, int repetitions)
         {
-            ExerciceID = exerciceID;
-            ProgramID = programID;
-            Repetitions = repetitions;
+            Id = peId;    
+            ProgramId = programId;
+            ExerciceId = exerciceId;
             Position = position;
-
+            Repetitions = repetitions;
         }
 
     }
