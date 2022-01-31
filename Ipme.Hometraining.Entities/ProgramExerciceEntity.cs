@@ -31,17 +31,15 @@ namespace Ipme.Hometraining.Entities
 
         public ProgramExerciceEntity()
         {
-
         }
 
-        public ProgramExerciceEntity(ExerciceEntity exercice, ProgramEntity program, int position, int repetitions)
+        public ProgramExerciceEntity(ProgramEntity program, ExerciceEntity exercice, int position, int repetitions)
         {
             Id = Guid.NewGuid();
-            Program = Program;
+            Program = program;
             Exercice = exercice;
-            Repetitions = repetitions;
             Position = position;
-            
+            Repetitions = repetitions;    
         }
 
     }

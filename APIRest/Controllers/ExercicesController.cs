@@ -5,7 +5,6 @@ using Ipme.Hometraining.Persistance;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace APIRest.Controllers
@@ -51,6 +50,18 @@ namespace APIRest.Controllers
             ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceGet);
             return Ok(exerciceDto);
         }
+
+
+        // GET: api/<ExerciceController>/UserId
+        [HttpGet("UserId")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ExerciceDto>))]
+        public IActionResult GetExercicesOfUser(Guid userId)
+        {
+            var exercices = _repository.GetExercicesOfUser(userId);
+            var exercicesDto = _mapper.Map<IEnumerable<ExerciceDto>>(exercices);
+            return Ok(exercicesDto);
+        }
+
 
         // DELETE api/<ExerciceController>/5
         [HttpDelete("{id}")]

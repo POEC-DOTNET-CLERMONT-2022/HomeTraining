@@ -8,6 +8,8 @@ namespace Ipme.Hometraining.Persistance
     {
         IEnumerable<ExerciceEntity> GetAllExercices();
 
+        IEnumerable<ExerciceEntity> GetExercicesOfUser(Guid userId);
+
         ExerciceEntity GetSingleExercice(Guid id);
 
         void AddExercice(ExerciceEntity exerciceEntity);

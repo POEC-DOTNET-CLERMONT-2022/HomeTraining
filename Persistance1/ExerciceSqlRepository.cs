@@ -46,11 +46,16 @@ namespace Ipme.Hometraining.Persistance
         {
             var exo = GetSingleExercice(exerciceEntity.Id);
             if (exo == null)
-                return null; 
+                return null;
             SqlContext.Set<ExerciceEntity>().Update(exerciceEntity);
             SqlContext.SaveChanges();
             return exerciceEntity;
         }
 
+        IEnumerable<ExerciceEntity> IExerciceRepository.GetExercicesOfUser(Guid userId)
+        {
+            return SqlContext.Set<ExerciceEntity>().Where(exo => exo.UserId == userId).ToList();
+
+        }
     }
 }

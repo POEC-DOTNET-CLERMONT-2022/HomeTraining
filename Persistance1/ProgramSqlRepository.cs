@@ -29,6 +29,7 @@ namespace Ipme.Hometraining.Persistance
         public void AddProgram(ProgramEntity programEntity)
         {
             SqlContext.Set<ProgramEntity>().Add(programEntity);
+            SqlContext.SaveChanges();
         }
 
         public ProgramEntity RemoveProgram(Guid id)
@@ -37,6 +38,7 @@ namespace Ipme.Hometraining.Persistance
             if (programEntity == null)
                 return null;
             SqlContext.Set<ProgramEntity>().Remove(programEntity);
+            SqlContext.SaveChanges();
             return programEntity;
         }
 
@@ -46,10 +48,16 @@ namespace Ipme.Hometraining.Persistance
             if (program == null)
                 return null;
             SqlContext.Set<ProgramEntity>().Update(programEntity);
+            SqlContext.SaveChanges();
             return programEntity;
-
         }
 
+        
+        IEnumerable<ProgramEntity> IProgramRepository.GetProgramsOfUser(Guid userId)
+        {
+            return SqlContext.Set<ProgramEntity>().Where(prg => prg.UserId == userId).ToList();
+        }
+        
 
     }
 }

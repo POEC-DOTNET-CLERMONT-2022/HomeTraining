@@ -14,13 +14,11 @@ namespace APIRest.Controllers
     public class ProgramController : ControllerBase
     {
         IProgramRepository _repository { get; }
-        private readonly DbContext _dbContext;
         private IMapper _mapper;
 
-        public ProgramController(SqlDbContext dbContext, IMapper mapper)
+        public ProgramController(IProgramRepository repository, IMapper mapper)
         {
-            _dbContext = dbContext;
-            _repository = new ProgramSqlRepository(dbContext);
+            _repository = repository;
             _mapper = mapper;
         }
 
@@ -51,6 +49,18 @@ namespace APIRest.Controllers
             return Ok(programDto);
         }
 
+                
+        // GET: api/<ProgramController>/UserId
+        [HttpGet("UserId")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProgramDto>))]
+        public IActionResult GetProgramsOfUser(Guid userId)
+        {
+            var programs = _repository.GetProgramsOfUser(userId);
+            var programsDto = _mapper.Map<IEnumerable<ProgramDto>>(programs);
+            return Ok(programsDto);
+        }
+        
+
         // DELETE api/<ProgramController>/5
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ProgramDto>))]
@@ -63,7 +73,6 @@ namespace APIRest.Controllers
             if (programEntity == null)
                 return NotFound("Aucun resultat pour DEL");
             ProgramDto programDto = _mapper.Map<ProgramDto>(programEntity);
-            _dbContext.SaveChanges();
             return Ok(programDto);
         }
 
@@ -76,7 +85,6 @@ namespace APIRest.Controllers
             //TODO verifier les informations passées
             ProgramEntity programEntity = _mapper.Map<ProgramEntity>(programDto);
             _repository.AddProgram(programEntity);
-            _dbContext.SaveChanges();
             return Ok(programDto);
         }
 
@@ -91,7 +99,6 @@ namespace APIRest.Controllers
             ProgramEntity majprogramEntity = _repository.UpdateProgram(programEntity);
             if (majprogramEntity == null)
                 return NotFound("Aucun resultat pour PUT");
-            _dbContext.SaveChanges();
             return Ok(programDto);
 
         }

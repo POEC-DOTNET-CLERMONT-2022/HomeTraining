@@ -50,7 +50,6 @@ namespace Ipme.Hometraining.Persistance
             SqlContext.Set<UserEntity>().Update(userEntity);
             SqlContext.SaveChanges();
             return userEntity;
-
         }
 
     }

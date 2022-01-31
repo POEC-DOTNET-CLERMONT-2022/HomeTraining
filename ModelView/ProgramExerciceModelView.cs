@@ -32,7 +32,7 @@ namespace Ipme.Hometraining.ModelView
             }
         }
 
-
+        /*
         public ExerciceModel Exercice
         {
             get { return ProgramExercice.Exercice; }
@@ -42,5 +42,7 @@ namespace Ipme.Hometraining.ModelView
                 OnNotifyPropertyChanged();
             }
         }
+        */
+
     }
 }
