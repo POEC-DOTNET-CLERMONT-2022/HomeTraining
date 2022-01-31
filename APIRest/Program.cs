@@ -12,6 +12,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped(typeof(IUserRepository), typeof(UserSqlRepository));
 builder.Services.AddScoped(typeof(IExerciceRepository), typeof(ExerciceSqlRepository));
+
+builder.Services.AddScoped(typeof(IProgramExerciceRepository), typeof(ProgramExerciceSqlRepository));
+
 builder.Services.AddScoped<DbContext, SqlDbContext>();
 builder.Services.AddDbContext<SqlDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 //on peut ajouter d'autres context ici
