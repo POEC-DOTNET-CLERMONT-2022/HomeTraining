@@ -54,7 +54,7 @@ namespace Ipme.Hometraining.Persistance
 
         IEnumerable<ExerciceEntity> IExerciceRepository.GetExercicesOfUser(Guid userId)
         {
-            return SqlContext.Set<ExerciceEntity>().Where(exo => exo.UserId == userId).ToList();
+            return SqlContext.Set<ExerciceEntity>().Where(exo => exo.User.Id == userId).ToList();
 
         }
     }

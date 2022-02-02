@@ -55,7 +55,7 @@ namespace Ipme.Hometraining.Persistance
         
         IEnumerable<ProgramEntity> IProgramRepository.GetProgramsOfUser(Guid userId)
         {
-            return SqlContext.Set<ProgramEntity>().Where(prg => prg.UserId == userId).ToList();
+            return SqlContext.Set<ProgramEntity>().Where(prg => prg.User.Id == userId).ToList();
         }
         
 

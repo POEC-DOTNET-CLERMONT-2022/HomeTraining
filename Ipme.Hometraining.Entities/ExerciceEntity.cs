@@ -14,16 +14,14 @@ namespace Ipme.Hometraining.Entities
         public string Description { get; set; }
         public MuscleArea MuscleArea { get; set; }
         public string VideoName { get; set; }
-
-        public Guid UserId { get; set; }    // ajouté par Nico
-
-        [ForeignKey("UserId")]// ok pour Nico
-        [Index(IsUnique = true)]        
+       
         public virtual UserEntity User { get; set; }    // ok pour Nico
 
         public ExerciceEntity()
         {
         }
+
+
         public ExerciceEntity(Guid id, string name, string description, MuscleArea muscleArea, string videoName,UserEntity user)
         {
             if (id == Guid.Empty)
@@ -35,7 +33,6 @@ namespace Ipme.Hometraining.Entities
             MuscleArea = muscleArea;
             VideoName = videoName;
             User = user;
-            UserId = user.Id; // Du coup il faut qu'il soit à jour
         }
 
 
