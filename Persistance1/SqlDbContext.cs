@@ -41,7 +41,7 @@ namespace Ipme.Hometraining.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ExerciceEntity>().ToTable("Exercice");
+            //modelBuilder.Entity<ExerciceEntity>().ToTable("Exercice");
             modelBuilder.Entity<ProgramExerciceEntity>()
                 .HasOne(p => p.Program)
                 .WithMany(p => p.ProgramExercices)

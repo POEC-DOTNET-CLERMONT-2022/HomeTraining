@@ -34,26 +34,11 @@ namespace WPFClient
             //MuscleAreas = Enum.GetValues(typeof(MuscleArea));
 
         }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            LoadExercicesAsync();
-        }
-
-        public async void LoadExercicesAsync()
-        {
-            /*await Policy.Execute(async () =>
-            {*/
-            var exercicesModel = ((ExerciceDataManager)ExerciceDataManager).GetExercicesFixture(MuscleArea.Abdos);
-            Exercices = new ObservableCollection<ExerciceModel>((IEnumerable<ExerciceModel>)exercicesModel);     
-
-            //});
-
-        }
+      
 
         private void brrr()
         {
-            var exercicesModel = ((ExerciceDataManager)ExerciceDataManager).GetExercicesFixture(MuscleArea.Abdos);            
+            var exercicesModel = ((ExerciceDataManager)ExerciceDataManager).GetExercicesFixture();            
             Exercices = new ObservableCollection<ExerciceModel>(exercicesModel);
         }
     }

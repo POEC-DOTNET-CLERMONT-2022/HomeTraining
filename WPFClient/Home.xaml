@@ -34,16 +34,17 @@
             <TabItem Header="Création programme d'entrainement">
                 <Grid Background="#FFE5E5E5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="170*" />
-                        <ColumnDefinition Width="73*" />
-                        <ColumnDefinition Width="204*" />
+                        <ColumnDefinition Width="340*" />
+                        <ColumnDefinition Width="146*" />
+                        <ColumnDefinition Width="129*" />
+                        <ColumnDefinition Width="279*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="35*" />
                         <RowDefinition Height="19*" />
                         <RowDefinition Height="471*" />
                     </Grid.RowDefinitions>
-                    <TabControl x:Name="TabExercicesZone" ItemsSource="{Binding MuscleAreas}" Grid.Row="2" TabStripPlacement="Left" Margin="8" >
+                    <TabControl x:Name="TabExercicesZone" ItemsSource="{Binding MuscleAreas}" Grid.Row="2" TabStripPlacement="Left" Margin="8,8,8,8" >
 
 
 

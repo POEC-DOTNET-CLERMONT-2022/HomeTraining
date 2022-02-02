@@ -28,7 +28,7 @@ namespace Ipme.Hometraining.ApiData
             }
         }
 
-        public IEnumerable<ExerciceModel> GetExercicesFixture(MuscleArea zone)
+        public IEnumerable<ExerciceModel> GetExercicesFixture()
         {
             ExerciceModel ex1 = new ExerciceModel(Guid.NewGuid(),"POMPES","", MuscleArea.Pectoraux,"",Guid.NewGuid());
             ExerciceModel ex2 = new ExerciceModel(Guid.NewGuid(),"CRUNCH", "", MuscleArea.Abdos, "", Guid.NewGuid());

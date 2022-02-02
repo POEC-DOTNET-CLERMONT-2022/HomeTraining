@@ -17,10 +17,12 @@ namespace Ipme.Hometraining.Persistance
             SqlContext = sqlContext;
         }
 
+        //TODO doit renvoyer un resultat par rapport a idProgramme et une position
         public ProgramExerciceEntity GetSingleProgramExercice(Guid id)
         {
             return SqlContext.Set<ProgramExerciceEntity>().SingleOrDefault(prgEx => prgEx.Id == id);
         }
+        
 
         public IEnumerable<ProgramExerciceEntity> GetAllProgramExercices()
         {
