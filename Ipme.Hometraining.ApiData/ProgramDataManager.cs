@@ -14,7 +14,7 @@ namespace Ipme.Hometraining.ApiData
 
 
         //TODO Corriger les fonctions revoir le code
-        public async Task<IEnumerable<ExerciceModel>> GetExercicesAsync(string uri)
+        public async Task<IEnumerable<ExerciceModel>> GetProgramExercicesAsync(string uri)
         {
             try
             {
