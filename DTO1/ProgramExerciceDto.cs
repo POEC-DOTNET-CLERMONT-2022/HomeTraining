@@ -7,19 +7,22 @@ namespace Ipme.Hometraining.Dto
     [DataContract]
     public class ProgramExerciceDto
     {
-        // Inutile ??? 
+        
+        [DataMember]
         public Guid Id { get; set; }
 
+        [DataMember]
         public Guid ProgramId { get; set; }
 
+        [DataMember]
         public Guid ExerciceId { get; set; }
 
+        [DataMember]
         public int Position { get; set; }
 
+        [DataMember]
         public int Repetitions { get; set; }
 
-        // à anlever du Dto
-        // public ExerciceDto Exercice { get; set; }
 
     }
 

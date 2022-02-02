@@ -9,6 +9,7 @@ namespace Ipme.Hometraining.Models
         public string LastName { get; set; }
         public string Login { get; set; }
         public string _password { get; set; }
+
         public bool _isAdmin;
 
         public UserModel(Guid id, string firstName, string lastName, string login, string password, bool isAdmin)
@@ -22,6 +23,7 @@ namespace Ipme.Hometraining.Models
             Login = login;
             _password = password;
             _isAdmin = isAdmin;
+
         }
         
     }

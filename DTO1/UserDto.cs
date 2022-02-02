@@ -4,9 +4,10 @@ using System.Runtime.Serialization;
 
 namespace Ipme.Hometraining.Dto
 {
-    [DataContract]
+    [DataContract] 
     public class UserDto
     {
+
         [DataMember]
         public Guid Id { get; set; } 
 
@@ -24,8 +25,6 @@ namespace Ipme.Hometraining.Dto
 
         [DataMember]
         public bool IsAdmin { get; set; }
-
-
 
     }
 }

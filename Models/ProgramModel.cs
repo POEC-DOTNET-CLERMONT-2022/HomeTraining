@@ -13,10 +13,7 @@ namespace Ipme.Hometraining.Models
         public Difficulty Difficulty { get; set; }
         public Guid UserId { get; set; }
         public ObservableCollection<ProgramExerciceModel> ExerciceList {  get; set; }
-
         public UserModel User { get; set; }
-
-
 
         public ProgramModel(Guid id, string name, Difficulty difficulty, Guid userId)
         {
