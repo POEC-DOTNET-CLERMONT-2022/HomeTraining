@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "xgmXeWxmAv07GmXuBh/XG811zHgMSk1eSDuXMMzfMxT0P6ks63OkKN+7GrSnX9E3HxY4dr/C3LXtp2VA7mfrJg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Profiles\\Profiles.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lomac\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\lomac\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\lomac\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

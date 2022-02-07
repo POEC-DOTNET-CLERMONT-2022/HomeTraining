@@ -1,0 +1,15 @@
+C:\Users\lomac\source\repos\HomeTraining\DTO1\bin\Debug\net6.0\Ipme.Hometraining.DTO.deps.json
+C:\Users\lomac\source\repos\HomeTraining\DTO1\bin\Debug\net6.0\Ipme.Hometraining.DTO.dll
+C:\Users\lomac\source\repos\HomeTraining\DTO1\bin\Debug\net6.0\ref\Ipme.Hometraining.DTO.dll
+C:\Users\lomac\source\repos\HomeTraining\DTO1\bin\Debug\net6.0\Ipme.Hometraining.DTO.pdb
+C:\Users\lomac\source\repos\HomeTraining\DTO1\bin\Debug\net6.0\Ipme.Hometraining.Models.dll
+C:\Users\lomac\source\repos\HomeTraining\DTO1\bin\Debug\net6.0\Ipme.Hometraining.Models.pdb
+C:\Users\lomac\source\repos\HomeTraining\DTO1\obj\Debug\net6.0\DTO.csproj.AssemblyReference.cache
+C:\Users\lomac\source\repos\HomeTraining\DTO1\obj\Debug\net6.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lomac\source\repos\HomeTraining\DTO1\obj\Debug\net6.0\DTO.AssemblyInfoInputs.cache
+C:\Users\lomac\source\repos\HomeTraining\DTO1\obj\Debug\net6.0\DTO.AssemblyInfo.cs
+C:\Users\lomac\source\repos\HomeTraining\DTO1\obj\Debug\net6.0\DTO.csproj.CoreCompileInputs.cache
+C:\Users\lomac\source\repos\HomeTraining\DTO1\obj\Debug\net6.0\DTO.csproj.CopyComplete
+C:\Users\lomac\source\repos\HomeTraining\DTO1\obj\Debug\net6.0\Ipme.Hometraining.DTO.dll
+C:\Users\lomac\source\repos\HomeTraining\DTO1\obj\Debug\net6.0\ref\Ipme.Hometraining.DTO.dll
+C:\Users\lomac\source\repos\HomeTraining\DTO1\obj\Debug\net6.0\Ipme.Hometraining.DTO.pdb

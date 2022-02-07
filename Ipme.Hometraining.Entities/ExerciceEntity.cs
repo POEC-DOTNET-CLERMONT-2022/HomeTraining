@@ -13,11 +13,12 @@ namespace Ipme.Hometraining.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public MuscleArea MuscleArea { get; set; }
-        public string VideoName { get; set; }
-       
+        public string VideoName { get; set; }       
         public virtual UserEntity User { get; set; }    // ok pour Nico
 
-        public ExerciceEntity()
+        public Guid UserId { get; set; }
+
+        private ExerciceEntity()
         {
         }
 

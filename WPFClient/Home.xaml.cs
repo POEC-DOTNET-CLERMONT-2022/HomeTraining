@@ -24,22 +24,29 @@ namespace WPFClient
         public ObservableCollection<ExerciceModel> Exercices { get;  set; }
         readonly ObservableCollection<ProgramExerciceModel> _programsExercices;
 
-        private readonly IDataManager<ExerciceModel, ExerciceDto> ExerciceDataManager= ((App)Application.Current).ExerciceDataManager;
+        public UserModelView User { get; private set; }
+        Guid userGuid = new Guid("DA286A18-43C9-51F1-1EBA-A76D2AC0B1DC");
 
+        private readonly IDataManager<ExerciceModel, ExerciceDto> ExerciceDataManager= ((App)Application.Current).ExerciceDataManager;
+        private readonly IDataManager<UserModel, UserDto> UserDataManager = ((App)Application.Current).UserDataManager;
+        AllExerciceView exmc;
         public Home()
         {
             InitializeComponent();            
             DataContext = this;
-            brrr();
+
+            exmc = new AllExerciceView();
+
             //MuscleAreas = Enum.GetValues(typeof(MuscleArea));
 
         }
       
-
-        private void brrr()
+        public async void LoadApiData()
         {
-            var exercicesModel = ((ExerciceDataManager)ExerciceDataManager).GetExercicesFixture();            
-            Exercices = new ObservableCollection<ExerciceModel>(exercicesModel);
+            this.User = new UserModelView(UserDataManager.Get(userGuid).Result);
+
         }
+
+
     }
 }

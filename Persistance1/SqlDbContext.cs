@@ -22,8 +22,6 @@ namespace Ipme.Hometraining.Persistance
             ChangeTracker.LazyLoadingEnabled = false;
             ChangeTracker.AutoDetectChangesEnabled = false;
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
-            
-
             return base.Set<TEntity>();
         }
 
@@ -34,19 +32,16 @@ namespace Ipme.Hometraining.Persistance
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(ConnectionString);
 
-            
-        
-
     }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<ExerciceEntity>().ToTable("Exercice");
-            modelBuilder.Entity<ProgramExerciceEntity>()
+           /* modelBuilder.Entity<ProgramExerciceEntity>()
                 .HasOne(p => p.Program)
                 .WithMany(p => p.ProgramExercices)
                 .OnDelete(DeleteBehavior.Cascade);
-
+           */
 
         }
 

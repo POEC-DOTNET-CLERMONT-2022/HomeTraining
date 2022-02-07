@@ -20,6 +20,9 @@ namespace WPFClient
         public HttpClient HttpClient { get; } = new HttpClient();
 
         public IDataManager<ExerciceModel, ExerciceDto> ExerciceDataManager { get; }
+        public IDataManager<UserModel, UserDto> UserDataManager { get; }
+        public IDataManager<ProgramModel, ProgramDto> ProgramDataManager { get; }
+        public IDataManager<ProgramExerciceModel, ProgramExerciceDto> ProgramExerciceDataManager { get; }
 
         //public INavigator Navigator { get; } = new Navigator();
 
@@ -27,8 +30,10 @@ namespace WPFClient
         {
             var configuration = new MapperConfiguration(cfg => cfg.AddMaps(typeof(App)));
             Mapper = new Mapper(configuration);
-
             ExerciceDataManager = new ExerciceDataManager(HttpClient, Mapper, SERVER_URL);
+            UserDataManager = new UserDataManager(HttpClient, Mapper, SERVER_URL);
+            ProgramDataManager = new ProgramDataManager(HttpClient, Mapper, SERVER_URL);
+            ProgramExerciceDataManager = new ProgramExerciceDataManager(HttpClient, Mapper, SERVER_URL);
 
         }
 

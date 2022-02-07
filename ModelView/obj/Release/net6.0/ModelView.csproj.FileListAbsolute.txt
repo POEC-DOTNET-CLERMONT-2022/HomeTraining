@@ -1,0 +1,15 @@
+C:\Users\lomac\source\repos\HomeTraining\ModelView\bin\Release\net6.0\Ipme.Hometraining..deps.json
+C:\Users\lomac\source\repos\HomeTraining\ModelView\bin\Release\net6.0\Ipme.Hometraining..dll
+C:\Users\lomac\source\repos\HomeTraining\ModelView\bin\Release\net6.0\ref\Ipme.Hometraining..dll
+C:\Users\lomac\source\repos\HomeTraining\ModelView\bin\Release\net6.0\Ipme.Hometraining..pdb
+C:\Users\lomac\source\repos\HomeTraining\ModelView\bin\Release\net6.0\Ipme.Hometraining.Models.dll
+C:\Users\lomac\source\repos\HomeTraining\ModelView\bin\Release\net6.0\Ipme.Hometraining.Models.pdb
+C:\Users\lomac\source\repos\HomeTraining\ModelView\obj\Release\net6.0\ModelView.csproj.AssemblyReference.cache
+C:\Users\lomac\source\repos\HomeTraining\ModelView\obj\Release\net6.0\ModelView.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lomac\source\repos\HomeTraining\ModelView\obj\Release\net6.0\ModelView.AssemblyInfoInputs.cache
+C:\Users\lomac\source\repos\HomeTraining\ModelView\obj\Release\net6.0\ModelView.AssemblyInfo.cs
+C:\Users\lomac\source\repos\HomeTraining\ModelView\obj\Release\net6.0\ModelView.csproj.CoreCompileInputs.cache
+C:\Users\lomac\source\repos\HomeTraining\ModelView\obj\Release\net6.0\ModelView.csproj.CopyComplete
+C:\Users\lomac\source\repos\HomeTraining\ModelView\obj\Release\net6.0\Ipme.Hometraining..dll
+C:\Users\lomac\source\repos\HomeTraining\ModelView\obj\Release\net6.0\ref\Ipme.Hometraining..dll
+C:\Users\lomac\source\repos\HomeTraining\ModelView\obj\Release\net6.0\Ipme.Hometraining..pdb

@@ -16,7 +16,7 @@
                         <ColumnDefinition Width="30*"/>
                         <ColumnDefinition Width="527*"/>
                     </Grid.ColumnDefinitions>
-                    <local:ExerciceControl Margin="10,10,10,262"/>
+                    <!--<local:AllExerciceView Margin="10,10,10,262"/>-->
 
                 </Grid>
             </TabItem>

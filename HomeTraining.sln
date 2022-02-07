@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ipme.Hometraining.ApiData", "Ipme.Hometraining.ApiData\Ipme.Hometraining.ApiData.csproj", "{F210765C-FFBA-4C79-BC27-DB28ED7057E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelView", "ModelView\ModelView.csproj", "{FC2ADBA3-DE03-4DD8-9403-2B3ADDC997D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelView", "ModelView\ModelView.csproj", "{FC2ADBA3-DE03-4DD8-9403-2B3ADDC997D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

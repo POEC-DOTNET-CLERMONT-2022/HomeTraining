@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Ipme.Hometraining./1.0.0": {
+        "dependencies": {
+          "Ipme.Hometraining.Models": "1.0.0"
+        },
+        "runtime": {
+          "Ipme.Hometraining..dll": {}
+        }
+      },
+      "Ipme.Hometraining.Models/1.0.0": {
+        "runtime": {
+          "Ipme.Hometraining.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Ipme.Hometraining./1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Ipme.Hometraining.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
