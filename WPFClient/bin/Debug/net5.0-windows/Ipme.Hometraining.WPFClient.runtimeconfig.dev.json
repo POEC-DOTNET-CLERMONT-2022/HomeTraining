@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\lomac\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\lomac\\.nuget\\packages"
-    ]
-  }
-}
