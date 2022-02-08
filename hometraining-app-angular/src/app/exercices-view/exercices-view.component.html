@@ -1,0 +1,34 @@
+<div class="row mt-5">
+  <p>Les exercices</p>
+  <div class="col-md-8">
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <!--<th scope="col">Id</th>-->
+        <th scope="col">Nom exercice</th>
+        <th scope="col">Zone musculaire</th>
+        <th scope="col">Description exercice</th>
+        <th scope="col">Créateur</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let exercices of listExercices">
+        <!--<td>{{exercices.id}}</td>-->
+        <td>{{exercices.name}}</td>
+        <td>{{exercices.muscleArea}}</td>
+        <td>{{exercices.description}}</td>
+        <td><app-user id="{{exercices.userId}}"></app-user></td>
+        <td><p><button class="btn btn-info" (click)="updateWindwow(exercices)" >Modifier</button></p>
+          <p><button class="btn btn-danger" (click)="delete(exercices.id)" >Supprimer</button></p></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div *ngIf="exercice!=null" class="col-md-4">Modifier Exercice
+    <app-update-exercice  [exercice]="exercice"></app-update-exercice>
+  </div>
+
+</div>
