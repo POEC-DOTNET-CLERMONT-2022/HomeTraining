@@ -4,7 +4,9 @@ using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
+
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -18,12 +20,24 @@ builder.Services.AddScoped(typeof(IProgramExerciceRepository), typeof(ProgramExe
 builder.Services.AddScoped<DbContext, SqlDbContext>();
 
 builder.Services.AddDbContext<SqlDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-//on peut ajouter d'autres context ici
 
-/*builder.Services.AddSingleton<IExerciceRepository,ExerciceSqlRepository>();
-builder.Services.AddSingleton<IUserRepository, UserSqlRepository>();*/
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        builder =>
+        {
+            builder.AllowAnyHeader();
+            builder.AllowAnyOrigin();
+            builder.AllowAnyMethod();
+        });
+});
 
 var app = builder.Build();
+
+app.UseCors(MyAllowSpecificOrigins);
+//app.UseAuthorization();
+
 
 using (var scope = app.Services.CreateScope())
 {

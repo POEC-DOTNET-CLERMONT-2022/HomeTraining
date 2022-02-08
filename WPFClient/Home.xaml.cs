@@ -24,37 +24,29 @@ namespace WPFClient
         public ObservableCollection<ExerciceModel> Exercices { get;  set; }
         readonly ObservableCollection<ProgramExerciceModel> _programsExercices;
 
-        private readonly IDataManager<ExerciceModel, ExerciceDto> ExerciceDataManager= ((App)Application.Current).ExerciceDataManager;
+        public UserModelView User { get; private set; }
+        Guid userGuid = new Guid("DA286A18-43C9-51F1-1EBA-A76D2AC0B1DC");
 
+        private readonly IDataManager<ExerciceModel, ExerciceDto> ExerciceDataManager= ((App)Application.Current).ExerciceDataManager;
+        private readonly IDataManager<UserModel, UserDto> UserDataManager = ((App)Application.Current).UserDataManager;
+        AllExerciceView exmc;
         public Home()
         {
             InitializeComponent();            
             DataContext = this;
-            brrr();
+
+            exmc = new AllExerciceView();
+
             //MuscleAreas = Enum.GetValues(typeof(MuscleArea));
 
         }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+      
+        public async void LoadApiData()
         {
-            LoadExercicesAsync();
-        }
-
-        public async void LoadExercicesAsync()
-        {
-            /*await Policy.Execute(async () =>
-            {*/
-            var exercicesModel = ((ExerciceDataManager)ExerciceDataManager).GetExercicesFixture(MuscleArea.Abdos);
-            Exercices = new ObservableCollection<ExerciceModel>((IEnumerable<ExerciceModel>)exercicesModel);     
-
-            //});
+            this.User = new UserModelView(UserDataManager.Get(userGuid).Result);
 
         }
 
-        private void brrr()
-        {
-            var exercicesModel = ((ExerciceDataManager)ExerciceDataManager).GetExercicesFixture(MuscleArea.Abdos);            
-            Exercices = new ObservableCollection<ExerciceModel>(exercicesModel);
-        }
+
     }
 }

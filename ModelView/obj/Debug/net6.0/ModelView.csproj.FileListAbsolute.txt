@@ -1,0 +1,15 @@
+C:\POEC\HomeTraining\ModelView\bin\Debug\net6.0\Ipme.Hometraining..deps.json
+C:\POEC\HomeTraining\ModelView\bin\Debug\net6.0\Ipme.Hometraining..dll
+C:\POEC\HomeTraining\ModelView\bin\Debug\net6.0\ref\Ipme.Hometraining..dll
+C:\POEC\HomeTraining\ModelView\bin\Debug\net6.0\Ipme.Hometraining..pdb
+C:\POEC\HomeTraining\ModelView\bin\Debug\net6.0\Ipme.Hometraining.Models.dll
+C:\POEC\HomeTraining\ModelView\bin\Debug\net6.0\Ipme.Hometraining.Models.pdb
+C:\POEC\HomeTraining\ModelView\obj\Debug\net6.0\ModelView.csproj.AssemblyReference.cache
+C:\POEC\HomeTraining\ModelView\obj\Debug\net6.0\ModelView.GeneratedMSBuildEditorConfig.editorconfig
+C:\POEC\HomeTraining\ModelView\obj\Debug\net6.0\ModelView.AssemblyInfoInputs.cache
+C:\POEC\HomeTraining\ModelView\obj\Debug\net6.0\ModelView.AssemblyInfo.cs
+C:\POEC\HomeTraining\ModelView\obj\Debug\net6.0\ModelView.csproj.CoreCompileInputs.cache
+C:\POEC\HomeTraining\ModelView\obj\Debug\net6.0\ModelView.csproj.CopyComplete
+C:\POEC\HomeTraining\ModelView\obj\Debug\net6.0\Ipme.Hometraining..dll
+C:\POEC\HomeTraining\ModelView\obj\Debug\net6.0\ref\Ipme.Hometraining..dll
+C:\POEC\HomeTraining\ModelView\obj\Debug\net6.0\Ipme.Hometraining..pdb

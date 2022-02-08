@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Q1vNPxhVn4+Cax0jhEBGBcc0xZcRqZv0SdyiQ06HC+98E1GBH4lpZTNdCAS0xb6o1H/a9xVH8dqA3TkT/6HZfg==",
+  "success": true,
+  "projectFilePath": "C:\\POEC\\HomeTraining\\Ipme.Hometraining.ApiData\\Ipme.Hometraining.ApiData.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Paul DA CRUZ\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
+    "C:\\Users\\Paul DA CRUZ\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

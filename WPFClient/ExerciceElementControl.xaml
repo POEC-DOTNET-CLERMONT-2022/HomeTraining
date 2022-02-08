@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPFClient"
              mc:Ignorable="d" 
+             
              d:DesignHeight="90" d:DesignWidth="610">
 
     <Grid Background="#FFFFFEFE" Margin="0,0,0,0">
@@ -14,22 +15,22 @@
         </MediaElement>
 
         <TextBox x:Name="Repetitions" HorizontalAlignment="Left" Margin="220,10,0,0" TextWrapping="Wrap" 
-                 Text="{Binding ex.Repetitions, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                 Text="{Binding Exercice.Repetitions, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
                  VerticalAlignment="Top" Width="30" Height="20" BorderBrush="{x:Null}" Background="{x:Null}" 
                  IsEnabled="False" Foreground="Black" />
 
         <TextBox x:Name="NameExercice" HorizontalAlignment="Left" Margin="260,10,0,0" TextWrapping="Wrap" 
-                 Text="{Binding ex.Name, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                 Text="{Binding Exercice.Name, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
                  VerticalAlignment="Top" Width="120" Height="20" BorderBrush="{x:Null}" Background="{x:Null}" 
                  IsEnabled="False" Foreground="Black" />
 
         <TextBox x:Name="MuscleAreaExercice" HorizontalAlignment="Left" Margin="260,40,0,0" TextWrapping="Wrap" 
-                 Text="{Binding ex.MuscleArea, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                 Text="{Binding Exercice.MuscleArea, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
                  VerticalAlignment="Top" Width="100" BorderBrush="{x:Null}" Background="{x:Null}" Height="20"
                  SelectionOpacity="2" Foreground="Black" IsEnabled="False" />
 
         <TextBox x:Name="DescriptionExercice" HorizontalAlignment="Left" Margin="400,10,0,0" TextWrapping="Wrap" 
-                 Text="{Binding ex.Description, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 Text="{Binding Exercice.Description, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top" Width="200" BorderBrush="{x:Null}" Background="{x:Null}" Height="40" 
                  IsEnabled="False" Foreground="Black" />
 
