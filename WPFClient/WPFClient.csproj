@@ -34,7 +34,6 @@
     <ProjectReference Include="..\DTO1\DTO.csproj" />
     <ProjectReference Include="..\Ipme.Hometraining.ApiData\Ipme.Hometraining.ApiData.csproj" />
     <ProjectReference Include="..\Ipme.Hometraining.Entities\Entities.csproj" />
-    <ProjectReference Include="..\ModelView\ModelView.csproj" />
     <ProjectReference Include="..\Persistance1\Persistance.csproj" />
   </ItemGroup>
 

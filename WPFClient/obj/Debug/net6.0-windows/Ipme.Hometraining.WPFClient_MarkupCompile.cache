@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\
+C:\Users\lomac\source\repos\HomeTraining\WPFClient\obj\Debug\net6.0-windows\
 WPFClient
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\POEC\HomeTraining\WPFClient\App.xaml
-4-50436313
+C:\Users\lomac\source\repos\HomeTraining\WPFClient\App.xaml
+2-441064976
 11997236439
-9-682798086
-229-34833472
-ExerciceControl.xaml;ExerciceElementControl.xaml;Home.xaml;ProgramDetailView.xaml;
+9796255105
+237-1993980031
+Views\Home.xaml;Views\Login.xaml;
 
 False
 

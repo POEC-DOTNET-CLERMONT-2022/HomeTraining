@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "eh63DlqIdfTyE8PrU/IKrrALyHbCLbWGLnq+R64BCNOLMZC4e2MajKvV0DEZflo13EcLtU+USyC+ON3F2g8Ayg==",
+  "dgSpecHash": "Un6LL4RUeXiT7A025ERzqvq+IqFd+du4KfoWSU0r5p0cAIpUOENkv+iqpNPZdfvqHF5mTXkEu2LYNzlKV3cLWw==",
   "success": true,
-  "projectFilePath": "C:\\POEC\\HomeTraining\\Models\\Models.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lomac\\.nuget\\packages\\microsoft.toolkit.mvvm\\7.1.2\\microsoft.toolkit.mvvm.7.1.2.nupkg.sha512"
+  ],
   "logs": []
 }

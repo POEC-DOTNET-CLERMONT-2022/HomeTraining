@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\POEC\\HomeTraining\\Models\\Models.csproj": {}
+    "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj": {}
   },
   "projects": {
-    "C:\\POEC\\HomeTraining\\Models\\Models.csproj": {
+    "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\POEC\\HomeTraining\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj",
         "projectName": "Ipme.Hometraining.Models",
-        "projectPath": "C:\\POEC\\HomeTraining\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\Paul DA CRUZ\\.nuget\\packages\\",
-        "outputPath": "C:\\POEC\\HomeTraining\\Models\\obj\\",
+        "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\lomac\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Paul DA CRUZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\lomac\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +39,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Toolkit.Mvvm": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

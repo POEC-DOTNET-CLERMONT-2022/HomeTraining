@@ -10,3 +10,15 @@ C:\POEC\HomeTraining\Models\obj\Debug\net6.0\Models.csproj.CoreCompileInputs.cac
 C:\POEC\HomeTraining\Models\obj\Debug\net6.0\Ipme.Hometraining.Models.dll
 C:\POEC\HomeTraining\Models\obj\Debug\net6.0\ref\Ipme.Hometraining.Models.dll
 C:\POEC\HomeTraining\Models\obj\Debug\net6.0\Ipme.Hometraining.Models.pdb
+C:\Users\lomac\source\repos\HomeTraining\Models\bin\Debug\net6.0\Ipme.Hometraining.Models.deps.json
+C:\Users\lomac\source\repos\HomeTraining\Models\bin\Debug\net6.0\Ipme.Hometraining.Models.dll
+C:\Users\lomac\source\repos\HomeTraining\Models\bin\Debug\net6.0\Ipme.Hometraining.Models.pdb
+C:\Users\lomac\source\repos\HomeTraining\Models\obj\Debug\net6.0\Models.csproj.AssemblyReference.cache
+C:\Users\lomac\source\repos\HomeTraining\Models\obj\Debug\net6.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lomac\source\repos\HomeTraining\Models\obj\Debug\net6.0\Models.AssemblyInfoInputs.cache
+C:\Users\lomac\source\repos\HomeTraining\Models\obj\Debug\net6.0\Models.AssemblyInfo.cs
+C:\Users\lomac\source\repos\HomeTraining\Models\obj\Debug\net6.0\Models.csproj.CoreCompileInputs.cache
+C:\Users\lomac\source\repos\HomeTraining\Models\obj\Debug\net6.0\Ipme.Hometraining.Models.dll
+C:\Users\lomac\source\repos\HomeTraining\Models\obj\Debug\net6.0\refint\Ipme.Hometraining.Models.dll
+C:\Users\lomac\source\repos\HomeTraining\Models\obj\Debug\net6.0\Ipme.Hometraining.Models.pdb
+C:\Users\lomac\source\repos\HomeTraining\Models\obj\Debug\net6.0\ref\Ipme.Hometraining.Models.dll

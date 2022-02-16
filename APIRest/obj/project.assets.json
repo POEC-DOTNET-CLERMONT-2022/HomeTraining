@@ -1306,6 +1306,15 @@
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {}
         }
       },
+      "Microsoft.Toolkit.Mvvm/7.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Microsoft.Toolkit.Mvvm.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.Toolkit.Mvvm.dll": {}
+        }
+      },
       "Microsoft.VisualStudio.Debugger.Contracts/17.2.0": {
         "type": "package",
         "dependencies": {
@@ -3271,6 +3280,9 @@
       "Ipme.Hometraining.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Toolkit.Mvvm": "7.1.2"
+        },
         "compile": {
           "bin/placeholder/Ipme.Hometraining.Models.dll": {}
         },
@@ -5006,6 +5018,32 @@
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
         "microsoft.openapi.1.2.3.nupkg.sha512",
         "microsoft.openapi.nuspec"
+      ]
+    },
+    "Microsoft.Toolkit.Mvvm/7.1.2": {
+      "sha512": "tUQn6ar9oP7kmYaZ6pWabxpQaqw95Bsf+GG7prEL0y5MV5F60z76lI/Ppps9zcTqwd7e5CrdZBcdfor9WuvohA==",
+      "type": "package",
+      "path": "microsoft.toolkit.mvvm/7.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "analyzers/dotnet/cs/Microsoft.Toolkit.Mvvm.SourceGenerators.dll",
+        "analyzers/dotnet/cs/Microsoft.Toolkit.Mvvm.SourceGenerators.pdb",
+        "analyzers/dotnet/cs/Microsoft.Toolkit.Mvvm.SourceGenerators.xml",
+        "lib/net5.0/Microsoft.Toolkit.Mvvm.dll",
+        "lib/net5.0/Microsoft.Toolkit.Mvvm.pdb",
+        "lib/net5.0/Microsoft.Toolkit.Mvvm.xml",
+        "lib/netstandard2.0/Microsoft.Toolkit.Mvvm.dll",
+        "lib/netstandard2.0/Microsoft.Toolkit.Mvvm.pdb",
+        "lib/netstandard2.0/Microsoft.Toolkit.Mvvm.xml",
+        "lib/netstandard2.1/Microsoft.Toolkit.Mvvm.dll",
+        "lib/netstandard2.1/Microsoft.Toolkit.Mvvm.pdb",
+        "lib/netstandard2.1/Microsoft.Toolkit.Mvvm.xml",
+        "microsoft.toolkit.mvvm.7.1.2.nupkg.sha512",
+        "microsoft.toolkit.mvvm.nuspec"
       ]
     },
     "Microsoft.VisualStudio.Debugger.Contracts/17.2.0": {
@@ -10232,24 +10270,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Paul DA CRUZ\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\lomac\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\POEC\\HomeTraining\\APIRest\\APIRest.csproj",
+      "projectUniqueName": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\APIRest\\APIRest.csproj",
       "projectName": "APIRest",
-      "projectPath": "C:\\POEC\\HomeTraining\\APIRest\\APIRest.csproj",
-      "packagesPath": "C:\\Users\\Paul DA CRUZ\\.nuget\\packages\\",
-      "outputPath": "C:\\POEC\\HomeTraining\\APIRest\\obj\\",
+      "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\APIRest\\APIRest.csproj",
+      "packagesPath": "C:\\Users\\lomac\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\APIRest\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Paul DA CRUZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\lomac\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10263,11 +10296,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\POEC\\HomeTraining\\DTO1\\DTO.csproj": {
-              "projectPath": "C:\\POEC\\HomeTraining\\DTO1\\DTO.csproj"
+            "C:\\Users\\lomac\\source\\repos\\HomeTraining\\DTO1\\DTO.csproj": {
+              "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\DTO1\\DTO.csproj"
             },
-            "C:\\POEC\\HomeTraining\\Persistance1\\Persistance.csproj": {
-              "projectPath": "C:\\POEC\\HomeTraining\\Persistance1\\Persistance.csproj"
+            "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Persistance1\\Persistance.csproj": {
+              "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Persistance1\\Persistance.csproj"
             }
           }
         }
@@ -10331,7 +10364,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

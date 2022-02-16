@@ -42,6 +42,15 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.Toolkit.Mvvm/7.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Microsoft.Toolkit.Mvvm.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.Toolkit.Mvvm.dll": {}
+        }
+      },
       "Microsoft.Win32.Registry/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -283,6 +292,9 @@
       "Ipme.Hometraining.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.Toolkit.Mvvm": "7.1.2"
+        },
         "compile": {
           "bin/placeholder/Ipme.Hometraining.Models.dll": {}
         },
@@ -434,6 +446,32 @@
         "runtime.json",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Microsoft.Toolkit.Mvvm/7.1.2": {
+      "sha512": "tUQn6ar9oP7kmYaZ6pWabxpQaqw95Bsf+GG7prEL0y5MV5F60z76lI/Ppps9zcTqwd7e5CrdZBcdfor9WuvohA==",
+      "type": "package",
+      "path": "microsoft.toolkit.mvvm/7.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "analyzers/dotnet/cs/Microsoft.Toolkit.Mvvm.SourceGenerators.dll",
+        "analyzers/dotnet/cs/Microsoft.Toolkit.Mvvm.SourceGenerators.pdb",
+        "analyzers/dotnet/cs/Microsoft.Toolkit.Mvvm.SourceGenerators.xml",
+        "lib/net5.0/Microsoft.Toolkit.Mvvm.dll",
+        "lib/net5.0/Microsoft.Toolkit.Mvvm.pdb",
+        "lib/net5.0/Microsoft.Toolkit.Mvvm.xml",
+        "lib/netstandard2.0/Microsoft.Toolkit.Mvvm.dll",
+        "lib/netstandard2.0/Microsoft.Toolkit.Mvvm.pdb",
+        "lib/netstandard2.0/Microsoft.Toolkit.Mvvm.xml",
+        "lib/netstandard2.1/Microsoft.Toolkit.Mvvm.dll",
+        "lib/netstandard2.1/Microsoft.Toolkit.Mvvm.pdb",
+        "lib/netstandard2.1/Microsoft.Toolkit.Mvvm.xml",
+        "microsoft.toolkit.mvvm.7.1.2.nupkg.sha512",
+        "microsoft.toolkit.mvvm.nuspec"
       ]
     },
     "Microsoft.Win32.Registry/4.7.0": {
@@ -1043,24 +1081,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Paul DA CRUZ\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\lomac\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\POEC\\HomeTraining\\Ipme.Hometraining.Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Ipme.Hometraining.Entities\\Entities.csproj",
       "projectName": "Ipme.Hometraining.Entities",
-      "projectPath": "C:\\POEC\\HomeTraining\\Ipme.Hometraining.Entities\\Entities.csproj",
-      "packagesPath": "C:\\Users\\Paul DA CRUZ\\.nuget\\packages\\",
-      "outputPath": "C:\\POEC\\HomeTraining\\Ipme.Hometraining.Entities\\obj\\",
+      "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Ipme.Hometraining.Entities\\Entities.csproj",
+      "packagesPath": "C:\\Users\\lomac\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Ipme.Hometraining.Entities\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Paul DA CRUZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\lomac\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1074,8 +1107,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\POEC\\HomeTraining\\Models\\Models.csproj": {
-              "projectPath": "C:\\POEC\\HomeTraining\\Models\\Models.csproj"
+            "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj"
             }
           }
         }
@@ -1114,7 +1147,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

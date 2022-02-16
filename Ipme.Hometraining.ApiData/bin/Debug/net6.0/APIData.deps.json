@@ -28,6 +28,14 @@
         }
       },
       "Microsoft.CSharp/4.7.0": {},
+      "Microsoft.Toolkit.Mvvm/7.1.2": {
+        "runtime": {
+          "lib/net5.0/Microsoft.Toolkit.Mvvm.dll": {
+            "assemblyVersion": "7.1.0.0",
+            "fileVersion": "7.1.2.1"
+          }
+        }
+      },
       "Ipme.Hometraining.DTO/1.0.0": {
         "dependencies": {
           "Ipme.Hometraining.Models": "1.0.0"
@@ -37,6 +45,9 @@
         }
       },
       "Ipme.Hometraining.Models/1.0.0": {
+        "dependencies": {
+          "Microsoft.Toolkit.Mvvm": "7.1.2"
+        },
         "runtime": {
           "Ipme.Hometraining.Models.dll": {}
         }
@@ -62,6 +73,13 @@
       "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "path": "microsoft.csharp/4.7.0",
       "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+    },
+    "Microsoft.Toolkit.Mvvm/7.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tUQn6ar9oP7kmYaZ6pWabxpQaqw95Bsf+GG7prEL0y5MV5F60z76lI/Ppps9zcTqwd7e5CrdZBcdfor9WuvohA==",
+      "path": "microsoft.toolkit.mvvm/7.1.2",
+      "hashPath": "microsoft.toolkit.mvvm.7.1.2.nupkg.sha512"
     },
     "Ipme.Hometraining.DTO/1.0.0": {
       "type": "project",
