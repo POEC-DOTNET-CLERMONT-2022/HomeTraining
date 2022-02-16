@@ -6,6 +6,8 @@ using System.ComponentModel;
 
 namespace Ipme.Hometraining.Models
 {
+
+    //TODO : à quoi sert ObservableObject ici ? 
     public class ProgramModel : ObservableObject
     {
         private Guid Id { get; set; }

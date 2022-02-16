@@ -42,6 +42,7 @@ namespace APIRest.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<ProgramDto> Get(Guid id)
         {
+            //TODO : logger 
             if (id == Guid.Empty)
                 return NotFound();
             ProgramEntity programGet = _repository.GetSingleProgram(id);
