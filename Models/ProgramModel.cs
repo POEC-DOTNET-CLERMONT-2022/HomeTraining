@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace Ipme.Hometraining.Models
 {
-    public class ProgramModel
+    public class ProgramModel : ObservableObject
     {
         private Guid Id { get; set; }
         public string Name { get; set; }

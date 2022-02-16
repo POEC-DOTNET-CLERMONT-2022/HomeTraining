@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
 
 
 namespace Ipme.Hometraining.Models
 {
 
-    public class ProgramExerciceModel
+    public class ProgramExerciceModel : ObservableObject
     {
 
         // Inutile ??? 

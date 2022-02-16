@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
 using System.ComponentModel;
 
 namespace Ipme.Hometraining.Models
@@ -7,7 +8,7 @@ namespace Ipme.Hometraining.Models
      * Classe représentant un exercice concret
      */
 
-    public class ExerciceModel
+    public class ExerciceModel : ObservableObject
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

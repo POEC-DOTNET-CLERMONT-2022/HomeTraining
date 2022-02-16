@@ -2,29 +2,24 @@
 using Ipme.Hometraining.ApiData;
 using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.Models;
+using Prism.Ioc;
 using System.Net.Http;
 using System.Windows;
+using Prism.Unity;
 
 namespace WPFClient
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
+
+    public partial class App : PrismApplication
     {
-        //Technique d'injection
-        //injecter autre chose ici
         public IMapper Mapper { get; }
 
         private const string SERVER_URL = "https://localhost:7266";
         public HttpClient HttpClient { get; } = new HttpClient();
-
         public IDataManager<ExerciceModel, ExerciceDto> ExerciceDataManager { get; }
         public IDataManager<UserModel, UserDto> UserDataManager { get; }
         public IDataManager<ProgramModel, ProgramDto> ProgramDataManager { get; }
         public IDataManager<ProgramExerciceModel, ProgramExerciceDto> ProgramExerciceDataManager { get; }
-
-        //public INavigator Navigator { get; } = new Navigator();
 
         public App()
         {
@@ -34,13 +29,17 @@ namespace WPFClient
             UserDataManager = new UserDataManager(HttpClient, Mapper, SERVER_URL);
             ProgramDataManager = new ProgramDataManager(HttpClient, Mapper, SERVER_URL);
             ProgramExerciceDataManager = new ProgramExerciceDataManager(HttpClient, Mapper, SERVER_URL);
-
         }
 
-        //private void App_OnStartup(object sender, StartupEventArgs e)
-        //{
-        //    Navigator.RegisterView(new LoginPage());
-        //    Navigator.RegisterView(new HomePage());
-        //}
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation<Home>();
+        }
+
+        protected override Window CreateShell()
+        {
+            var w = Container.Resolve<Home>();
+            return w;
+        }
     }
 }

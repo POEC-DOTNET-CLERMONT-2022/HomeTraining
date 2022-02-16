@@ -1,16 +1,11 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
 
 namespace Ipme.Hometraining.Models
 {
-    public class UserModel
+    public class UserModel : ObservableObject
     {
         private Guid _id;
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Login { get; set; }
-        public string _password { get; set; }
-
-        public bool _isAdmin;
 
         public UserModel(Guid id, string firstName, string lastName, string login, string password, bool isAdmin)
         {
@@ -18,13 +13,50 @@ namespace Ipme.Hometraining.Models
             if (firstName == null) throw new ArgumentOutOfRangeException(nameof(firstName));
 
             _id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            Login = login;
+            _firstName = firstName;
+            _lastName = lastName;
+            _login = login;
             _password = password;
             _isAdmin = isAdmin;
 
         }
+
+        private string _firstName;
+        public string FirstName
+        {
+            get => _firstName;
+            set => SetProperty(ref _firstName, value);
+        }
+
+        private string _lastName;
+        public string LastName
+        {
+            get => _lastName;
+            set => SetProperty(ref _lastName, value);
+        }
+
+        private string _login;
+        public string Login
+        {
+            get => _login;
+            set => SetProperty(ref _login, value);
+        }
+
+        private string _password;
+
         
+        public string Password
+        {
+            get => _password;
+            set => SetProperty(ref _password, value);
+        }
+
+
+        private bool _isAdmin;
+        public bool IsAdmin
+        {
+            get => _isAdmin;
+            set => SetProperty(ref _isAdmin, value);
+        }
     }
 }

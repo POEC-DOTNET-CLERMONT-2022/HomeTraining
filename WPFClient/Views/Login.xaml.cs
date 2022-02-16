@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFClient
+namespace WPFClient.Views
 {
     /// <summary>
-    /// Logique d'interaction pour createExerciceForm.xaml
+    /// Logique d'interaction pour Login.xaml
     /// </summary>
-    public partial class createExerciceForm : Page
+    public partial class Login : Page
     {
-        public createExerciceForm()
+        public Login()
         {
             InitializeComponent();
         }
