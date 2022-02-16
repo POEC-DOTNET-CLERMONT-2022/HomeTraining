@@ -9,12 +9,21 @@ WPFClient
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+<<<<<<< HEAD
 C:\Users\lomac\source\repos\HomeTraining\WPFClient\App.xaml
 2-441064976
 11997236439
 9796255105
 237-1993980031
 Views\Home.xaml;Views\Login.xaml;
+=======
+C:\POEC\HomeTraining\WPFClient\App.xaml
+6-1963291829
+11997236439
+11-1925938070
+229-34833472
+AllExerciceView.xaml;createExerciceForm.xaml;ExerciceControl.xaml;ExerciceElementControl.xaml;Home.xaml;ProgramDetailView.xaml;
+>>>>>>> 44bb738bfa9a42abe1e25352b038c1a95bff9c7a
 
 False
 

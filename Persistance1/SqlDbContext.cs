@@ -36,12 +36,61 @@ namespace Ipme.Hometraining.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+<<<<<<< HEAD
             modelBuilder.Entity<ProgramExerciceEntity>()
+=======
+
+
+            //   modelBuilder.Entity<ExerciceEntity>().ToTable("Exercice");
+
+            /*
+            EntityTypeBuilder<BeerEntity> typeBuilder = modelBuilder.Entity<BeerEntity>();
+                        var idName = "BeerId";
+                        // Configuration nom de table et clef primaire
+                        typeBuilder.ToTable("Beer").HasKey(be => be.Id).HasName(idName);
+                        typeBuilder.Property(be => be.Id).HasColumnName(idName).ValueGeneratedOnAdd();
+                        // Configuration longueur des nvarchar 
+                        typeBuilder.Property(be => be.Name).HasMaxLength(Rules.DEFAULT_NAME_MAX_LENGHT);
+                        typeBuilder.Property(be => be.Description).HasMaxLength(Rules.DEFAULT_DESCRIPTION_MAX_LENGTH);
+                        // Brewery
+                        typeBuilder.HasOne(be => be.Brewery).WithMany();
+                        typeBuilder.Navigation(be => be.Brewery).AutoInclude();
+                        */
+
+
+
+
+            modelBuilder.Entity<ProgramExerciceEntity>();
+
+            //modelBuilder.Entity<ExerciceEntity>().ToTable("Exercice");
+
+           /* modelBuilder.Entity<ProgramExerciceEntity>()
+
+>>>>>>> 44bb738bfa9a42abe1e25352b038c1a95bff9c7a
                 .HasOne(p => p.Program)
                 .WithMany(p => p.ProgramExercices)
                 .OnDelete(DeleteBehavior.Cascade);
         }
 
+<<<<<<< HEAD
+=======
+
+        //modelBuilder.Entity<ExerciceEntity>().ToTable("Exercice");
+        //EntityTypeBuilder<ExerciceEntity> entityTypeBuilder = modelBuilder.Entity<ExerciceEntity>();
+
+        //[Column("Pseudo")] //Si nom de colonne différent
+        //entityTypeBuilder.Property(u => u.Login).HasColumnName("Pseudo");
+
+        //si pas de clé
+        //entityTypeBuilder.HasNoKey();
+
+        //équivalent à [Table("User")] dans le SqlDto
+        //entityTypeBuilder.ToTable("User");
+
+        //équivalent à [Key] dans le SqlDto
+        //userCatalog.HasKey(u => u.UserId);
+
+>>>>>>> 44bb738bfa9a42abe1e25352b038c1a95bff9c7a
     }
 
 }

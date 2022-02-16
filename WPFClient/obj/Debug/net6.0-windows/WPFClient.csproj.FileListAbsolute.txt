@@ -84,6 +84,7 @@ C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\ExerciceElementControl.g
 C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\ProgramDetailView.g.cs
 C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\ExerciceElementControl.baml
 C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\ProgramDetailView.baml
+<<<<<<< HEAD
 C:\Users\lomac\source\repos\HomeTraining\WPFClient\bin\Debug\net6.0-windows\Videos\Seoul-21985.mp4
 C:\Users\lomac\source\repos\HomeTraining\WPFClient\bin\Debug\net6.0-windows\Ipme.Hometraining.WPFClient.exe
 C:\Users\lomac\source\repos\HomeTraining\WPFClient\bin\Debug\net6.0-windows\Ipme.Hometraining.WPFClient.deps.json
@@ -172,3 +173,9 @@ C:\Users\lomac\source\repos\HomeTraining\WPFClient\obj\Debug\net6.0-windows\refi
 C:\Users\lomac\source\repos\HomeTraining\WPFClient\obj\Debug\net6.0-windows\Ipme.Hometraining.WPFClient.pdb
 C:\Users\lomac\source\repos\HomeTraining\WPFClient\obj\Debug\net6.0-windows\WPFClient.genruntimeconfig.cache
 C:\Users\lomac\source\repos\HomeTraining\WPFClient\obj\Debug\net6.0-windows\ref\Ipme.Hometraining.WPFClient.dll
+=======
+C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\AllExerciceView.g.cs
+C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\createExerciceForm.g.cs
+C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\AllExerciceView.baml
+C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\createExerciceForm.baml
+>>>>>>> 44bb738bfa9a42abe1e25352b038c1a95bff9c7a

@@ -16,9 +16,11 @@ namespace Ipme.Hometraining.Entities
 
         public string VideoName { get; set; }
 
-        public virtual UserEntity User { get; set; }    // ok pour Nico
-
+<<<<<<< HEAD
+=======
         public Guid UserId { get; set; }
+>>>>>>> 44bb738bfa9a42abe1e25352b038c1a95bff9c7a
+        public virtual UserEntity User { get; set; }    // ok pour Nico
 
         private ExerciceEntity()
         {
