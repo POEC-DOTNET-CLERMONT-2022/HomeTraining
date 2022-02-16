@@ -52,17 +52,6 @@ namespace APIRest.Controllers
         }
 
 
-        // GET: api/<ExerciceController>/UserId
-        [HttpGet("UserId")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ExerciceDto>))]
-        public IActionResult GetExercicesOfUser(Guid userId)
-        {
-            var exercices = _repository.GetExercicesOfUser(userId);
-            var exercicesDto = _mapper.Map<IEnumerable<ExerciceDto>>(exercices);
-            return Ok(exercicesDto);
-        }
-
-
         // DELETE api/<ExerciceController>/5
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ExerciceDto>))]
@@ -102,6 +91,28 @@ namespace APIRest.Controllers
             if (majexerciceEntity == null)
                 return NotFound("Aucun resultat pour PUT");
             return Ok(exerciceDto);
+        }
+
+
+        // GET: api/<ExerciceController>/UserId
+        [HttpGet("{UserId}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ExerciceDto>))]
+        public IActionResult GetExercicesOfUser(Guid userId)
+        {
+            var exercices = _repository.GetExercicesOfUser(userId);
+            var exercicesDto = _mapper.Map<IEnumerable<ExerciceDto>>(exercices);
+            return Ok(exercicesDto);
+        }
+
+
+        // GET: api/<ExerciceController>/programId
+        [HttpGet("{ProgramId}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ExerciceDto>))]
+        public IActionResult GetExercicesinProgram(Guid programId)
+        {
+            var exercices = _repository.GetExercicesinProgram(programId);
+            var exercicesDto = _mapper.Map<IEnumerable<ExerciceDto>>(exercices);
+            return Ok(exercicesDto);
         }
 
 
