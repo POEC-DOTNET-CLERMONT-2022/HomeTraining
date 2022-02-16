@@ -84,3 +84,7 @@ C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\ExerciceElementControl.g
 C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\ProgramDetailView.g.cs
 C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\ExerciceElementControl.baml
 C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\ProgramDetailView.baml
+C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\AllExerciceView.g.cs
+C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\createExerciceForm.g.cs
+C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\AllExerciceView.baml
+C:\POEC\HomeTraining\WPFClient\obj\Debug\net6.0-windows\createExerciceForm.baml

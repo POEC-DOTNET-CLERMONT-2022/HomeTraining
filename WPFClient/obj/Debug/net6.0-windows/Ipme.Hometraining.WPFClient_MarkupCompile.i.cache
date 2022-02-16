@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\POEC\HomeTraining\WPFClient\App.xaml
-4-50436313
+6-1963291829
 11997236439
-1126128104
+13-1217011880
 229-34833472
-ExerciceControl.xaml;ExerciceElementControl.xaml;Home.xaml;ProgramDetailView.xaml;
+AllExerciceView.xaml;createExerciceForm.xaml;ExerciceControl.xaml;ExerciceElementControl.xaml;Home.xaml;ProgramDetailView.xaml;
 
-False
+True
 
