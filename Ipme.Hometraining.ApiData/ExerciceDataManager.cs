@@ -23,6 +23,7 @@ namespace Ipme.Hometraining.ApiData
             }
             catch (Exception ex)
             {
+                //TODO : utiliser Debug.WriteLine();
                 Console.WriteLine(ex.Message);
                 throw;
             }

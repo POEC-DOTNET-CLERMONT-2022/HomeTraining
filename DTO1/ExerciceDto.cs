@@ -4,9 +4,11 @@ using System.Runtime.Serialization;
 
 namespace Ipme.Hometraining.Dto
 {
+    //TODO : à supprimer 
     [DataContract]
     public class ExerciceDto
     {
+        //TODO : à supprimer 
         [DataMember]
         public Guid Id { get; set; }
 

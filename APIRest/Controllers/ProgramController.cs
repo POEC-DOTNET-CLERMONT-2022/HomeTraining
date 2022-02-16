@@ -13,6 +13,7 @@ namespace APIRest.Controllers
 
     public class ProgramController : ControllerBase
     {
+        //TODO : majuscule 
         IProgramRepository _repository { get; }
         private IMapper _mapper;
 
@@ -28,6 +29,7 @@ namespace APIRest.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProgramDto>))]
         public ActionResult<IEnumerable<ProgramDto>>? Get()
         {
+            //TODO : logger 
             var programs = _repository.GetAllPrograms();
             var programsDto = _mapper.Map<IEnumerable<ProgramDto>>(programs);
             return Ok(programsDto);

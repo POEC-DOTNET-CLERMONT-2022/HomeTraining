@@ -9,6 +9,7 @@ namespace Ipme.Hometraining.Profiles
         public ExerciceProfile()
         {
             CreateMap<ExerciceDto, ExerciceEntity>().ReverseMap();
+            //TODO : à supprimer  
             /*.ForMember(
                     dest => dest.Id,
                     opt => opt.MapFrom(src => $"{src.Id}")

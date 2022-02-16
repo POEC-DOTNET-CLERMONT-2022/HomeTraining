@@ -42,6 +42,7 @@ namespace APIRest.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public ActionResult<ExerciceDto> Get(Guid id)
         {
+            //TODO : gestion des exceptions 
             if (id == Guid.Empty)
                 return NotFound();
             ExerciceEntity exerciceGet = _repository.GetSingleExercice(id);
@@ -95,6 +96,7 @@ namespace APIRest.Controllers
 
 
         // GET: api/<ExerciceController>/UserId
+        //TODO : ajouter les accolades 
         [HttpGet("UserId")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ExerciceDto>))]
         public IActionResult GetExercicesOfUser(Guid userId)

@@ -38,6 +38,7 @@ namespace WPFClient
 
         protected override Window CreateShell()
         {
+            //TODO : nommage de la variable ? 
             var w = Container.Resolve<Home>();
             return w;
         }

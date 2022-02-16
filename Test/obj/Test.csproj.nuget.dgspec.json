@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Test\\Test.csproj": {}
+    "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Test\\Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lomac\\source\\repos\\HomeTraining\\APIRest\\APIRest.csproj": {
+    "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\APIRest\\APIRest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\APIRest\\APIRest.csproj",
+        "projectUniqueName": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\APIRest\\APIRest.csproj",
         "projectName": "APIRest",
-        "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\APIRest\\APIRest.csproj",
-        "packagesPath": "C:\\Users\\lomac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\APIRest\\obj\\",
+        "projectPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\APIRest\\APIRest.csproj",
+        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
+        "outputPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\APIRest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lomac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +32,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\lomac\\source\\repos\\HomeTraining\\DTO1\\DTO.csproj": {
-                "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\DTO1\\DTO.csproj"
+              "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\DTO1\\DTO.csproj": {
+                "projectPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\DTO1\\DTO.csproj"
               },
-              "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Persistance1\\Persistance.csproj": {
-                "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Persistance1\\Persistance.csproj"
+              "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Persistance1\\Persistance.csproj": {
+                "projectPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Persistance1\\Persistance.csproj"
               }
             }
           }
@@ -96,21 +100,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lomac\\source\\repos\\HomeTraining\\DTO1\\DTO.csproj": {
+    "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\DTO1\\DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\DTO1\\DTO.csproj",
+        "projectUniqueName": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\DTO1\\DTO.csproj",
         "projectName": "Ipme.Hometraining.DTO",
-        "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\DTO1\\DTO.csproj",
-        "packagesPath": "C:\\Users\\lomac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\DTO1\\obj\\",
+        "projectPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\DTO1\\DTO.csproj",
+        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
+        "outputPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\DTO1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lomac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -124,8 +132,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj"
+              "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Models\\Models.csproj": {
+                "projectPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Models\\Models.csproj"
               }
             }
           }
@@ -154,89 +162,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Ipme.Hometraining.Entities\\Entities.csproj": {
+    "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Ipme.Hometraining.Entities\\Entities.csproj",
-        "projectName": "Ipme.Hometraining.Entities",
-        "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Ipme.Hometraining.Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\lomac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Ipme.Hometraining.Entities\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\lomac\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.4, )"
-            },
-            "System.ComponentModel.Annotations": {
-              "target": "Package",
-              "version": "[5.0.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj",
+        "projectUniqueName": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Models\\Models.csproj",
         "projectName": "Ipme.Hometraining.Models",
-        "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj",
-        "packagesPath": "C:\\Users\\lomac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\obj\\",
+        "projectPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Models\\Models.csproj",
+        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
+        "outputPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lomac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -282,101 +226,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Persistance1\\Persistance.csproj": {
+    "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Persistance1\\Persistance.csproj",
-        "projectName": "Ipme.Hometraining.Persistance",
-        "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Persistance1\\Persistance.csproj",
-        "packagesPath": "C:\\Users\\lomac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Persistance1\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\lomac\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\lomac\\source\\repos\\HomeTraining\\DTO1\\DTO.csproj": {
-                "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\DTO1\\DTO.csproj"
-              },
-              "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Ipme.Hometraining.Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Ipme.Hometraining.Entities\\Entities.csproj"
-              },
-              "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj": {
-                "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Models\\Models.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "dependencies": {
-            "AutoFixture": {
-              "target": "Package",
-              "version": "[4.17.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[6.0.1, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[6.0.1, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Test\\Test.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Test\\Test.csproj",
+        "projectUniqueName": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Test\\Test.csproj",
-        "packagesPath": "C:\\Users\\lomac\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\Test\\obj\\",
+        "projectPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Test\\Test.csproj",
+        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
+        "outputPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\Test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lomac\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -390,8 +258,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\lomac\\source\\repos\\HomeTraining\\APIRest\\APIRest.csproj": {
-                "projectPath": "C:\\Users\\lomac\\source\\repos\\HomeTraining\\APIRest\\APIRest.csproj"
+              "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\APIRest\\APIRest.csproj": {
+                "projectPath": "C:\\nicolas\\POEC\\Csharp\\2022\\projets\\HomeTraining\\APIRest\\APIRest.csproj"
               }
             }
           }
@@ -446,7 +314,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

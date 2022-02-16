@@ -5,9 +5,9 @@ using System;
 namespace Ipme.Hometraining.Models
 {
 
+    //TODO : à quoi sert ObservableObject ici ? 
     public class ProgramExerciceModel : ObservableObject
     {
-
         private Guid Id { get; set; }
         private Guid ProgramId { get; set; }
         private Guid ExerciceId { get; set; }

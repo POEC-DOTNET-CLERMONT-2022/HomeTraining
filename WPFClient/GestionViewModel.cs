@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFClient
 {
+    //TODO : à supprimer ? 
     internal class GestionViewModel
     {
 
