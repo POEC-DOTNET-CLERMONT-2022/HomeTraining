@@ -36,12 +36,42 @@ namespace Ipme.Hometraining.Persistance
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+<<<<<<< HEAD
+
+            //   modelBuilder.Entity<ExerciceEntity>().ToTable("Exercice");
+
+            /*
+            EntityTypeBuilder<BeerEntity> typeBuilder = modelBuilder.Entity<BeerEntity>();
+                        var idName = "BeerId";
+                        // Configuration nom de table et clef primaire
+                        typeBuilder.ToTable("Beer").HasKey(be => be.Id).HasName(idName);
+                        typeBuilder.Property(be => be.Id).HasColumnName(idName).ValueGeneratedOnAdd();
+                        // Configuration longueur des nvarchar 
+                        typeBuilder.Property(be => be.Name).HasMaxLength(Rules.DEFAULT_NAME_MAX_LENGHT);
+                        typeBuilder.Property(be => be.Description).HasMaxLength(Rules.DEFAULT_DESCRIPTION_MAX_LENGTH);
+                        // Brewery
+                        typeBuilder.HasOne(be => be.Brewery).WithMany();
+                        typeBuilder.Navigation(be => be.Brewery).AutoInclude();
+                        */
+
+
+           // modelBuilder.Entity<ExerciceEntity>().Navigation(e => e.User).AutoInclude();
+
+
+
+
+
+
+            modelBuilder.Entity<ProgramExerciceEntity>()
+=======
             //modelBuilder.Entity<ExerciceEntity>().ToTable("Exercice");
            /* modelBuilder.Entity<ProgramExerciceEntity>()
+>>>>>>> 8552baea691a307866d009892e9cb68b65ae26d3
                 .HasOne(p => p.Program)
                 .WithMany(p => p.ProgramExercices)
                 .OnDelete(DeleteBehavior.Cascade);
            */
+
 
         }
 

@@ -1,0 +1,17 @@
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\bin\Debug\net6.0\Ipme.Hometraining.Entities.deps.json
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\bin\Debug\net6.0\Ipme.Hometraining.Entities.dll
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\bin\Debug\net6.0\ref\Ipme.Hometraining.Entities.dll
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\bin\Debug\net6.0\Ipme.Hometraining.Entities.pdb
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\bin\Debug\net6.0\Ipme.Hometraining.Models.dll
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\bin\Debug\net6.0\Ipme.Hometraining.Models.pdb
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\obj\Debug\net6.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\obj\Debug\net6.0\Entities.AssemblyInfoInputs.cache
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\obj\Debug\net6.0\Entities.AssemblyInfo.cs
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInputs.cache
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\obj\Debug\net6.0\Entities.csproj.CopyComplete
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\obj\Debug\net6.0\Ipme.Hometraining.Entities.dll
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\obj\Debug\net6.0\ref\Ipme.Hometraining.Entities.dll
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\obj\Debug\net6.0\Ipme.Hometraining.Entities.pdb
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\bin\Debug\net6.0\Ipme.Hometraining.Entities.runtimeconfig.json
+C:\POEC\HomeTraining\Ipme.Hometraining.Entities\obj\Debug\net6.0\Entities.genruntimeconfig.cache

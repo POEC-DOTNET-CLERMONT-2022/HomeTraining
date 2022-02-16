@@ -1,0 +1,12 @@
+C:\POEC\HomeTraining\Models\bin\Debug\net6.0\Ipme.Hometraining.Models.deps.json
+C:\POEC\HomeTraining\Models\bin\Debug\net6.0\Ipme.Hometraining.Models.dll
+C:\POEC\HomeTraining\Models\bin\Debug\net6.0\ref\Ipme.Hometraining.Models.dll
+C:\POEC\HomeTraining\Models\bin\Debug\net6.0\Ipme.Hometraining.Models.pdb
+C:\POEC\HomeTraining\Models\obj\Debug\net6.0\Models.csproj.AssemblyReference.cache
+C:\POEC\HomeTraining\Models\obj\Debug\net6.0\Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\POEC\HomeTraining\Models\obj\Debug\net6.0\Models.AssemblyInfoInputs.cache
+C:\POEC\HomeTraining\Models\obj\Debug\net6.0\Models.AssemblyInfo.cs
+C:\POEC\HomeTraining\Models\obj\Debug\net6.0\Models.csproj.CoreCompileInputs.cache
+C:\POEC\HomeTraining\Models\obj\Debug\net6.0\Ipme.Hometraining.Models.dll
+C:\POEC\HomeTraining\Models\obj\Debug\net6.0\ref\Ipme.Hometraining.Models.dll
+C:\POEC\HomeTraining\Models\obj\Debug\net6.0\Ipme.Hometraining.Models.pdb

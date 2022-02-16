@@ -51,6 +51,7 @@ namespace APIRest.Controllers
             return Ok(prgExDto);
         }
 
+
         // DELETE api/<ProgramExercicesController>/5
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ActionResult<ProgramExerciceDto>))]
@@ -90,6 +91,17 @@ namespace APIRest.Controllers
             if (majPrgExEntity == null)
                 return NotFound("Aucun resultat pour PUT");
             return Ok(prgExDto);
+        }
+
+
+        // GET: api/<ProgramExercicesController>/ProgramId
+        [HttpGet("ProgramId")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProgramExerciceDto>))]
+        public IActionResult GetDetailProgram(Guid programId)
+        {
+            var prgExercices = _repository.GetDetailProgram(programId);
+            var prgExercicesDto = _mapper.Map<IEnumerable<ProgramExerciceDto>>(prgExercices);
+            return Ok(prgExercicesDto);
         }
 
 

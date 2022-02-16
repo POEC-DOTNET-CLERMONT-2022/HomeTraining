@@ -13,7 +13,13 @@ namespace Ipme.Hometraining.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public MuscleArea MuscleArea { get; set; }
+<<<<<<< HEAD
+        public string VideoName { get; set; }
+
+        public Guid UserId { get; set; }
+=======
         public string VideoName { get; set; }       
+>>>>>>> 8552baea691a307866d009892e9cb68b65ae26d3
         public virtual UserEntity User { get; set; }    // ok pour Nico
 
         public Guid UserId { get; set; }
@@ -23,7 +29,7 @@ namespace Ipme.Hometraining.Entities
         }
 
 
-        public ExerciceEntity(Guid id, string name, string description, MuscleArea muscleArea, string videoName,UserEntity user)
+        public ExerciceEntity(Guid id, string name, string description, MuscleArea muscleArea, string videoName, UserEntity user)
         {
             if (id == Guid.Empty)
             { id = Guid.NewGuid(); };
@@ -34,6 +40,7 @@ namespace Ipme.Hometraining.Entities
             MuscleArea = muscleArea;
             VideoName = videoName;
             User = user;
+
         }
 
 

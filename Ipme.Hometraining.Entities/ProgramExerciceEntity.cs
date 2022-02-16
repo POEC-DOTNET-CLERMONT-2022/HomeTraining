@@ -14,7 +14,10 @@ namespace Ipme.Hometraining.Entities
         public int Position { get; set; }
         public int Repetitions { get; set; }
 
+        public Guid ProgramId { get; set; }
         public virtual ProgramEntity Program { get; set; }
+
+        public Guid ExerciceId { get; set; }
         public virtual ExerciceEntity Exercice { get; set; }
 
 

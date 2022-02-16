@@ -1,0 +1,13 @@
+C:\POEC\HomeTraining\DTO1\bin\Debug\netstandard2.0\Ipme.Hometraining.DTO.deps.json
+C:\POEC\HomeTraining\DTO1\bin\Debug\netstandard2.0\Ipme.Hometraining.DTO.dll
+C:\POEC\HomeTraining\DTO1\bin\Debug\netstandard2.0\Ipme.Hometraining.DTO.pdb
+C:\POEC\HomeTraining\DTO1\obj\Debug\netstandard2.0\DTO.csproj.AssemblyReference.cache
+C:\POEC\HomeTraining\DTO1\obj\Debug\netstandard2.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\POEC\HomeTraining\DTO1\obj\Debug\netstandard2.0\DTO.AssemblyInfoInputs.cache
+C:\POEC\HomeTraining\DTO1\obj\Debug\netstandard2.0\DTO.AssemblyInfo.cs
+C:\POEC\HomeTraining\DTO1\obj\Debug\netstandard2.0\DTO.csproj.CoreCompileInputs.cache
+C:\POEC\HomeTraining\DTO1\obj\Debug\netstandard2.0\Ipme.Hometraining.DTO.dll
+C:\POEC\HomeTraining\DTO1\obj\Debug\netstandard2.0\Ipme.Hometraining.DTO.pdb
+C:\POEC\HomeTraining\DTO1\bin\Debug\netstandard2.0\Ipme.Hometraining.Models.dll
+C:\POEC\HomeTraining\DTO1\bin\Debug\netstandard2.0\Ipme.Hometraining.Models.pdb
+C:\POEC\HomeTraining\DTO1\obj\Debug\netstandard2.0\DTO.csproj.CopyComplete
