@@ -51,7 +51,7 @@ namespace APIRest.Controllers
 
                 
         // GET: api/<ProgramController>/UserId
-        [HttpGet("UserId")]
+        [HttpGet("{UserId}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProgramDto>))]
         public IActionResult GetProgramsOfUser(Guid userId)
         {

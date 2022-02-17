@@ -57,5 +57,18 @@ namespace Ipme.Hometraining.Persistance
             return SqlContext.Set<ExerciceEntity>().Where(exo => exo.User.Id == userId).ToList();
 
         }
+
+        IEnumerable<ExerciceEntity> IExerciceRepository.GetExercicesinProgram(Guid programId)
+        {
+            string query = @$"select distinct(E.Id), E.Name, E.Description, E.MuscleArea, E.VideoName, E.UserId
+                              from Exercice E
+                              inner join ProgramExercice on E.Id = ProgramExercice.ExerciceId
+                              where ProgramExercice.ProgramId = '{programId}' order by E.Name";
+
+
+            return SqlContext.Set<ExerciceEntity>().FromSqlRaw(query).ToList();
+        }
+
+
     }
 }

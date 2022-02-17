@@ -8,6 +8,7 @@ namespace Ipme.Hometraining.Entities
     [Table("Exercice")]
     public class ExerciceEntity
     {
+
         [Key]
         public Guid Id { get; set; }
         public string Name { get; set; }
