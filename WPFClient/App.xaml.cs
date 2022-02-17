@@ -6,6 +6,7 @@ using Prism.Ioc;
 using System.Net.Http;
 using System.Windows;
 using Prism.Unity;
+using Prism.Modularity;
 
 namespace WPFClient
 {
@@ -31,15 +32,24 @@ namespace WPFClient
             ProgramExerciceDataManager = new ProgramExerciceDataManager(HttpClient, Mapper, SERVER_URL);
         }
 
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-            containerRegistry.RegisterForNavigation<Home>();
-        }
 
+        //Création de la fenetre main Shell
         protected override Window CreateShell()
         {
             var w = Container.Resolve<Home>();
             return w;
+        }
+
+        //Enregistrement des Servivces
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            // containerRegistry.RegisterForNavigation<Home>();
+        }
+
+        //Gestionnaire de module
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<HomeTrainingAppMoudule>();
         }
     }
 }

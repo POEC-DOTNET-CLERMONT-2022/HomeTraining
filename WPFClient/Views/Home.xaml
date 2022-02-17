@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="https://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:WPFClient"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
-        x:Name="MainWindow"       
-        Title="Hometraining v1" Height="600" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/hometraining.ico" Background="#FF5624D0">
+        x:Name="Shell"       
+        Title="{Binding Title}" Height="600" Width="900"  WindowStartupLocation="CenterScreen" Icon="/hometraining.ico" Background="#FF5624D0">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -16,22 +18,12 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-
-        <ListView
-            ItemsSource="{Binding Customers}"
-            SelectedItem="{Binding SelectedCustomer}"
-        />
-        <Button
-            Grid.Row="1" Width="80" Height="40"
-            Command="{Binding CommandLoad}"
-            Content="LOAD" Cursor="Hand"
-        />
-        <Button Content="Se déconnecter" HorizontalAlignment="Left" Margin="725,10,0,0" VerticalAlignment="Top" Width="149" Background="#FFA7A7A7" />
-        <Label  x:Name="UserNameDisplay" Content="NomUtilisateur" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Background="{x:Null}" FontWeight="Bold" Foreground="White"/>
-
-    </Grid>
+        <DockPanel LastChildFill="True">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5" >
+                <Button Command="{Binding NavigateCommand}" CommandParameter="CreatProgrameExerciceView" Margin="5" Cursor="Hand">Création programme exercice</Button>
+                <Button Command="{Binding NavigateCommand}" CommandParameter="UserAuthView" Margin="5">Authentification USER</Button>
+            </StackPanel>
+            <ContentControl prism:RegionManager.RegionName="ContentRegion" Margin="5"  />
+        </DockPanel>
+    </Grid> 
 </Window>
