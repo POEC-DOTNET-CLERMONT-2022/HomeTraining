@@ -1,10 +1,9 @@
-﻿<Window x:Class="WPFClient.Home"
+﻿<Window x:Class="WPFClient.Views.Home"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="https://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:local="clr-namespace:WPFClient"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
@@ -21,7 +20,8 @@
         <DockPanel LastChildFill="True">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5" >
                 <Button Command="{Binding NavigateCommand}" CommandParameter="CreatProgrameExerciceView" Margin="5" Cursor="Hand">Création programme exercice</Button>
-                <Button Command="{Binding NavigateCommand}" CommandParameter="UserAuthView" Margin="5">Authentification USER</Button>
+                <Button Command="{Binding NavigateCommand}" CommandParameter="UserAuthView" Margin="5" Cursor="Hand">Authentification USER</Button>
+                <Button Command="{Binding NavigateCommand}" CommandParameter="UserAuthView" Cursor="Hand" Content="Se connecter"/>
             </StackPanel>
             <ContentControl prism:RegionManager.RegionName="ContentRegion" Margin="5"  />
         </DockPanel>

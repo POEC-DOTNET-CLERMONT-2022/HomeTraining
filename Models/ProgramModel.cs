@@ -1,4 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace Ipme.Hometraining.Models
 {
-    public class ProgramModel : ObservableObject
+    public class ProgramModel : BindableBase
     {
         private Guid Id { get; set; }
         public string Name { get; set; }

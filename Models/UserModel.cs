@@ -1,9 +1,9 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using Prism.Mvvm;
 using System;
 
 namespace Ipme.Hometraining.Models
 {
-    public class UserModel : ObservableObject
+    public class UserModel : BindableBase
     {
         private Guid _id;
 

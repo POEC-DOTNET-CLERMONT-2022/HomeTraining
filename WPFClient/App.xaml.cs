@@ -5,51 +5,58 @@ using Ipme.Hometraining.Models;
 using Prism.Ioc;
 using System.Net.Http;
 using System.Windows;
-using Prism.Unity;
 using Prism.Modularity;
+using WPFClient.Views;
+using Prism.Unity;
 
 namespace WPFClient
 {
 
     public partial class App : PrismApplication
     {
-        public IMapper Mapper { get; }
-
+        private IMapper _mapper { get; }
         private const string SERVER_URL = "https://localhost:7266";
-        public HttpClient HttpClient { get; } = new HttpClient();
-        public IDataManager<ExerciceModel, ExerciceDto> ExerciceDataManager { get; }
-        public IDataManager<UserModel, UserDto> UserDataManager { get; }
-        public IDataManager<ProgramModel, ProgramDto> ProgramDataManager { get; }
-        public IDataManager<ProgramExerciceModel, ProgramExerciceDto> ProgramExerciceDataManager { get; }
+        private HttpClient _httpClient;       
+
+        //OAuth0
+        string Auth0Domain = "dev-2hpu-3au.eu.auth0.com";
+        string Auth0ClientId = "b4JWfGG0VDABmp4R0bK2ShZtNCnOcTLE";
+        UserModel CurrentUser = null;
 
         public App()
         {
+            _httpClient = new HttpClient();
             var configuration = new MapperConfiguration(cfg => cfg.AddMaps(typeof(App)));
-            Mapper = new Mapper(configuration);
-            ExerciceDataManager = new ExerciceDataManager(HttpClient, Mapper, SERVER_URL);
-            UserDataManager = new UserDataManager(HttpClient, Mapper, SERVER_URL);
-            ProgramDataManager = new ProgramDataManager(HttpClient, Mapper, SERVER_URL);
-            ProgramExerciceDataManager = new ProgramExerciceDataManager(HttpClient, Mapper, SERVER_URL);
+            _mapper = new Mapper(configuration);
         }
 
 
         //Création de la fenetre main Shell
         protected override Window CreateShell()
         {
-            var w = Container.Resolve<Home>();
-            return w;
+            return Container.Resolve<Home>();
         }
 
         //Enregistrement des Servivces
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // containerRegistry.RegisterForNavigation<Home>();
+           
+            containerRegistry.RegisterForNavigation<CreatProgrameExerciceView>();
+            containerRegistry.RegisterForNavigation<UserAuthView>();
+
+            containerRegistry.RegisterInstance<IDataManager<ExerciceModel, ExerciceDto>>(new ExerciceDataManager(_httpClient, _mapper, SERVER_URL));
+            containerRegistry.RegisterInstance<IDataManager<UserModel, UserDto>>(new UserDataManager(_httpClient, _mapper, SERVER_URL));
+            containerRegistry.RegisterInstance<IDataManager<ProgramModel, ProgramDto>>(new ProgramDataManager(_httpClient, _mapper, SERVER_URL));
+            containerRegistry.RegisterInstance<IDataManager<ProgramExerciceModel, ProgramExerciceDto>>(new ProgramExerciceDataManager(_httpClient, _mapper, SERVER_URL));
+
         }
 
         //Gestionnaire de module
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
-            moduleCatalog.AddModule<HomeTrainingAppMoudule>();
+           
         }
+
+      
     }
 }

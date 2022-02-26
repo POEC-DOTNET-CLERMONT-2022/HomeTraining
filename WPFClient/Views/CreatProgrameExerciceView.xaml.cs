@@ -1,18 +1,16 @@
 ﻿using System.Windows.Controls;
 
-namespace WPFClient
+namespace WPFClient.Views
 {
 
     public partial class CreatProgrameExerciceView : UserControl
     {
+
+        
         public CreatProgrameExerciceView()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-
-        }
     }
 }

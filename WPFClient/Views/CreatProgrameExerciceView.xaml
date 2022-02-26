@@ -1,28 +1,58 @@
-﻿<UserControl x:Class="WPFClient.CreatProgrameExerciceView"
+﻿<UserControl x:Class="WPFClient.Views.CreatProgrameExerciceView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <!--<UserControl.DataContext>
+        <my:CreatProgrameExerciceViewModel/>
+    </UserControl.DataContext>-->
+
+
     <Grid Background="White">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition>
+            <ColumnDefinition Width="143*">
             </ColumnDefinition>
-            <ColumnDefinition>
-
+            <ColumnDefinition Width="282*">
+            </ColumnDefinition>
+            <ColumnDefinition Width="91*" >
+            </ColumnDefinition>
+            <ColumnDefinition Width="284*" >
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="29*"></RowDefinition>
+            <RowDefinition Height="61*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="Nom programme : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <TextBox Grid.Row="0" HorizontalAlignment="Left" Margin="126,14,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="181"/>
-        <Label Grid.Row="0" Content="Difficulté programme : " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0"/>
-        <ComboBox Grid.Row="0" HorizontalAlignment="Left" Margin="188,62,0,0" VerticalAlignment="Top" Width="120"/>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Nom programme : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="24" Width="109"/>
+        <TextBox Grid.Row="0" HorizontalAlignment="Center" Margin="0,34,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="108" Height="24"/>
+        <Label Grid.Row="0" Content="Difficulté programme : " HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,72,0,0" Height="24" Width="130"/>
+        <ComboBox Grid.Row="0" HorizontalAlignment="Center" Margin="0,110,0,0" VerticalAlignment="Top" Width="108" Height="25"/>
+
+        <ListBox Grid.Row="1" d:ItemsSource="{Binding Exercices}" Grid.ColumnSpan="2" Margin="0,0,185,0">
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate DataType="{x:Type local:ExerciceModel}">
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+        </ListBox>
+        <Button Grid.Column="2" Content="Ajouter" HorizontalAlignment="Left" Margin="3,48,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Button Grid.Column="2" Content="Retirer" HorizontalAlignment="Center" Margin="0,153,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <DataGrid Grid.Column="3" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
 
     </Grid>
