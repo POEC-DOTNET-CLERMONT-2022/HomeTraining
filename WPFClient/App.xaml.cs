@@ -39,16 +39,14 @@ namespace WPFClient
 
         //Enregistrement des Servivces
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-           
+        {            
             containerRegistry.RegisterForNavigation<CreatProgrameExerciceView>();
             containerRegistry.RegisterForNavigation<UserAuthView>();
-
-            containerRegistry.RegisterInstance<IDataManager<ExerciceModel, ExerciceDto>>(new ExerciceDataManager(_httpClient, _mapper, SERVER_URL));
-            containerRegistry.RegisterInstance<IDataManager<UserModel, UserDto>>(new UserDataManager(_httpClient, _mapper, SERVER_URL));
-            containerRegistry.RegisterInstance<IDataManager<ProgramModel, ProgramDto>>(new ProgramDataManager(_httpClient, _mapper, SERVER_URL));
-            containerRegistry.RegisterInstance<IDataManager<ProgramExerciceModel, ProgramExerciceDto>>(new ProgramExerciceDataManager(_httpClient, _mapper, SERVER_URL));
-
+            containerRegistry.RegisterInstance<ExerciceDataManager>(new ExerciceDataManager(_httpClient, _mapper, SERVER_URL));
+            containerRegistry.RegisterInstance<UserDataManager>(new UserDataManager(_httpClient, _mapper, SERVER_URL));
+            containerRegistry.RegisterInstance<ProgramDataManager>(new ProgramDataManager(_httpClient, _mapper, SERVER_URL));
+            containerRegistry.RegisterInstance<ProgramExerciceDataManager>(new ProgramExerciceDataManager(_httpClient, _mapper, SERVER_URL));
+            
         }
 
         //Gestionnaire de module

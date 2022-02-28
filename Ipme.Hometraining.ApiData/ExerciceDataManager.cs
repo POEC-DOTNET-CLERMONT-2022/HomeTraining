@@ -11,23 +11,5 @@ namespace Ipme.Hometraining.ApiData
         {
         }
 
-
-        //TODO Corriger les fonctions revoir le code
-        public async Task<IEnumerable<ExerciceModel>> GetExercicesAsync(string uri)
-        {
-            try
-            {
-                var response =  await HttpClient.GetFromJsonAsync<ExerciceDto>(uri);               
-                    var exercices = Mapper.Map<IEnumerable<ExerciceModel>>(response); ;
-                    return exercices;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw;
-            }
-        }
-
-
     }
 }

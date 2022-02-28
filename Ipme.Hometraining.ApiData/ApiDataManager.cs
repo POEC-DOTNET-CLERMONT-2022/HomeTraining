@@ -3,7 +3,9 @@ using System.Net.Http.Json;
 
 namespace Ipme.Hometraining.ApiData
 {
-    public abstract class ApiDataManager<TModel, TDto> : IDataManager<TModel, TDto> where TModel : class where TDto : class
+    public abstract class ApiDataManager<TModel, TDto> : IDataManager<TModel, TDto> 
+        where TModel : class 
+        where TDto : class
     {
         protected HttpClient HttpClient { get; }
         protected IMapper Mapper { get; }
@@ -25,8 +27,16 @@ namespace Ipme.Hometraining.ApiData
 
         public async Task<IEnumerable<TModel>> GetAll()
         {
-            var result = await HttpClient.GetFromJsonAsync<TDto>(Uri);
-            return Mapper.Map<IEnumerable<TModel>>(result);
+            var result = await HttpClient.GetFromJsonAsync<IEnumerable<TDto>>(Uri);
+            if (result == null)
+            {
+                throw new Exception("Erreur données non reçus");
+            }
+            else
+            {
+                return Mapper.Map<IEnumerable<TModel>>(result);
+            }
+            
         }
 
         public async Task Add(TModel model)

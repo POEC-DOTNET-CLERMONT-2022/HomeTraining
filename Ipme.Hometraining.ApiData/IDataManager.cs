@@ -6,14 +6,14 @@ namespace Ipme.Hometraining.ApiData
                                                 where TDto : class
     {
 
-        Task<IEnumerable<TModel>> GetAll();   
+        public Task<IEnumerable<TModel>> GetAll();
 
-        Task<TModel> Get(Guid id);
+        public Task<TModel> Get(Guid id);
 
-        Task Add(TModel model);
+        public Task Add(TModel model);
 
-        Task Put(TModel model);
+        public Task Put(TModel model);
 
-        Task Delete(Guid id);
+        public Task Delete(Guid id);
     }
 }
