@@ -8,7 +8,7 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
         x:Name="Shell"       
-        Title="{Binding Title}" Height="600" Width="900"  WindowStartupLocation="CenterScreen" Icon="/hometraining.ico" Background="#FF5624D0">
+        Title="{Binding Title}" Height="600" Width="1200"  WindowStartupLocation="CenterScreen" Icon="/hometraining.ico" Background="#FF5624D0">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

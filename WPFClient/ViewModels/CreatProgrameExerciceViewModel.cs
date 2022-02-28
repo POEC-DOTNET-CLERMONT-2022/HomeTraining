@@ -31,7 +31,7 @@ namespace WPFClient.ViewModels
             programDataManager = container.Resolve<ProgramDataManager>();
             programExerciceDataManager = container.Resolve<ProgramExerciceDataManager>();
             userDataManager = container.Resolve<UserDataManager>();
-            LoadData();
+            _ = LoadData();
             
         }
 

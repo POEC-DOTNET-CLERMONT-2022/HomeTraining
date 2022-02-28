@@ -9,9 +9,13 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel DataContext="{Binding exerciceDetail, ElementName=Root}">
+            <Label Content="Nom exercice" HorizontalAlignment="Left"></Label>
             <TextBlock Text="{Binding Name}" Background="Gray"></TextBlock>
-            <TextBlock Text="{Binding Description}"></TextBlock>
+            <Label Content="Zone musculaire"/>
             <TextBlock Text="{Binding MuscleArea}"></TextBlock>
+            <Label Content="Description"/>
+            <TextBlock Text="{Binding Description}" TextWrapping="Wrap"></TextBlock>           
+            <!--<MediaElement x:Name="VideoExercice" HorizontalAlignment="Left" Height="148" Margin="59,223,0,0" VerticalAlignment="Top" Width="266"/>-->       
             <Image Source="{Binding VideoName}"  Height="100" Width="100"/>
         </StackPanel>
 

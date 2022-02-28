@@ -2,7 +2,7 @@
 using Ipme.Hometraining.Dto;
 using Ipme.Hometraining.Entities;
 
-namespace Ipme.Hometraining.Profiles
+namespace APIRest.Profiles
 {
     public class UserProfile : Profile
     {
