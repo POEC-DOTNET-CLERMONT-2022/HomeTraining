@@ -15,16 +15,22 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            <ObjectDataProvider x:Key="EnumDifficultySource" ObjectType="{x:Type Model:Difficulty}" MethodName="GetValues">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type TypeName="Model:Difficulty" />
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
         </ResourceDictionary>
     </UserControl.Resources>
+
     <!--<UserControl.DataContext>
         <my:CreatProgrameExerciceViewModel/>
     </UserControl.DataContext>-->
 
 
-    <Grid Background="White">
+    <Grid Background="#FFDFE0E6">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="230*">
+            <ColumnDefinition Width="240*">
             </ColumnDefinition>
             <ColumnDefinition Width="117*" >
             </ColumnDefinition>
@@ -35,12 +41,28 @@
             <RowDefinition Height="29*"></RowDefinition>
             <RowDefinition Height="61*"></RowDefinition>
         </Grid.RowDefinitions>
+        <StackPanel  Grid.Row="0" Grid.Column="0" >
+            <Grid Background="#FFDFE0E6" Height="145">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140*">
+                    </ColumnDefinition >
+                    
+                    <ColumnDefinition Width="140*">
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60*"></RowDefinition>
+                    <RowDefinition Height="60*"></RowDefinition>
+                    <RowDefinition Height="60*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Content="Nom programme :" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="109"  Grid.Row="0" Grid.Column="0"/>
+                <TextBox x:Name="ProgramName"    HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top"  Grid.Row="0" Grid.Column="1" Width="108" Height="24" Cursor="IBeam"/>
+                <Label  Content="Difficulté :"   HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="1" Grid.Column="0" Height="24" Width="130"/>
+                <ComboBox  HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource EnumDifficultySource}}"  Grid.Row="1" Grid.Column="1" SelectedIndex="0" Width="108" Margin="0,3,0,3"/>
+                <Button  Content="Sauvegarder"  HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2"  Grid.Column="0" Cursor="Hand" Width="111"/>
+            </Grid>
+        </StackPanel>
 
-        <Label Grid.Row="0" Grid.Column="0" Content="Nom programme :" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="24" Width="109"/>
-        <TextBox Grid.Row="0" HorizontalAlignment="Left" Margin="124,9,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="108" Height="24"/>
-        <Label Grid.Row="0" Content="Difficulté :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,39,0,0" Height="24" Width="130"/>
-        <ComboBox Grid.Row="0" HorizontalAlignment="Left" Margin="75,38,0,0" VerticalAlignment="Top" Width="108" Height="26"/>
-        <Button Grid.Column="0" Content="Sauvegarder"   Grid.Row="0" VerticalAlignment="Top" Height="32" Margin="123,103,10,0" Cursor="Hand"/>
 
         <ListBox Grid.Row="1" Grid.Column="0" x:Name="listExercices" ItemsSource="{Binding Exercices}" Margin="0,10,0,0">
             <ListBox.ItemTemplate>
@@ -52,7 +74,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <local:ExerciceUserControl Grid.Column="2" exerciceDetail="{Binding SelectedItem, ElementName=listExercices}" />
+        <local:ExerciceUserControl Grid.Column="2" ExerciceDetail="{Binding SelectedItem, ElementName=listExercices}" />
 
         <Button Grid.Column="1" Content="Ajouter" HorizontalAlignment="Left" Margin="26,48,0,0" Grid.Row="1" VerticalAlignment="Top" Height="32" Width="79"/>
         <Button Grid.Column="1" Content="Retirer" HorizontalAlignment="Center" Margin="0,153,0,0" Grid.Row="1" VerticalAlignment="Top" Height="32" Width="74"/>

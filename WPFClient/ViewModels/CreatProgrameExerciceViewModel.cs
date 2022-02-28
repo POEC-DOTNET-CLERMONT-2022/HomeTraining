@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using Unity;
+using WPFClient.Views;
 
 namespace WPFClient.ViewModels
 {
@@ -15,13 +16,27 @@ namespace WPFClient.ViewModels
     {
         IUnityContainer Container;
         public ObservableCollection<ExerciceModel> Exercices { get; private set; }
-        public ExerciceModel currentExercice { get; private set; }
+        public ExerciceUserControl currentExerciceControl { get; private set; }
+
+        public ProgramModel Program { get; private set; }
+
+        public ObservableCollection<ProgramExerciceModel> ExerciceList { get; private set; }
+        public Difficulty _difficulties;
+        public Difficulty Difficulty
+        {
+            get => _difficulties;
+            set => SetProperty(ref _difficulties, value);
+        }
 
         private ExerciceDataManager exerciceDataManager;
         private ProgramDataManager programDataManager;
         private ProgramExerciceDataManager programExerciceDataManager;
         private UserDataManager userDataManager;
         //myBindings properties here 
+
+    
+
+
 
         public CreatProgrameExerciceViewModel(IUnityContainer container)
         {
@@ -49,6 +64,12 @@ namespace WPFClient.ViewModels
             Exercices.AddRange(exercices);
             
             //Exercices.CurrentChanged += SelectedItemChanged;
+        }
+
+        public void AddProgramExercice()
+        {
+            /*var pexercice = new ProgramExerciceModel(Guid.NewGuid,)
+            ExerciceList.Add(currentExerciceControl.ExerciceDetail);*/
         }
     }
 }

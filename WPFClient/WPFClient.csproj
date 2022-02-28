@@ -37,14 +37,11 @@
     <ProjectReference Include="..\Ipme.Hometraining.Entities\Entities.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
     <ProjectReference Include="..\Persistance1\Persistance.csproj" />
+    <PackageReference Include="Auth0.OidcClient.WPF" Version="4.0.0" />
   </ItemGroup>
-
+ 
   <ItemGroup>
     <Resource Include="hometraining.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

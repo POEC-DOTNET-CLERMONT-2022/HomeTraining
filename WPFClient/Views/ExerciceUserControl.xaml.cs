@@ -16,7 +16,7 @@ namespace WPFClient.Views
 
         //Ma proprieté, pour une dependency property pas besoins d'appeller on property changed
         //les proprietes doivent être publics
-        public ExerciceModel exerciceDetail
+        public ExerciceModel ExerciceDetail
         {
             get
             {
@@ -30,7 +30,7 @@ namespace WPFClient.Views
         //On enregiste la dependencypropert nomDeLaPropriete,TypeDeLaPRopriete,
         //et la classe de la propriété elle même qui se trouve plus haut
         public static readonly DependencyProperty exerciceDetailProperty =
-        DependencyProperty.Register("exerciceDetail", typeof(ExerciceModel),
+        DependencyProperty.Register("ExerciceDetail", typeof(ExerciceModel),
         typeof(ExerciceUserControl));
     }
 }

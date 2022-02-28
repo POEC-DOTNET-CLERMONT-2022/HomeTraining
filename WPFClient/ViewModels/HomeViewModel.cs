@@ -15,7 +15,7 @@ namespace WPFClient.ViewModels
         public ObservableCollection<ExerciceModel> Exercices { get; set; }
         //readonly ObservableCollection<ProgramExerciceModel> _programsExercices;
 
-        public UserModel User { get; private set; }
+        public UserModel CurrentUser { get; private set; }
         //data validations
 
 

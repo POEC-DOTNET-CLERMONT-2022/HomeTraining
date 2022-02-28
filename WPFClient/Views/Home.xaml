@@ -8,7 +8,7 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
         x:Name="Shell"       
-        Title="{Binding Title}" Height="600" Width="1200"  WindowStartupLocation="CenterScreen" Icon="/hometraining.ico" Background="#FF5624D0">
+        Title="{Binding Title}" Height="600" Width="1200"  WindowStartupLocation="CenterScreen" Icon="/hometraining.ico" Background="#FF946DF5">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -18,10 +18,10 @@
     </Window.Resources>
     <Grid>
         <DockPanel LastChildFill="True">
-            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5" >
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="0" >
                 <Button Command="{Binding NavigateCommand}" CommandParameter="CreatProgrameExerciceView" Margin="5" Cursor="Hand">Création programme exercice</Button>
                 <Button Command="{Binding NavigateCommand}" CommandParameter="UserAuthView" Margin="5" Cursor="Hand">Authentification USER</Button>
-                <Button Command="{Binding NavigateCommand}" CommandParameter="UserAuthView" Cursor="Hand" Content="Se connecter"/>
+                <Button Command="{Binding LoginCommand}" CommandParameter="UserAuthView" Cursor="Hand" Content="Se connecter"/>
             </StackPanel>
             <ContentControl prism:RegionManager.RegionName="ContentRegion" Margin="5"  />
         </DockPanel>
