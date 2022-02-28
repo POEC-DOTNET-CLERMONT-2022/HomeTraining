@@ -14,6 +14,8 @@ namespace Ipme.Hometraining.Entities
         public string Name { get; set; }
         public DateTime Created { get; set; }       
         public Difficulty Difficulty { get; set; }
+        public Guid UserId { get; set; }
+
         public virtual UserEntity User { get; set; } 
 
         public List<ProgramExerciceEntity> ProgramExercices { get; set; }

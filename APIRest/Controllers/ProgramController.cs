@@ -50,8 +50,8 @@ namespace APIRest.Controllers
         }
 
                 
-        // GET: api/<ProgramController>/UserId
-        [HttpGet("{UserId}")]
+        // GET: api/<ProgramController>/User
+        [HttpGet("User/{userId}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProgramDto>))]
         public IActionResult GetProgramsOfUser(Guid userId)
         {
@@ -69,6 +69,9 @@ namespace APIRest.Controllers
         {
             if (id == Guid.Empty)
                 return NotFound();
+
+            //TODO vérifier pas de lignes détail 
+
             ProgramEntity programEntity = _repository.RemoveProgram(id);
             if (programEntity == null)
                 return NotFound("Aucun resultat pour DEL");

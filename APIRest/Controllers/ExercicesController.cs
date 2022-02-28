@@ -60,9 +60,13 @@ namespace APIRest.Controllers
         {
             if (id == Guid.Empty)
                 return NotFound();
+
+            //TODO : vérifier si utilisé dans un programme
+
             ExerciceEntity exerciceEntity = _repository.RemoveExercice(id);
             if (exerciceEntity == null)
                 return NotFound("Aucun resultat pour DEL");
+
             ExerciceDto exerciceDto = _mapper.Map<ExerciceDto>(exerciceEntity);
             return Ok(exerciceDto);
         }
@@ -94,8 +98,8 @@ namespace APIRest.Controllers
         }
 
 
-        // GET: api/<ExerciceController>/UserId
-        [HttpGet("{UserId}")]
+        // GET: api/<ExerciceController>/User
+        [HttpGet("User/{userId}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ExerciceDto>))]
         public IActionResult GetExercicesOfUser(Guid userId)
         {
@@ -105,8 +109,8 @@ namespace APIRest.Controllers
         }
 
 
-        // GET: api/<ExerciceController>/programId
-        [HttpGet("{ProgramId}")]
+        // GET: api/<ExerciceController>/Program
+        [HttpGet("Program/{programId}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ExerciceDto>))]
         public IActionResult GetExercicesinProgram(Guid programId)
         {

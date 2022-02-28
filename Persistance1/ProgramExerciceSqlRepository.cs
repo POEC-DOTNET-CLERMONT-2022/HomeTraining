@@ -22,7 +22,12 @@ namespace Ipme.Hometraining.Persistance
         {
             return SqlContext.Set<ProgramExerciceEntity>().SingleOrDefault(prgEx => prgEx.Id == id);
         }
-        
+
+        IEnumerable<ProgramExerciceEntity> IProgramExerciceRepository.GetProgramDetails(Guid programId)
+        {
+            return SqlContext.Set<ProgramExerciceEntity>().Where(pe => pe.Program.Id == programId).ToList();
+        }
+
 
         public IEnumerable<ProgramExerciceEntity> GetAllProgramExercices()
         {
@@ -30,7 +35,7 @@ namespace Ipme.Hometraining.Persistance
         }
 
         public void AddProgramExercice(ProgramExerciceEntity prgExEntity)
-        { 
+        {
             SqlContext.Set<ProgramExerciceEntity>().Add(prgExEntity);
             SqlContext.SaveChanges();
         }

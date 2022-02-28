@@ -8,6 +8,8 @@ namespace Ipme.Hometraining.Persistance
     {
         IEnumerable<ProgramExerciceEntity> GetAllProgramExercices();
 
+        IEnumerable<ProgramExerciceEntity> GetProgramDetails(Guid programId);
+
         ProgramExerciceEntity GetSingleProgramExercice(Guid id);
 
         void AddProgramExercice(ProgramExerciceEntity prgExEntity);

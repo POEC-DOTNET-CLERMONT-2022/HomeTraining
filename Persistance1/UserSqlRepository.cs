@@ -36,7 +36,7 @@ namespace Ipme.Hometraining.Persistance
         {
             var userEntity = GetSingleUser(id);
             if (userEntity == null)            
-                return null;            
+                return null;
             SqlContext.Set<UserEntity>().Remove(userEntity);
             SqlContext.SaveChanges();
             return userEntity;
