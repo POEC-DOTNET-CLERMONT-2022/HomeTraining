@@ -52,12 +52,11 @@ namespace Ipme.Hometraining.Persistance
             return programEntity;
         }
 
-        
         IEnumerable<ProgramEntity> IProgramRepository.GetProgramsOfUser(Guid userId)
         {
             return SqlContext.Set<ProgramEntity>().Where(prg => prg.User.Id == userId).ToList();
         }
-        
+
 
     }
 }

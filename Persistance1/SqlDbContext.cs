@@ -7,8 +7,10 @@ namespace Ipme.Hometraining.Persistance
 {
     public class SqlDbContext : DbContext
     {
+
         private string ConnectionString = "Server=(localdb)\\mssqllocaldb;Database=hometrainingbb;Trusted_Connection=True;MultipleActiveResultSets=true";
                 
+
         public DbSet<ExerciceEntity> Exercices { get; set; }
         public DbSet<ProgramEntity> Programmes { get; set; }
         public DbSet<ProgramExerciceEntity> ProgrammesExercices { get; set; }

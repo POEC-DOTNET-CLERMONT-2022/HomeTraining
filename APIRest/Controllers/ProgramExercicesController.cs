@@ -24,7 +24,6 @@ namespace APIRest.Controllers
             _logger = Logger;
         }
 
-
         // GET: api/<ProgramExercicesController>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProgramExerciceDto>))]
@@ -33,8 +32,7 @@ namespace APIRest.Controllers
             var prgExercices = _repository.GetAllProgramExercices();
             var prgExercicesDto = _mapper.Map<IEnumerable<ProgramExerciceDto>>(prgExercices);
             return Ok(prgExercicesDto);
-        }
-
+        }       
 
         // GET api/<ProgramExercicesController>/5
         [HttpGet("{id}")]
@@ -91,6 +89,23 @@ namespace APIRest.Controllers
                 return NotFound("Aucun resultat pour PUT");
             return Ok(prgExDto);
         }
+
+
+        // GET: api/<ProgramExercicesController>/ProgramId
+        [HttpGet("Program/{programId}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<ProgramExerciceDto>))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult GetDetailProgram(Guid programId)
+        {
+            var prgExercices = _repository.GetProgramDetails(programId);
+
+            if (prgExercices.Count() == 0)
+                return NotFound("Aucun exercice pour ce programme");
+
+            var prgExercicesDto = _mapper.Map<IEnumerable<ProgramExerciceDto>>(prgExercices);
+            return Ok(prgExercicesDto);
+        }
+
 
 
 
