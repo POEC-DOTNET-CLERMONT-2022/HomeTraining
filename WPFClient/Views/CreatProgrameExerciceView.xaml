@@ -9,7 +9,7 @@
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="900">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -23,23 +23,18 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <!--<UserControl.DataContext>
-        <my:CreatProgrameExerciceViewModel/>
-    </UserControl.DataContext>-->
-
-
     <Grid Background="#FFDFE0E6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240*">
             </ColumnDefinition>
-            <ColumnDefinition Width="117*" >
+            <ColumnDefinition Width="120*" >
             </ColumnDefinition>
             <ColumnDefinition Width="398*" >
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="29*"></RowDefinition>
-            <RowDefinition Height="61*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="90*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel  Grid.Row="0" Grid.Column="0" >
             <Grid Background="#FFDFE0E6" Height="145">
@@ -56,15 +51,15 @@
                     <RowDefinition Height="60*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Nom programme :" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="109"  Grid.Row="0" Grid.Column="0"/>
-                <TextBox x:Name="ProgramName"    HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top"  Grid.Row="0" Grid.Column="1" Width="108" Height="24" Cursor="IBeam"/>
+                <TextBox x:Name="ProgramName"    HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Grid.Row="0" Grid.Column="1" Width="108" Height="24" Cursor="IBeam"/>
                 <Label  Content="Difficulté :"   HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="1" Grid.Column="0" Height="24" Width="130"/>
-                <ComboBox  HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource EnumDifficultySource}}"  Grid.Row="1" Grid.Column="1" SelectedIndex="0" Width="108" Margin="0,3,0,3"/>
+                <ComboBox  HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource EnumDifficultySource}}"  Grid.Row="1" Grid.Column="1" SelectedIndex="0" Margin="0,0,0,0" />
                 <Button  Content="Sauvegarder"  HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2"  Grid.Column="0" Cursor="Hand" Width="111"/>
             </Grid>
         </StackPanel>
 
 
-        <ListBox Grid.Row="1" Grid.Column="0" x:Name="listExercices" ItemsSource="{Binding Exercices}" Margin="0,10,0,0">
+        <ListBox Grid.Row="1" Grid.Column="0" x:Name="listExercices" ItemsSource="{Binding Exercices}" SelectedItem="{Binding CurrentExercice}" Margin="0,10,0,0">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="{x:Type Model:ExerciceModel}">
                     <StackPanel>
@@ -75,10 +70,12 @@
         </ListBox>
 
         <local:ExerciceUserControl Grid.Column="2" ExerciceDetail="{Binding SelectedItem, ElementName=listExercices}" />
-
-        <Button Grid.Column="1" Content="Ajouter" HorizontalAlignment="Left" Margin="26,48,0,0" Grid.Row="1" VerticalAlignment="Top" Height="32" Width="79"/>
-        <Button Grid.Column="1" Content="Retirer" HorizontalAlignment="Center" Margin="0,153,0,0" Grid.Row="1" VerticalAlignment="Top" Height="32" Width="74"/>
-        <DataGrid Grid.Column="3" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <DockPanel Grid.Column="1" Grid.Row="1">
+            <Button  Content="Ajouter" Command="{Binding AddProgramExerciceCommand}" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="32" Width="79" Cursor="Hand"/>
+            <Button Content="Retirer" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="32" Width="74"/>
+        </DockPanel>
+        
+        <DataGrid Grid.Column="3" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
 
     </Grid>

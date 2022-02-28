@@ -1,5 +1,6 @@
 ﻿using Ipme.Hometraining.ApiData;
 using Ipme.Hometraining.Models;
+using Prism.Commands;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,10 @@ namespace WPFClient.ViewModels
     public class CreatProgrameExerciceViewModel : BindableBase
     {
         IUnityContainer Container;
+        public DelegateCommand AddProgramExerciceCommand { get; private set; }
+        //myBindings properties here 
         public ObservableCollection<ExerciceModel> Exercices { get; private set; }
-        public ExerciceUserControl currentExerciceControl { get; private set; }
-
+        public ExerciceModel CurrentExercice { get; set; }
         public ProgramModel Program { get; private set; }
 
         public ObservableCollection<ProgramExerciceModel> ExerciceList { get; private set; }
@@ -32,7 +34,7 @@ namespace WPFClient.ViewModels
         private ProgramDataManager programDataManager;
         private ProgramExerciceDataManager programExerciceDataManager;
         private UserDataManager userDataManager;
-        //myBindings properties here 
+
 
     
 
@@ -42,6 +44,8 @@ namespace WPFClient.ViewModels
         {
             Exercices = new ObservableCollection<ExerciceModel>();
             Container = container;
+            AddProgramExerciceCommand = new DelegateCommand(AddProgramExercice, CanAddProgramExercice);
+
             exerciceDataManager = container.Resolve<ExerciceDataManager>();
             programDataManager = container.Resolve<ProgramDataManager>();
             programExerciceDataManager = container.Resolve<ProgramExerciceDataManager>();
@@ -60,16 +64,24 @@ namespace WPFClient.ViewModels
         private async Task LoadData()
         {
             IEnumerable<ExerciceModel> exercices = await exerciceDataManager.GetAll();
-
-            Exercices.AddRange(exercices);
-            
+            Exercices.AddRange(exercices);            
             //Exercices.CurrentChanged += SelectedItemChanged;
         }
 
-        public void AddProgramExercice()
+
+        
+
+       
+        void AddProgramExercice()
         {
+        Console.WriteLine(CurrentExercice.Name);
             /*var pexercice = new ProgramExerciceModel(Guid.NewGuid,)
-            ExerciceList.Add(currentExerciceControl.ExerciceDetail);*/
+           ExerciceList.Add(currentExerciceControl.ExerciceDetail);*/
         }
+        bool CanAddProgramExercice()
+        {
+            return true;
+        }
+        
     }
 }

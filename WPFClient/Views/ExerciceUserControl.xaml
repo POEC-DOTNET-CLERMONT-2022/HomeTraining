@@ -16,7 +16,7 @@
             <Label Content="Description"/>
             <TextBlock Text="{Binding Description}" TextWrapping="Wrap"></TextBlock>           
             <!--<MediaElement x:Name="VideoExercice" HorizontalAlignment="Left" Height="148" Margin="59,223,0,0" VerticalAlignment="Top" Width="266"/>-->       
-            <Image Source="{Binding VideoName}"  Height="100" Width="100"/>
+            <!--<Image Source="{Binding VideoName}"  Height="100" Width="100"/>-->
         </StackPanel>
 
     </Grid>
