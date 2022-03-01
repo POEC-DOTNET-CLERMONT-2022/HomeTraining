@@ -8,27 +8,34 @@ namespace Ipme.Hometraining.Models
 {
     public class ProgramModel : BindableBase
     {
-        private Guid Id { get; set; }
-        public string _name;
+        public Guid Id { get; private set; }
+        private string _name;
         public string Name
         {
             get => _name;
             set => SetProperty(ref _name, value);
         }
-        public DateTime _created;
+        private DateTime _created;
         public DateTime Created
         {
             get => _created;
             set => SetProperty(ref _created, value);
         }
-        public Difficulty _difficulty;
+        private Difficulty _difficulty;
         public Difficulty Difficulty
         {
             get => _difficulty;
             set => SetProperty(ref _difficulty, value);
         }
-        public Guid UserId { get; set; }
-        public ObservableCollection<ProgramExerciceModel> ExerciceList {  get; set; }
+        public Guid UserId { get; private set; }
+
+        private ObservableCollection<ProgramExerciceModel> _exerciceList;
+        public ObservableCollection<ProgramExerciceModel> EexerciceList
+        {
+            get => _exerciceList;
+            set => SetProperty(ref _exerciceList, value);
+        }
+
 
         public UserModel _user;
         public UserModel User
@@ -40,13 +47,14 @@ namespace Ipme.Hometraining.Models
         public ProgramModel(Guid id, string name, Difficulty difficulty, Guid userId)
         {
             if (id == Guid.Empty) throw new ArgumentOutOfRangeException(nameof(id));
-            if (_name == null) throw new ArgumentOutOfRangeException(nameof(name));
+            if (name == null) throw new ArgumentOutOfRangeException(nameof(name));
             if (userId == Guid.Empty) throw new ArgumentOutOfRangeException(nameof(userId));
             Id = id;
-            _name = name;
+            Name = name;
             _created = DateTime.Today;
             _difficulty = difficulty;
             UserId = userId;
+            _exerciceList = new ObservableCollection<ProgramExerciceModel>();
         }
     }
 

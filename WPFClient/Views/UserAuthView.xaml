@@ -18,6 +18,7 @@
     </UserControl.Resources>
     <Grid Background="#FFEF6C6C">
         <ComboBox HorizontalAlignment="Left" Margin="271,137,0,0" VerticalAlignment="Top" Width="120"/>
-
+        <MediaElement Source="/Videos/Seoul-21985.mp4" Name="mePlayer" Stretch="None" />
+       
     </Grid>
 </UserControl>

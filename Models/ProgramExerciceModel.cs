@@ -9,7 +9,7 @@ namespace Ipme.Hometraining.Models
     {
 
         // Inutile ??? 
-        private Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         private Guid ProgramId { get; set; }
         private Guid ExerciceId { get; set; }
@@ -28,16 +28,23 @@ namespace Ipme.Hometraining.Models
         }
 
         private ExerciceModel _exercice;
-       // public ProgramExerciceModel(ExerciceModel user) => this.user = user;
+        public ExerciceModel Exercice
+        {
+            get => _exercice;
+            set => SetProperty(ref _exercice, value);
+        }
+
+        // public ProgramExerciceModel(ExerciceModel user) => this.user = user;
 
 
-        public ProgramExerciceModel(Guid peId, Guid programId, Guid exerciceId, int position, int repetitions)
+        public ProgramExerciceModel(Guid peId, Guid programId, ExerciceModel exercice, int position, int repetitions)
         {
             Id = peId;    
             ProgramId = programId;
-            ExerciceId = exerciceId;
+            Exercice = exercice;
             Position = position;
             Repetitions = repetitions;
+
         }
 
     }

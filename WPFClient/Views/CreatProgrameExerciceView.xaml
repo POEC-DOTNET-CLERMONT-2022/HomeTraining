@@ -15,7 +15,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <ObjectDataProvider x:Key="EnumDifficultySource" ObjectType="{x:Type Model:Difficulty}" MethodName="GetValues">
+            <ObjectDataProvider x:Key="EnumDifficultySource"  ObjectType="{x:Type Model:Difficulty}" MethodName="GetValues">
                 <ObjectDataProvider.MethodParameters>
                     <x:Type TypeName="Model:Difficulty" />
                 </ObjectDataProvider.MethodParameters>
@@ -36,12 +36,12 @@
             <RowDefinition Height="50*"></RowDefinition>
             <RowDefinition Height="90*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel  Grid.Row="0" Grid.Column="0" >
+        <StackPanel  Grid.Row="0" Grid.Column="0" Margin="2">
             <Grid Background="#FFDFE0E6" Height="145">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="140*">
                     </ColumnDefinition >
-                    
+
                     <ColumnDefinition Width="140*">
                     </ColumnDefinition>
                 </Grid.ColumnDefinitions>
@@ -51,15 +51,15 @@
                     <RowDefinition Height="60*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Content="Nom programme :" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="109"  Grid.Row="0" Grid.Column="0"/>
-                <TextBox x:Name="ProgramName"    HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Grid.Row="0" Grid.Column="1" Width="108" Height="24" Cursor="IBeam"/>
+                <TextBox  HorizontalAlignment="Center" TextWrapping="Wrap"  Text="{Binding Program.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top"  Grid.Row="0" Grid.Column="1" Width="143" Height="24" Cursor="IBeam"/>
                 <Label  Content="Difficulté :"   HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="1" Grid.Column="0" Height="24" Width="130"/>
-                <ComboBox  HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource EnumDifficultySource}}"  Grid.Row="1" Grid.Column="1" SelectedIndex="0" Margin="0,0,0,0" />
-                <Button  Content="Sauvegarder"  HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2"  Grid.Column="0" Cursor="Hand" Width="111"/>
+                <ComboBox  HorizontalAlignment="Center" ItemsSource="{Binding Source={StaticResource EnumDifficultySource}}" SelectedItem="{Binding Difficulty}" BorderBrush="Black"  Grid.Column="1" SelectedIndex="0" Margin="0,48,0,24" BorderThickness="0,0,0,1" Grid.RowSpan="2" Width="143" />
+                <Button  Content="Sauvegarder" Command="{Binding SaveProgramExerciceCommand}"  HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Row="2" Cursor="Hand" Width="142"/>
             </Grid>
         </StackPanel>
 
 
-        <ListBox Grid.Row="1" Grid.Column="0" x:Name="listExercices" ItemsSource="{Binding Exercices}" SelectedItem="{Binding CurrentExercice}" Margin="0,10,0,0">
+        <ListBox  x:Name="listExercices" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Exercices}" SelectedItem="{Binding CurrentExercice}" Margin="2">
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="{x:Type Model:ExerciceModel}">
                     <StackPanel>
@@ -69,14 +69,42 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <local:ExerciceUserControl Grid.Column="2" ExerciceDetail="{Binding SelectedItem, ElementName=listExercices}" />
-        <DockPanel Grid.Column="1" Grid.Row="1">
+        <local:ExerciceUserControl Grid.Column="2" ExerciceDetail="{Binding SelectedItem, ElementName=listExercices}" Margin="2" />
+        <DockPanel Grid.Column="1" Grid.Row="1" Margin="2">
             <Button  Content="Ajouter" Command="{Binding AddProgramExerciceCommand}" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="32" Width="79" Cursor="Hand"/>
-            <Button Content="Retirer" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="32" Width="74"/>
+            <Button Content="Retirer" Command="{Binding RemoveProgramExerciceCommand}" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="32" Width="74" Cursor="Hand"/>
         </DockPanel>
-        
-        <DataGrid Grid.Column="3" Grid.Row="2" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
+
+        <ListBox  Grid.Column="3" Grid.Row="2" ItemsSource="{Binding Program.EexerciceList}" SelectedItem="{Binding CurrentProgramExercice}" Margin="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Margin="1" BorderBrush="Black" BorderThickness="1">
+                            <!--<MediaElement Source="{Binding VideoName}" />-->
+                            <MediaElement HorizontalAlignment="Left"  VerticalAlignment="Top"  Source="/Videos/Seoul-21985.mp4"/>
+                        </Border>
+                        <StackPanel Grid.Column="1" Margin="5">
+                            <StackPanel Orientation="Horizontal" TextBlock.FontWeight="Bold" >
+                                <TextBlock Text="{Binding Exercice.Name}"/>
+                            </StackPanel>
+                            <Grid>
+                                <Label Content="Repetitions" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <TextBox Height="23" Margin="0,26,0,0" Text="{Binding Repetitions}" VerticalAlignment="Top" />
+                            </Grid>
+                            <Grid>
+                                <Label Content="Position" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <TextBlock Height="23" Margin="0,26,0,0" Text="{Binding Position}" VerticalAlignment="Top" />
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
     </Grid>
 
