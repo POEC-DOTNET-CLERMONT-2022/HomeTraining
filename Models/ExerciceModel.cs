@@ -40,6 +40,9 @@ namespace Ipme.Hometraining.Models
             get => _videoName;
             set => SetProperty(ref _videoName, value);
         }
+        private Uri _videoUri;
+        public Uri VideoUri { get; set; }
+
         public ExerciceModel(Guid id, string name, string description, MuscleArea muscleArea, string videoName, Guid userId)
         {           
             if (id == Guid.Empty) throw new ArgumentOutOfRangeException(nameof(id));
@@ -51,6 +54,7 @@ namespace Ipme.Hometraining.Models
             MuscleArea = muscleArea;
             VideoName = videoName;
             UserId = userId;
+            VideoUri = new Uri(VideoName, UriKind.RelativeOrAbsolute);
         }
     }
 }
