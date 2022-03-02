@@ -68,7 +68,7 @@ namespace WPFClient.ViewModels
 
         void AddProgramExercice()
         {
-            ProgramExerciceModel exercice = new ProgramExerciceModel(Guid.NewGuid(), Program.Id, CurrentExercice, 0, 0);
+            ProgramExerciceModel exercice = new ProgramExerciceModel(Guid.NewGuid(), Program.Id, CurrentExercice, Program.EexerciceList.Count+1, 0);
             Program.EexerciceList.Add(exercice);
             RemoveProgramExerciceCommand.RaiseCanExecuteChanged();
         }

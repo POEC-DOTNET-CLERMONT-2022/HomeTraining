@@ -44,5 +44,18 @@
     <Resource Include="hometraining.ico" />
     <Resource Include="Videos\Seoul-21985.mp4" />
   </ItemGroup>
+ 
+  <ItemGroup>
+    <Compile Update="Views\ProgramesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+ 
+  <ItemGroup>
+    <Page Update="Views\ProgramesView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
 
 </Project>
