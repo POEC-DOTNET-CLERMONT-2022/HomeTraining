@@ -5,14 +5,14 @@ namespace Ipme.Hometraining.Models
 {
     public class UserModel : BindableBase
     {
-        private Guid _id;
+        public Guid Id { get; private set; }
 
         public UserModel(Guid id, string firstName, string lastName, string login, string password, bool isAdmin)
         {
             if (id == Guid.Empty) throw new ArgumentOutOfRangeException(nameof(id));
             if (firstName == null) throw new ArgumentOutOfRangeException(nameof(firstName));
 
-            _id = id;
+            Id = id;
             _firstName = firstName;
             _lastName = lastName;
             _login = login;
@@ -43,8 +43,6 @@ namespace Ipme.Hometraining.Models
         }
 
         private string _password;
-
-        
         public string Password
         {
             get => _password;

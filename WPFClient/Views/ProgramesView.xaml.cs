@@ -11,6 +11,5 @@ namespace WPFClient.Views
         {
             InitializeComponent();
         }
-
     }
 }

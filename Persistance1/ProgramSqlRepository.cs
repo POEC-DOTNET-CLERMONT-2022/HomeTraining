@@ -23,7 +23,7 @@ namespace Ipme.Hometraining.Persistance
 
         public IEnumerable<ProgramEntity> GetAllPrograms()
         {
-            return SqlContext.Set<ProgramEntity>().ToList();
+            return SqlContext.Set<ProgramEntity>().Include(obj => obj.ProgramExercices).ToList();
         }
 
         public void AddProgram(ProgramEntity programEntity)

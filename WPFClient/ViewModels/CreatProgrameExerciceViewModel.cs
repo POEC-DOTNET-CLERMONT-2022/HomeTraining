@@ -5,18 +5,13 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Data;
 using Unity;
-using WPFClient.Views;
 
 namespace WPFClient.ViewModels
 {
     public class CreatProgrameExerciceViewModel : BindableBase
     {
-        IUnityContainer Container;
         //Commands
         public DelegateCommand AddProgramExerciceCommand { get; private set; }
         public DelegateCommand RemoveProgramExerciceCommand { get; private set; }
@@ -38,40 +33,37 @@ namespace WPFClient.ViewModels
         //DataManagers
         private ExerciceDataManager exerciceDataManager;
         private ProgramDataManager programDataManager;
-        private ProgramExerciceDataManager programExerciceDataManager;
-        private UserDataManager userDataManager;
 
+        //Injection du container de service
         public CreatProgrameExerciceViewModel(IUnityContainer container)
         {
-            Program = new ProgramModel(Guid.NewGuid(), "", Difficulty, new Guid("da286a18-43c9-51f1-1eba-a76d2ac0b1dc"));
+            Program = new ProgramModel(Guid.NewGuid(), "", Difficulty, container.Resolve<UserModel>().Id);
             Exercices = new ObservableCollection<ExerciceModel>(); ;
-            Container = container;
+
             AddProgramExerciceCommand = new DelegateCommand(AddProgramExercice, CanAddProgramExercice);
             RemoveProgramExerciceCommand = new DelegateCommand(RemoveProgramExercice, CanRemoveProgramExercice);
             SaveProgramExerciceCommand = new DelegateCommand(SaveProgram, CanSaveProgram).ObservesProperty(() => Program.Name);
 
             exerciceDataManager = container.Resolve<ExerciceDataManager>();
             programDataManager = container.Resolve<ProgramDataManager>();
-            programExerciceDataManager = container.Resolve<ProgramExerciceDataManager>();
-            userDataManager = container.Resolve<UserDataManager>();
             _ = LoadData();
 
         }
 
+        //recupération asynchrone des data
         private async Task LoadData()
         {
             IEnumerable<ExerciceModel> exercices = await exerciceDataManager.GetAll();
             Exercices.AddRange(exercices);
         }
 
-
-
         void AddProgramExercice()
         {
-            ProgramExerciceModel exercice = new ProgramExerciceModel(Guid.NewGuid(), Program.Id, CurrentExercice, Program.EexerciceList.Count+1, 0);
+            ProgramExerciceModel exercice = new ProgramExerciceModel(Guid.NewGuid(), Program.Id, CurrentExercice, Program.EexerciceList.Count + 1, 0);
             Program.EexerciceList.Add(exercice);
             RemoveProgramExerciceCommand.RaiseCanExecuteChanged();
         }
+
         bool CanAddProgramExercice()
         {
             return true;
@@ -80,10 +72,12 @@ namespace WPFClient.ViewModels
         void RemoveProgramExercice()
         {
             Program.EexerciceList.Remove(CurrentProgramExercice);
+            RemoveProgramExerciceCommand.RaiseCanExecuteChanged();
         }
+
         bool CanRemoveProgramExercice()
         {
-            if (Program!=null && Program.EexerciceList.Count > 0)
+            if (Program != null && Program.EexerciceList.Count > 0)
             {
                 return true;
             }
@@ -95,12 +89,16 @@ namespace WPFClient.ViewModels
 
         void SaveProgram()
         {
+            Program.Difficulty = Difficulty;
             programDataManager.Add(Program);
-            Program = null;
+            CurrentExercice = null;
+            Program.EexerciceList.Clear();
+            Program.Name = "";
+
         }
         bool CanSaveProgram()
         {
-            if (Program!=null && !String.IsNullOrEmpty(Program.Name))
+            if (Program != null && !String.IsNullOrEmpty(Program.Name))
             {
                 return true;
             }

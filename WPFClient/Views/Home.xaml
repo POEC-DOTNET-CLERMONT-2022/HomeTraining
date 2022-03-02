@@ -20,7 +20,7 @@
         <DockPanel LastChildFill="True">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="0" >
                 <Button  CommandParameter="UserAuthView" Margin="5" Cursor="Hand">Mon programme</Button>
-                <Button  CommandParameter="UserAuthView" Margin="5" Cursor="Hand">Programmes</Button>
+                <Button Command="{Binding NavigateCommand}" CommandParameter="ProgramesView" Margin="5" Cursor="Hand">Programmes</Button>
                 <Button Command="{Binding NavigateCommand}" CommandParameter="CreatProgrameExerciceView" Margin="5" Cursor="Hand">Création programme exercice</Button>
                 <Button Command="{Binding NavigateCommand}" CommandParameter="UserAuthView" Margin="5" Cursor="Hand" >Authentification USER</Button>
             </StackPanel>

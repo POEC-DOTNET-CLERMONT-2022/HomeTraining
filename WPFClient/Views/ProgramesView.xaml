@@ -27,56 +27,60 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="240*">
             </ColumnDefinition>
-            <ColumnDefinition Width="120*" >
-            </ColumnDefinition>
-            <ColumnDefinition Width="398*" >
+            <ColumnDefinition Width="240*" >
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="60*"></RowDefinition>
             <RowDefinition Height="16*"></RowDefinition>
             <RowDefinition Height="90*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel  Grid.Row="0" Grid.Column="0" Margin="2">
-            <Grid Background="#FFDFE0E6" Height="145">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="140*">
-                    </ColumnDefinition >
 
-                    <ColumnDefinition Width="140*">
-                    </ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="60*"></RowDefinition>
-                    <RowDefinition Height="60*"></RowDefinition>
-                    <RowDefinition Height="60*"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Label Content="Nom programme :" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="109"  Grid.Row="0" Grid.Column="0"/>
-                <TextBox  HorizontalAlignment="Center" TextWrapping="Wrap"  Text="{Binding Program.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top"  Grid.Row="0" Grid.Column="1" Width="143" Height="24" Cursor="IBeam"/>
-                <Label  Content="Difficulté :"   HorizontalAlignment="Center" VerticalAlignment="Top"  Grid.Row="1" Grid.Column="0" Height="24" Width="130"/>
-                <ComboBox  HorizontalAlignment="Center" ItemsSource="{Binding Source={StaticResource EnumDifficultySource}}" SelectedItem="{Binding Difficulty}" BorderBrush="Black"  Grid.Column="1" SelectedIndex="0" Margin="0,48,0,24" BorderThickness="0,0,0,1" Grid.RowSpan="2" Width="143" />
-                <Button  Content="Sauvegarder" Command="{Binding SaveProgramExerciceCommand}"  HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Row="2" Cursor="Hand" Width="142"/>
-            </Grid>
-        </StackPanel>
-
-        <Label Grid.Row="1" Grid.Column="0" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">Exercices</Label>
-        <ListBox  x:Name="listExercices" Grid.Row="2" Grid.Column="0" ItemsSource="{Binding Exercices}" SelectedItem="{Binding CurrentExercice}" Margin="2">
+        <Label Grid.Row="0" Grid.Column="1" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center">Programme</Label>
+        <ListBox  Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Program.EexerciceList}" SelectedItem="{Binding CurrentProgramExercice}" Margin="2">
             <ListBox.ItemTemplate>
-                <DataTemplate DataType="{x:Type Model:ExerciceModel}">
-                    <StackPanel>
-                        <TextBlock Text="{Binding Name}"/>
-                    </StackPanel>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Margin="1" BorderBrush="Black" BorderThickness="1">
+                            <MediaElement Name="myMediaElement">
+                                <MediaElement.Triggers>
+                                    <EventTrigger RoutedEvent="MediaElement.Loaded">
+                                        <EventTrigger.Actions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <MediaTimeline Source="{Binding Exercice.VideoUri}" Storyboard.TargetName="myMediaElement"  RepeatBehavior="Forever" />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger.Actions>
+                                    </EventTrigger>
+                                </MediaElement.Triggers>
+                            </MediaElement>
+                        </Border>
+                        <StackPanel Grid.Column="1" Margin="5">
+                            <StackPanel Orientation="Horizontal" TextBlock.FontWeight="Bold" >
+                                <TextBlock Text="{Binding Exercice.Name}"/>
+                            </StackPanel>
+                            <Grid>
+                                <Label Content="Repetitions" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <TextBox Height="23" Margin="0,26,0,0" Text="{Binding Repetitions}" VerticalAlignment="Top" />
+                            </Grid>
+                            <Grid>
+                                <Label Content="Position" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                                <TextBlock Height="23" Margin="0,26,0,0" Text="{Binding Position}" VerticalAlignment="Top" />
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <local:ExerciceUserControl Grid.Column="2" ExerciceDetail="{Binding SelectedItem, ElementName=listExercices}" Margin="2" />
-        <DockPanel Grid.Column="1" Grid.Row="1" Margin="2">
-            <Button  Content="Ajouter" Command="{Binding AddProgramExerciceCommand}" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="32" Width="79" Cursor="Hand"/>
-            <Button Content="Retirer" Command="{Binding RemoveProgramExerciceCommand}" HorizontalAlignment="Center" VerticalAlignment="Center"  Height="32" Width="74" Cursor="Hand"/>
-        </DockPanel>
-        <Label Grid.Column="3" Grid.Row="1" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">Aperçu programme</Label>
-            <ListBox  Grid.Column="3" Grid.Row="2" ItemsSource="{Binding Program.EexerciceList}" SelectedItem="{Binding CurrentProgramExercice}" Margin="2">
+
+        
+        <Label Grid.Column="0" Grid.Row="0" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">Programmes</Label>
+            <ListBox  Grid.Column="0" Grid.Row="1" ItemsSource="{Binding Program.EexerciceList}" SelectedItem="{Binding CurrentProgramExercice}" Margin="2">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
